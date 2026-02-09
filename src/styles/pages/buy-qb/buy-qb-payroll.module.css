@@ -1,0 +1,323 @@
+.subText {
+    color: #626367;
+    font-size: 17px;
+    letter-spacing: 1%;
+    line-height: 154%;
+}
+
+.subHeading {
+    font-size: 24px;
+    font-weight: 700 !important;
+    color: #0C336B;
+    margin-top: 20px;
+    border-radius: 14px;
+    text-align: center;
+    padding-block: 21px;
+    position: relative;
+    border-left: 1px solid #C0DAFF !important;
+    border-top: 1px solid #C0DAFF !important;
+    border-right: 1px solid #C0DAFF !important;
+    border-bottom: 10px solid transparent;
+}
+
+.subHeading::after {
+    content: "";
+    position: absolute;
+    bottom: -9.9px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-image: linear-gradient(to right, #E9FFCD 33%, #CDE9FF 33%, #CDE9FF 66%, #FFE3CD 66%, #FFE3CD 100%);
+}
+
+
+
+.QuickBooksEnterprise .subText {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.QuickBooksEnterpriseItems {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.QuickBooksEnterpriseItem2 {
+    flex: 1 0 calc(50% - 200px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+.QuickBooksEnterpriseItem1 {
+    flex: 1 0 calc(50% - 185px);
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 461; */
+    width: 100%;
+    min-height: 330px;
+    border: 1px solid #d0d0d0;
+    padding: 22px 16px 50px 16px;
+    border-radius: 11px;
+    background: #FFF4E9;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.leftSide .subText {
+    padding: 24px 22px;
+    border: 1px solid #FFDA84;
+    border-radius: 7px;
+    text-align: left;
+}
+
+.leftSide .icon {
+    flex: 1 0 calc(50% - 35px);
+    font-size: 13px !important;
+    background: #ffffff;
+    color: #042553;
+    font-weight: medium;
+    border: 1px solid #FFCE5B;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    padding: 13px 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.icon span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #042553;
+}
+
+.rightSideTop p,
+.rightSideBottom p {
+    text-align: left !important;
+    border: 1px solid #B8E282;
+    border-radius: 7px;
+    padding: 20px 0 20px 24px;
+    background: #ffffff;
+}
+
+.rightSideTop,
+.rightSideBottom {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 220px;
+    border: 1px solid #dfdfdf;
+    padding: 22px 16px 0px 16px;
+    border-radius: 11px;
+    background: #E9FFCD;
+}
+
+.popImage {
+    position: absolute;
+    bottom: -25%;
+    left: 37.5%;
+    width: 150px;
+    z-index: 2;
+}
+
+.bgImage {
+    bottom: -25%;
+    position: absolute;
+    filter: blur(1px);
+    width: 330px;
+    right: -20%;
+    z-index: -1;
+}
+
+.popImage1 {
+    position: absolute;
+    bottom: -46%;
+    left: 41.5%;
+    width: 150px;
+    z-index: 2;
+}
+
+.popImage2 {
+    position: absolute;
+    bottom: -32%;
+    left: 57.5%;
+    width: 150px;
+    z-index: 2;
+}
+
+.popImage3 {
+    position: absolute;
+    bottom: -13%;
+    left: 53.5%;
+    width: 150px;
+    z-index: 2;
+}
+
+.bgImage1 {
+    position: absolute;
+    bottom: -70%;
+    filter: blur(0.8px);
+    width: 330px;
+    right: -14%;
+    z-index: -1;
+}
+
+.strip {
+    height: 130px;
+    width: 101vw;
+    background: url(/assets/images/buy-qb-payroll/strip.webp) no-repeat;
+    background-size: 120% 100%;
+    background-position: 100% 0%;
+}
+
+.bannerCTA {
+    display: flex;
+}
+
+.enterpriseIamge {
+    display: flex;
+}
+
+@media screen and (max-width:420px) and (min-width:380px) {
+    .bannerCTA {
+        flex-wrap: wrap;
+    }
+}
+
+/* cta */
+.cta2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-position: center;
+    object-fit: contain;
+    background-size: cover;
+    padding-block: 47px 37px;
+
+    .span {
+        font-weight: 500;
+        color: #0E3C85;
+        font-size: 32px;
+        line-height: 48px;
+        text-align: center;
+    }
+
+}
+
+section:nth-child(4)>.cta2 {
+    background: url(/assets/images/buy-qb-payroll/cta1.webp) no-repeat;
+    background-position: center;
+    object-fit: contain;
+    background-size: cover;
+}
+
+section:nth-child(6)>.cta2 {
+    background: url(/assets/images/buy-qb-payroll/cta2.webp) no-repeat;
+    background-position: center;
+    object-fit: contain;
+    background-size: cover;
+}
+
+.payrollManagement1,
+.payrollManagement2 {
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden;
+    gap: 70px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1140px;
+    padding: 29px 29px 29px 50px;
+}
+
+.payrollManagement2 img {
+    flex: 1 0 auto;
+    width: 330px !important;
+    height: 346px;
+}
+
+.payrollManagement1 img {
+    width: 404px;
+    flex: 1 0 auto;
+}
+
+.payrollManagement2 p,
+.payrollManagement1 p {
+    flex: 1 0 calc(100%-464px);
+    font-size: 17px;
+    line-height: 154%;
+    color: #626367;
+}
+
+.payrollManagement1 {
+    margin-right: auto;
+    margin-block: 50px;
+}
+
+.payrollManagement2 {
+    margin-left: auto;
+}
+
+@media screen and (max-width:790px) {
+    .cta2 {
+        padding-block: 30px !important;
+        padding-inline-start: 10px;
+
+        .span {
+            font-size: 29px !important;
+            line-height: 38px !important;
+            text-align: center;
+        }
+    }
+
+    .QuickBooksEnterpriseItem1,
+    .QuickBooksEnterpriseItem2 {
+        flex: 1 0 100%;
+    }
+
+    .rightSideTop p,
+    .rightSideBottom p {
+        padding: 20px 10px 20px 24px;
+    }
+
+    .payrollManagement2,
+    .payrollManagement1 {
+        padding: 29px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
+
+@media screen and (max-width:480px) {
+    .leftSide .icon {
+        flex: 1 0 calc(100% - 35px);
+    }
+
+    .rightSideTop,
+    .rightSideBottom {
+        min-height: 280px;
+    }
+
+    .strip {
+        width: 100% !important;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+    }
+}

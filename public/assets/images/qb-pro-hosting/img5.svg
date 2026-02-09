@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <g id="Group_14170" data-name="Group 14170" transform="translate(-182.177 -115.672)">
+    <circle id="Ellipse_3579" data-name="Ellipse 3579" cx="33" cy="33" r="33" transform="translate(182.177 115.673)" fill="#013d8e"/>
+    <g id="Group_14102" data-name="Group 14102" transform="translate(197.177 132.673)">
+      <g id="Ellipse_3971" data-name="Ellipse 3971" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="3.314" cy="3.314" r="3.314" stroke="none"/>
+        <circle cx="3.314" cy="3.314" r="2.314" fill="none"/>
+      </g>
+      <g id="Ellipse_3972" data-name="Ellipse 3972" transform="translate(29.83)" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="3.314" cy="3.314" r="3.314" stroke="none"/>
+        <circle cx="3.314" cy="3.314" r="2.314" fill="none"/>
+      </g>
+      <g id="Ellipse_3973" data-name="Ellipse 3973" transform="translate(29.937 13.468)" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="3.314" cy="3.314" r="3.314" stroke="none"/>
+        <circle cx="3.314" cy="3.314" r="2.314" fill="none"/>
+      </g>
+      <g id="Ellipse_3974" data-name="Ellipse 3974" transform="translate(29.83 25.779)" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="3.314" cy="3.314" r="3.314" stroke="none"/>
+        <circle cx="3.314" cy="3.314" r="2.314" fill="none"/>
+      </g>
+      <g id="Ellipse_3975" data-name="Ellipse 3975" transform="translate(0 25.779)" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="3.314" cy="3.314" r="3.314" stroke="none"/>
+        <circle cx="3.314" cy="3.314" r="2.314" fill="none"/>
+      </g>
+      <g id="Ellipse_3976" data-name="Ellipse 3976" transform="translate(0 12.89)" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="3.314" cy="3.314" r="3.314" stroke="none"/>
+        <circle cx="3.314" cy="3.314" r="2.314" fill="none"/>
+      </g>
+      <path id="Path_50999" data-name="Path 50999" d="M148.006,79h3.877l3.281,3.281" transform="translate(-141.279 -74.967)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <path id="Path_51002" data-name="Path 51002" d="M148.006,82.283h3.877L155.164,79" transform="translate(-141.279 -52.655)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <path id="Path_51000" data-name="Path 51000" d="M155.164,79h-3.877l-3.281,3.281" transform="translate(-125.063 -74.967)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <path id="Path_51001" data-name="Path 51001" d="M155.164,82.283h-3.877L148.006,79" transform="translate(-125.063 -52.655)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <path id="Path_51003" data-name="Path 51003" d="M147.664,91h2.324" transform="translate(-141.301 -74.215)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <path id="Path_51004" data-name="Path 51004" d="M147.664,91h2.324" transform="translate(-120.051 -74.215)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <g id="server-outline" transform="translate(12.831 10.158)">
+        <ellipse id="Ellipse_3977" data-name="Ellipse 3977" cx="5.576" cy="2.198" rx="5.576" ry="2.198" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Path_51005" data-name="Path 51005" d="M17.152,20.062c0,1.283-2.5,2.323-5.576,2.323S6,21.346,6,20.062" transform="translate(-6 -14.856)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Path_51006" data-name="Path 51006" d="M17.152,28.125c0,1.283-2.5,2.323-5.576,2.323S6,29.408,6,28.125" transform="translate(-6 -20.025)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Path_51007" data-name="Path 51007" d="M6,11.929v8.62C6,22.014,8.5,23.2,11.576,23.2s5.576-1.188,5.576-2.653v-8.62" transform="translate(-6 -9.953)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+html,
+body {
+    touch-action: manipulation
+}
+
+body {
+    font-family: 'Graphik', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative
+}
+
+* {
+    scroll-margin: 50px
+}
+
+.caption,
+.subtitle {
+    display: block;
+    color: #464646
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    white-space: break-spaces;
+    color: #fff
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #013d8e;
+    margin-bottom: 12px
+}
+
+h3 {
+    font-size: 25px;
+    color: #013d8e;
+    font-weight: 600
+}
+
+h4 {
+    color: #013d8e;
+    font-size: 22px
+}
+
+h5 {
+    font-size: 20px
+}
+
+h6 {
+    font-size: 16px
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: .5rem;
+    margin-top: 0
+}
+
+.subtitle {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.caption {
+    font-weight: 600
+}
+
+a {
+    text-decoration: none;
+    color: #0d6efd
+}
+
+p {
+    font-size: 16px;
+    line-height: 28px
+}
+
+.text-muted {
+    color: #626262
+}
+
+.text-large {
+    font-size: 17px
+}
+
+#form input,
+#form select::placeholder {
+    color: #585858 !important
+}
+
+@media screen and (max-width:768px) {
+
+    .container {
+        padding: 0 15px
+    }
+
+    h2 {
+        font-size: 28px !important
+    }
+}
+
+hr.faqHr {
+    border: 2px solid #fff0;
+    -o-border-image: radial-gradient(81.76% 156.83% at 45.91% -88.06%, #464646 10%, #fff0 100%);
+    border-image: radial-gradient(81.76% 156.83% at 45.91% -88.06%, #464646 10%, #fff0 100%);
+    border-image-slice: 1;
+    color: #eee;
+    display: grid;
+    height: 1px;
+    margin: 0;
+    opacity: 1;
+    width: 100%
+}
+
+p.faqText {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding-bottom: 1.5rem
+}
+
+.modal-border {
+    align-items: center;
+    border: 1px solid;
+    -o-border-image: linear-gradient(90deg, #00204d, #fff, #00204d) 1;
+    border-image: linear-gradient(90deg, #00204d, #fff, #00204d) 1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 0
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--gap)))
+    }
+}
+
+.animate-marquee {
+    animation: marquee-scroll 11s linear infinite
+}
+
+@keyframes trustedMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

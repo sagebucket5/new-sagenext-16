@@ -1,0 +1,244 @@
+.benefitsSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 70px;
+  position: relative;
+}
+/* processbar css */
+.ScrollerBar {
+  position: absolute;
+  left: 50%;
+  bottom:  0px;
+  transform: translate(50%, 6%);
+  width: 5.5px;
+  height: 110%;
+  background: #F0F0F0;
+  /* border-radius: 6px; */
+}
+.ScrollerBarInner {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  background:#137ED8;
+  /* border-radius: 6px; */
+  box-shadow: 0 2px 8px rgba(26, 143, 255, 0.1);
+}
+.ScrollerBarInner:after{
+  position: absolute;
+  content: "";
+  bottom: -13px;
+  left: -7.245px;
+  outline: 1px solid #bde0fd;
+  background: #137ED8;
+  width: 20px;
+  filter: blur(0.21px);
+  border: 4px solid #BDE0FD;
+  height: 20px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.leftContent {
+  position: relative;
+  margin-top: 10px;
+  /* display: flex;
+  flex-direction: column; */
+  gap: 24px;
+  /* background: linear-gradient(165.72deg,#f7bdf8 21.15%,#cd237f 81.93%)  ; */
+}
+
+.leftContent .blurred {
+  filter: blur(3px);
+  opacity: 0.5;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.leftContent .active {
+  filter: none;
+  opacity: 1;
+  transition: filter 0.3s, opacity 0.3s;
+}
+/* end */
+.leftCol {
+  flex: 1 0 auto;
+  padding: 0 40px 0 0;
+  max-width: 600px;
+}
+.leftContent {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 154%;
+  letter-spacing: 0.1px;
+  color: #797979;
+  margin-bottom: 22px;
+}
+.leftContent strong {
+  font-weight: 600;
+}
+.benefitsHeading {
+  font-weight: 800 !important;
+  font-size: 33px !important;
+  line-height: 140%;
+  letter-spacing: -0px;
+  word-spacing: 1px;
+  text-align: center;
+  color: #0c336b !important;
+  max-width: 600px;
+  margin: 0 auto 80px;
+}
+.rightCol {
+  flex: 1 0 auto;
+  min-width: 370px;
+  display: flex;
+}
+
+.cardsCol {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.benefitCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  border-radius: 14px;
+  padding: 25px 40px 25px 22px;
+  box-shadow: 0 2px 16px rgba(26, 143, 255, 0.06);
+  min-width: 320px;
+  max-width: 550px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.benefitCard:hover {
+  box-shadow: 0 6px 32px rgba(26, 143, 255, 0.13);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.icon {
+  flex-shrink: 0;
+  color: #1a8fff;
+  object-fit: cover;
+  width: 70px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.cardTitle {
+  font-weight: 600 !important;
+  font-size: 15px;
+  line-height: 140%;
+  /* letter-spacing: 0%; */
+  text-transform: capitalize;
+  color: #050f27;
+  margin-bottom: 6px;
+}
+
+.cardDesc {
+  font-weight: 350;
+  font-size: 13px;
+  line-height: 144%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+  color: #626367;
+  margin-bottom: 0;
+}
+/* cta css */
+.bgCTA{
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: 100% 100%;
+  padding:64px 0 70px !important;
+}
+.titleCta{
+font-weight: 900;
+font-size: 36px;
+display: block;
+line-height: 102%;
+letter-spacing: 1px;
+text-align: center;
+margin-top: 14px;
+}
+.ctaBoxs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 40px;
+}
+@media (max-width: 1100px) {
+  .benefitsSection {
+    flex-direction: column;
+    padding: 40px 0 40px 0;
+  }
+  .leftCol {
+    max-width: 100%;
+    padding: 0 0 32px 0;
+  }
+  .rightCol {
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .cardsCol {
+    margin-left: 38px;
+    max-width: 100%;
+  }
+  .ScrollerBar{
+    display: none;
+  }
+  .titleCta br{
+    display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .titleCta{
+    font-size: 27px ;
+  }
+  
+  .ctaBoxs{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .benefitsSection {
+    flex-direction: column;
+    padding: 24px 0 24px 0;
+    gap: 15px;
+  }
+  .leftCol {
+    padding: 0 0 18px 0;
+  }
+  .rightCol {
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cardsCol {
+    margin:auto;
+    gap: 18px;
+  }
+  .benefitCard {
+    min-width: 0;
+    max-width: 100%;
+    gap: 10px;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .icon {
+    width: 70px;
+    height: auto;
+  }
+  .cardTitle {
+    font-size: 1rem;
+  }
+  .cardDesc {
+    font-size: 14px;
+  }
+  .benefitsHeading{
+    margin: 0;
+  }
+}

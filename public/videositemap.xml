@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    <url>
+        <loc>https://www.thesagenext.com/quickbooks-hosting</loc>
+        <video:video>
+            <video:title>Why Does Your Accounting Business Need QuickBooks Hosting?</video:title>
+            <video:description>This video explores several features of QuickBooks Hosting which can lead to a productive Business. Along with a listed set question that you should ask before choosing a QuickBooks Cloud Hosting Provider.</video:description>
+            <video:thumbnail_loc>https://www.thesagenext.com/assets/images/01/qb-hosting/business-need.webp</video:thumbnail_loc>
+            <video:content_loc>https://www.thesagenext.com/assets/videos/qb-hosting/quickbooks-hosting.mp4</video:content_loc>
+            <video:duration>133</video:duration>
+        </video:video>
+    </url>
+</urlset>

@@ -1,0 +1,152 @@
+.subHeading span {
+    font-size: 17px;
+    font-weight: 400;
+    color: #515050;
+    line-height: 20px;
+    letter-spacing: 6%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    border-image: url(/assets/images/qb-pos/borderImage.svg) 1 0%;
+}
+
+.ctaDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-position: center;
+    object-fit: contain;
+    background-size: cover;
+    padding-block: 47px 37px;
+
+    .span {
+        font-weight: 600;
+        color: #0E3C85;
+        font-size: 32px;
+        line-height: 48px;
+        text-align: center;
+    }
+}
+
+.row2 {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 70px;
+    row-gap: 42px;
+}
+
+
+@media screen and (max-width:1024px) {
+    .row2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .row2 {
+        grid-template-columns: repeat(1, 1fr);
+        padding-inline: 20px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .add-on-row {
+        margin-inline: 10px;
+    }
+
+    .add-on-row img {
+        margin-inline: 0px !important;
+    }
+
+    .add-on-row h3 {
+        margin-block: 20px !important;
+    }
+}
+
+
+.items {
+    border: 2px solid #EDEDED;
+    border-bottom: 0px;
+    border-radius: 8px;
+    padding: 30px 34px 30px 34px;
+    position: relative;
+
+    .icon img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .icon span {
+        font-size: 20px;
+        font-weight: 700;
+        color: #464646;
+        line-height: 30px;
+        margin-top: 5px;
+    }
+
+    .desc {
+        margin-top: 12px;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 29px;
+        text-align: justify;
+    }
+
+    .borders1 {
+        border-bottom: 8px solid #F4AC04;
+        position: absolute;
+        width: 50%;
+        bottom: 0px;
+        left: 0.5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .borders2 {
+        border-bottom: 8px solid #333741;
+        position: absolute;
+        width: 50%;
+        bottom: 0px;
+        right: 0px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .borders1,
+    .borders2 {
+        transition: width 0.4s ease-in-out;
+    }
+}
+
+.items:hover .borders1 {
+    width: 85%;
+}
+
+.items:hover .borders2 {
+    width: 15%;
+}
+
+.add-on-row {
+    padding: 20px 20px 10px 0px;
+    border-radius: 10px;
+}
+
+.add-on-row p {
+    color: #626262;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17.8px;
+    letter-spacing: 0.04em;
+    text-align: justified;
+}
+
+.add-on-row img {
+    display: flex;
+    margin: auto;
+}
+
+.add-on-row h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-block: 0px 10px;
+}

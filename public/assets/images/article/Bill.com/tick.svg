@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_16555" data-name="Rectangle 16555" width="20" height="20" rx="10" fill="#6183b9"/>
+    </clipPath>
+    <clipPath id="clip-Tick_Light">
+      <rect width="20" height="20"/>
+    </clipPath>
+  </defs>
+  <g id="Tick_Light" data-name="Tick – Light" clip-path="url(#clip-Tick_Light)">
+    <g id="Tick-Light" clip-path="url(#clip-path)">
+      <g id="Group_2943" data-name="Group 2943" transform="translate(-3 -3)">
+        <rect id="Rectangle_16554" data-name="Rectangle 16554" width="20" height="20" rx="10" transform="translate(3 3)" fill="#6183b9"/>
+        <path id="Path_8339" data-name="Path 8339" d="M-21807.287-24602.027l4.229,4.521,9.207-9.547" transform="translate(21815.797 24614.525)" fill="none" stroke="#fff" stroke-width="2.3"/>
+      </g>
+    </g>
+  </g>
+</svg>

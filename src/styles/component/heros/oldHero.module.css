@@ -1,0 +1,202 @@
+.custom_banner {
+    overflow: hidden;
+    background: linear-gradient(90deg, #023576 30%, #549ba7 120%);
+    border-radius: 0 0 20px 20px;
+}
+
+.banner_content h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.9px;
+}
+
+.custom_banner .banner_content {
+    position: relative;
+    top: 52%;
+    transform: translateY(-50%);
+    padding: 5rem 0
+}
+
+.custom_banner .banner_content .subheading {
+    padding: 0 0 .5rem 5px;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #fab737;
+    max-width: max-content;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff
+}
+
+.custom_banner .banner_content .speciality {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1rem .5rem 2rem;
+    padding-left: 5px;
+    color: #6e6e6e;
+    font-weight: 500
+}
+.custom_banner .banner_content .speciality li {
+    width: 50%;
+    list-style-type: none;
+    margin-bottom: .5rem;
+    display: flex;
+    font-weight: 500 !important;
+    justify-content: start
+}
+
+.custom_banner .banner_content .speciality li img {
+    margin-right: 10px;
+    object-fit: contain !important;
+}
+
+.custom_banner .banner_content .speciality span {
+    color: #fff;
+    padding: 0 0 7px 7px
+}
+
+.custom_banner .banner_content .pros {
+    display: flex;
+    font-style: italic;
+    padding-left: 1rem;
+    padding-top: .7rem;
+    align-items: center;
+    gap: 10px
+}
+
+.custom_banner .banner_content .pros li {
+    color: #e9e9e9;
+    font-size: 13px;
+    font-weight: 300;
+    padding-left: 5px
+}
+
+.custom_banner .banner_content .pros li:first-child {
+    margin-right: 30px
+}
+
+.custom_banner .banner_content .banner_disc {
+    font-size: 18px;
+    font-weight: 400 !important;
+    color: #fff;
+    width: 95%;
+    display: block;
+    padding-bottom: 1rem
+}
+
+.custom_banner .right_section_banner {
+    position: relative;
+    height: 100%
+}
+
+@media (max-width:790px) {
+    .custom_banner {
+        height: max-content;
+    }
+
+    .banner_content h1 {
+        font-size: 2rem;
+        line-height: inherit;
+        white-space: normal
+    }
+
+    .banner_image img {
+        width: 100%
+    }
+
+    .banner_image,
+    .right_section_banner {
+        display: none
+    }
+    .custom_banner .banner_content .speciality img {
+        margin-right: 2px !important;
+    }
+    .custom_banner .banner_content .speciality li {
+       align-items: start;
+    }
+    .banner_content{
+    top: unset !important;
+    transform: none !important;
+}
+}
+
+@media screen and (min-width:992px) {
+    .custom_banner {
+        min-height: 90vh;
+        display: flex;
+        align-items: center
+    }
+
+    .custom_banner .banner_image {
+        min-height: 390px
+    }
+
+    .custom_banner .banner-im,
+    .custom_banner .banner_image {
+        width: 100%;
+        height: 80%;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+
+    .custom_banner .banner-im {
+        top: 60%
+    }
+
+    .custom_banner .banner_content .pros li {
+        font-size: 12px;
+        margin-left: -10px
+    }
+
+    .custom_banner .video-frame {
+        padding: 1rem 0 3rem
+    }
+
+    .custom_banner .banner_content {
+        top: 58%;
+        padding: 2rem 1rem
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:1200px) {
+    .custom_banner {
+        /* min-height: 40%; */
+        display: flex;
+        align-items: center
+    }
+
+    .custom_banner .banner_image {
+        min-height: auto;
+        min-width: 100%
+    }
+
+    .banner_content h1 {
+        white-space: normal
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .custom_banner {
+        width: 100%;
+        background-size: contain;
+    }
+
+    .custom_banner .banner_image {
+        min-height: 390px;
+        min-width: 550px
+    }
+}
+
+@media (min-width:2000px) {
+    .custom_banner {
+        overflow: hidden;
+        width: 100%;
+        max-height: 900px;
+        min-height: 800px;
+        position: relative
+    }
+}

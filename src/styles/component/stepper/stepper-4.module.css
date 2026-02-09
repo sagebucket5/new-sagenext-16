@@ -1,0 +1,134 @@
+.proven_process .top_section {
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.scrollableRow {
+  display: flex;
+  overflow-x: auto;
+  z-index: 2;
+  position: relative;
+}
+.StepHead {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+.proven_process .bottom_section .card_outer {
+  text-align: center;
+  padding: 1rem;
+}
+.proven_process .bottom_section .card_outer h3 {
+  font-size: 17px;
+  color: #464646;
+  font-weight: 700;
+}
+.proven_process {
+  margin: 1rem 0rem 0rem 0rem;
+  position: relative;
+  background-color: #f3f8ff;
+}
+.proven_process .top_section p {
+  font-weight: 400;
+}
+.proven_process .bottom_section .stepperImage p {
+    color: #464646;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400 ;
+  line-height: normal;
+}
+.proven_process .stepperDot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 74px;
+  z-index: 1;
+  height: 4px;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      transparent 50%,
+      #fff 50%,
+      #fff 100%
+    ),
+    linear-gradient(90deg, #cee2ff, #cee2ff, #86b8ff, #0151c1);
+  background-size: 10px 5px, 100% 3px;
+}
+.stepperImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.image {
+  margin-left: 30px;
+}
+.arrow {
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .scrollableRow {
+    overflow-x: scroll;
+  }
+
+  .scrollableRow .step {
+    display: inline-block;
+  }
+  .bottom_section .scrollableRow .step {
+    max-width: 200px;
+  }
+  .proven_process .card_outer {
+    height: auto;
+  }
+  .stepper {
+    display: none;
+  }
+  .proven_process .stepperDot {
+    display: none;
+  }
+  .image {
+    margin-left: 0px;
+  }
+  .arrow {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .scrollableRow {
+    flex-wrap: wrap;
+    /* overflow-x: scroll; */
+  }
+  .bottom_section .scrollableRow .step {
+    max-width: 100%;
+    /* border: solid; */
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .stepper {
+    display: none;
+  }
+  .proven_process .stepperDot {
+    display: none;
+  }
+  .image {
+    margin-left: 0px;
+  }
+  .arrow {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .proven_process .stepperDot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 74px;
+  }
+}

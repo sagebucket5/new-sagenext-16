@@ -1,0 +1,84 @@
+.desc{
+font-weight: 400;
+font-size: 17px;
+line-height: 154%;
+letter-spacing: 1%;
+color: #626367;
+}
+
+.row2 {
+    max-width: 1165px;
+    margin-inline: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 37px;
+    row-gap: 28px;
+}
+
+.items {
+    border: 2px solid #EDEDED;
+    border-bottom: 0px;
+    border-radius: 8px;
+    padding: 30px 34px 30px 34px;
+    position: relative;
+
+    .icon img {
+        width: 49px;
+        height: 49px;
+    }
+
+    .icon span {
+        font-size: 20px;
+        font-weight: 700;
+        color: #464646;
+        line-height: 30px;
+        margin-top: 5px;
+    }
+
+    .desc {
+        margin-top: 12px;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 29px;
+        text-align: justify;
+    }
+    overflow: hidden;
+}
+.borders2 {border-bottom: 8px solid #333741;position: absolute;width: 50%;bottom: 0px;right: 0px;border-bottom-right-radius: 5px;}
+.borders1,
+.borders2 {transition: width 0.4s ease-in-out;}
+.borders1 {border-bottom: 8px solid #F4AC04;position: absolute;width: 50%;bottom: 0px;left: 0.5px;border-bottom-left-radius: 5px;}
+
+.items::before {background: linear-gradient(225deg, #09256d 50%, #ffffff00 50%);content: '';position: absolute;top: -100%;right: 0%;width: 100px;height: 100px;transition: all 0.4s ease;}
+
+.items:hover::before {top: -0.2%;}
+
+.items:hover .borders1 {width: 85%;}
+
+.items:hover .borders2 {width: 15%;}
+.benefits{display: grid;align-items: center;justify-content: space-between; grid-template-columns: repeat(2,360px); max-width: 950px;text-transform: capitalize; margin: 50px auto 0px auto; gap: 46px; }
+.benefits h3{font-size: 15px;font-weight: 600;color: #050F27;line-height: 140%;margin: 0; }
+.benefitsItem { display: flex; align-items: center;gap: 10px;}
+.benefitsItem img {width: 70px; height: 68px;}
+.ctaBG{
+    padding: 50px 0;
+    background: url(/assets/images/fishbowl/bgcta.webp) no-repeat ;
+    background-size: cover;
+    background-position: center;
+}
+@media screen and (max-width: 904px) {
+    .row2 {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+    }
+    
+}
+@media screen and (max-width: 504px) {
+    .benefits,
+    .row2 {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 30px;
+    }
+    
+}

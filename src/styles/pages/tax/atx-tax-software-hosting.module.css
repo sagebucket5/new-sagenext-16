@@ -1,0 +1,109 @@
+.atxTax {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.atxTax .taxOperationText {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.atxTax h2 {
+    color: #31416c;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    padding-top: 3rem;
+}
+
+.atxTax .taxOperationText p {
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 0rem 1rem;
+}
+
+.atxTax .CloudSolution .CTA-taxSoftware {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.CloudSolutions{
+    color: #013d8e;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 3rem;
+}
+
+.ctaButton p {
+    color: #013d8e;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+hr.line {
+    border-top: 2px solid #d0e3ff;
+    width: 60%;
+}
+
+.list-group strong {
+    color: rgb(34, 34, 34);
+}
+ 
+
+/* Responsive CSS */
+@media screen and (max-width: 480px) {
+    .Trends{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .atxTax {
+        background: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .atxTax {
+        background: none;
+    }
+
+    .atxTax h2 {
+        width: 100%;
+    }
+
+    .atxTax .taxOperationText p {
+        text-align: justify;
+        padding: 0rem 0rem;
+    }
+
+    .atxTax .CloudSolution .CTA-taxSoftware {
+        flex-direction: column;
+    }
+
+    .atxTax .taxOperationText {
+        text-align: justify;
+        margin-top: 0rem;
+    }
+
+    .atxTax h2 {
+        padding-top: 1rem;
+    }
+
+    .taxOperationSecond {
+        padding-top: 2.5rem;
+    }
+    .MoreSave {
+        display: none;
+      }
+}

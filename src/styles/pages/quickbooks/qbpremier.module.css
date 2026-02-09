@@ -1,0 +1,381 @@
+/* QB Premier on cloud start */
+.on-cloud {
+  margin-top: 5rem;
+}
+.on-cloud .on-cloud-img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.on-cloud .img-section {
+  background-image: url(/assets/images/qb-premier/on-cloud.webp);
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.on-cloud .content_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .on-cloud .img-section {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .on-cloud .img-section {
+    width: 250px;
+    height: 100%;
+  }
+  .on-cloud .on-cloud-img {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .on-cloud .img-section {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+  }
+
+  .on-cloud .content_section {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+}
+
+/* How easy hosting start */
+.easy-hosting {
+  margin: 2rem 0rem 2.5rem 0rem;
+}
+
+.easy-hosting .easy-inner-section {
+  padding: 3rem 0rem;
+}
+
+.easy-hosting .content_section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 2rem;
+}
+
+.easy-hosting .book {
+  background-color: #fff;
+  height: 350px;
+  width: 300px;
+  position: relative;
+  left: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 3px 66px #00000029;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .easy-hosting .easy-inner-section {
+    padding: 2rem;
+  }
+
+  .easy-hosting .book {
+    position: unset;
+    left: 0;
+  }
+
+  .easy-hosting .content_section {
+    padding-left: 0;
+  }
+}
+.version-section .list {
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+.version-section .list .list-link {
+  border: 1px solid #ededed;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.version-section .list .list-link.active {
+  background-color: #013d8e;
+  color: #fff;
+  padding-left: 20px;
+  transition: 0.5s;
+}
+.version-section .list .list-link .left_section,
+.version-section .list .list-link .right_section {
+  padding: 8px;
+}
+
+.version-section .list .list-link .left-section img {
+  filter: brightness(0) saturate(100%) invert(21%) sepia(94%) saturate(1615%)
+    hue-rotate(200deg) brightness(100%) contrast(114%);
+}
+.version-section .list .list-link.active .left-section img {
+  filter: invert(0);
+}
+.ssd-img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: -70px;
+  right: -80px;
+}
+@media screen and (max-width: 992px) {
+  .version-section .list {
+    width: 100%;
+    /* margin-bottom: 2rem; */
+  }
+  .ssd-img {
+    display: none;
+  }
+  .version-section .sm-version {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Not Sure CTA start */
+.want-to-know {
+  margin: 2.5rem 0rem 0rem 0rem;
+  background-image: url(/assets/images/qb-premier/not-sure-bg.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  padding: 0rem 2rem 0rem 2rem;
+}
+.want-to-know .top-bar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.want-to-know .top-bar .heading {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 2rem;
+  color: #013d8e;
+}
+.want-to-know .top-bar .cta-btn {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .want-to-know {
+    background-image: unset;
+  }
+  .want-to-know .top-bar .heading {
+    font-size: 30px;
+  }
+}
+
+/* cloud experts start */
+.cloud-experts {
+  margin: 5rem 0rem;
+}
+
+.cloud-experts .top-section {
+  border: 2px solid #ededed;
+  border-radius: 0px 0px 10px 10px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cloud-experts .top-section .img-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud-experts .bottom-section {
+  padding: 3rem 5rem;
+  background-color: #013d8e;
+  border-radius: 10px 10px 0px 0px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.cloud-experts .bottom-section .cloud-b {
+  position: relative;
+  z-index: 2;
+}
+.cloud-experts .bottom-section h2 {
+  color: #fff !important;
+}
+.cloud-experts .bottom-section p {
+  margin-bottom: 0;
+}
+.cloud-experts .bottom-section::before {
+  content: "";
+  background-image: url(/assets/images/qb-premier/sec-bg.webp);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 992px) {
+  .cloud-experts .top-section {
+    padding: 0;
+  }
+
+  .cloud-experts .bottom-section {
+    padding: 3rem 1rem;
+  }
+
+  .cloud-experts .bottom-section::before {
+    right: 0;
+    top: 50%;
+  }
+}
+
+/* reasons why start */
+.reasons {
+  margin: 5rem 0rem;
+}
+
+.reasons .card {
+  border: 2px solid #ededed;
+  padding: 3rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+}
+.reasons .card:hover,
+.reasons .card:hover {
+  border-color: rgb(1, 81, 193);
+  transition: 0.4s all ease-in-out;
+}
+
+.reasons .card .top {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.reasons .card .top h3 {
+  font-size: 20px;
+  margin-bottom: 0px !important;
+  padding-left: 1rem;
+  color: #0151c1 !important;
+}
+
+.reasons .content_section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .reasons .card {
+    min-height: 250px;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .reasons .card {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .reasons .content_section {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+}
+
+/* 1 month subscription start */
+.get-in-touch {
+  margin: 5rem 0rem;
+  background-image: url(/assets/images/01/qb-enterprise-hosting/git.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.5rem 0rem;
+}
+
+.get-in-touch .git-outer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.get-in-touch .git-outer .left-section {
+  font-size: 25px;
+  font-weight: 600;
+  color: #fff;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .get-in-touch .git-outer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .get-in-touch .git-outer .left-section {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Sub CSA start */
+.sub-csa {
+  margin: 5rem 0rem;
+}
+
+.sub_csa .disc {
+  display: flex;
+}
+
+.sub_csa .right_div {
+  width: 65%;
+  padding-right: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .sub_csa .left_div {
+    width: 30%;
+    background-image: url(/assets/images/qb-premier/sub-csa.webp);
+    width: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sub_csa .right_div {
+    width: 100%;
+    text-align: center;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}

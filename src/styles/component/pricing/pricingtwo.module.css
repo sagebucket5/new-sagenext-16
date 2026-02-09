@@ -1,0 +1,394 @@
+/* Price Slider Start*/
+.toggle-btn {
+  margin: 1rem 0rem 1rem 0rem;
+}
+.toggle-btn span {
+  font-size: 18px;
+  font-weight: 500;
+  vertical-align: middle;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  border-radius: 50px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0151c1;
+  -webkit-transition: 0.4s;
+
+  /* box-shadow: 2px 6px 25px #1e2321; */
+  transform: translate(0px, 0px);
+  transition: 0.6s ease transform, 0.6s box-shadow;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  /* background-color: #50bfe6; */
+  background-color: #0151c1;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #50bfe6;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* Price Slider end*/
+
+.pricingTable .ButtonMainCont {
+  border-bottom: 1.2px solid #e9e9e9;
+}
+.pricingTable .ButtonMainCont .ViewPlanMain {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+.pricingTable .ButtonContain :first-child {
+  margin-right: 2.5rem;
+}
+
+.pricingTable .ButtonMainCont .ViewPlan .MoreSave {
+  text-align: center;
+  margin: 0;
+  color: #0151c1;
+  font-size: 16px;
+  font-weight: 500;
+}
+.pricingTable .ButtonContain li p {
+  cursor: pointer;
+  color: var(--text-priority-2-light, #6e6e6e);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: -3rem;
+  margin-left: -2rem;
+}
+.pricingTable .ButtonContain li .active {
+  color: #0151c1;
+  border-bottom: 2px solid #0151c1;
+}
+.pricingTable .monthlyPriceList .StarterPlan1 .StarterPlan2 {
+  margin-left: 1rem;
+}
+.pricingTable .monthlyPriceList .StarterPlan1 .StarterPlan2 p {
+  color: var(--text-priority-1-light, #464646);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .Intermediate1 .Intermediate2 p {
+  color: var(--text-priority-1-light, #464646);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .StarterPlan1 .price p b {
+  color: var(--text-priority-2-light, #6e6e6e);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 1rem;
+}
+.pricingTable .monthlyPriceList .StarterPlan1 .price span {
+  color: #464646;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.pricingTable .monthlyPriceList .StarterPlan1 .Information p {
+  position: relative;
+  margin-left: 3rem;
+  margin-bottom: 3px;
+}
+.pricingTable .monthlyPriceList .StarterPlan1 .Information span {
+  color: #171717;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 1rem;
+}
+.pricingTable .monthlyPriceList .StarterPlan1 .Information p::before {
+  background-image: url("/assets/images/qb-hosting/tick.svg");
+  position: absolute;
+  content: "";
+  top: 10%;
+  left: -11%;
+  height: 18px;
+  width: 18px;
+}
+.pricingTable .monthlyPriceList .Advance1 .Advance2 {
+  margin-left: 1rem;
+}
+.pricingTable .monthlyPriceList .Advance1 .Advance2 p {
+  color: var(--text-priority-1-light, #464646);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .InterMediateDiv {
+  box-shadow: 0px 0px 10px 0px rgba(195, 193, 193, 0.5);
+  padding: 40px;
+  margin: -40px 0px -40px 0px;
+  background-color: #fff;
+}
+.pricingTable .monthlyPriceList .InterMediateDiv {
+  position: relative;
+}
+.pricingTable .monthlyPriceList .Intermediate1 .ribbon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Second Coloumn CSS */
+.pricingTable .monthlyPriceList .InterMediateDiv .price p b {
+  color: var(--text-priority-2-light, #6e6e6e);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .InterMediateDiv .price span {
+  color: #464646;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .InterMediateDiv .Information span {
+  color: #171717;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .InterMediateDiv .Information p {
+  position: relative;
+  margin-left: 2rem;
+  margin-bottom: 3px;
+}
+.pricingTable .monthlyPriceList .InterMediateDiv .Information p::before {
+  background-image: url("/assets/images/qb-hosting/tick.svg");
+  position: absolute;
+  content: "";
+  top: 10%;
+  left: -13%;
+  height: 18px;
+  width: 18px;
+}
+.price-details {
+  display: flex;
+  align-items: center;
+}
+
+.price-details {
+  display: flex;
+  align-items: center;
+}
+.lineThrough {
+  text-decoration: line-through;
+  color: #6e6e6e !important;
+  font-size: 24px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: normal !important;
+  margin-left: 10px !important;
+}
+
+.pricingTable .monthlyPriceList .Advance1 {
+  padding-left: 2rem;
+}
+.pricingTable .monthlyPriceList .Advance1 .price p b {
+  color: var(--text-priority-2-light, #6e6e6e);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .Advance1 .price span {
+  color: #464646;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.pricingTable .monthlyPriceList .Advance1 .price .custom-text {
+  color: #6e6e6e;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 1rem;
+}
+.pricingTable .monthlyPriceList .Advance1 .Information span {
+  color: #171717;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 1rem;
+}
+.pricingTable .monthlyPriceList .Advance1 .Information p {
+  position: relative;
+  margin-left: 3.5rem;
+  margin-bottom: 3px;
+}
+.pricingTable .monthlyPriceList .Advance1 .Information p::before {
+  background-image: url("/assets/images/qb-hosting/tick.svg");
+  position: absolute;
+  content: "";
+  top: 10%;
+  left: -13%;
+  height: 18px;
+  width: 18px;
+}
+.MoreSaveMob {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .pricingTable .ButtonMainCont .ViewPlanMain {
+    display: block;
+  }
+  .MoreSaveMob {
+    display: block;
+    text-align: center;
+    margin: 0;
+    color: #0151c1;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+  .toggle-btn {
+    text-align: center;
+  }
+  .MoreSave {
+    display: none;
+  }
+  .pricingTable .ButtonContain li p {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  .pricingTable .monthlyPriceList .Intermediate1 .ribbon {
+    position: absolute;
+    right: 0;
+    top: 35px;
+  }
+  .pricingTable .monthlyPriceList .Intermediate1 .Intermediate2 p {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .monthlyPriceList {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: hidden;
+    padding-bottom: 2rem;
+  }
+
+  .monthlyPriceList .col-md-4 {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .monthlyPriceList::-webkit-scrollbar {
+    width: 6px;
+  }
+  .monthlyPriceList::-webkit-scrollbar-thumb {
+    background-color: #ffc107;
+    border-radius: 6px;
+  }
+  .monthlyPriceList::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 6px;
+  }
+  .monthlyPriceList::-webkit-scrollbar-button {
+    display: none;
+  }
+  .monthlyPriceList::-webkit-scrollbar {
+    height: 5px;
+  }
+  .pricingTable .monthlyPriceList .Advance1 {
+    padding-left: 0;
+  }
+  .pricingTable .monthlyPriceList .InterMediateDiv .Information p {
+    position: none;
+    margin-left: 2rem;
+    margin-bottom: 3px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .pricingTable .monthlyPriceList .InterMediateDiv .Information p {
+    position: none;
+    margin-left: -5px;
+    margin-bottom: 3px;
+  }
+  .pricingTable .monthlyPriceList .Intermediate1 .ribbon {
+    position: absolute;
+    right: 0;
+    top: 0px;
+  }
+  .pricingTable .monthlyPriceList .Advance1 {
+    padding-left: 0;
+  }
+  .MoreSaveMob {
+    display: block;
+    text-align: center;
+    margin: 0;
+    color: #0151c1;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+  .toggle-btn {
+    margin: 1rem 0rem 1rem 0rem;
+    text-align: center;
+  }
+}

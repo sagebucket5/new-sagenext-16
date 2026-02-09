@@ -1,0 +1,455 @@
+.broadApps {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 25px 0 25px 30px;
+  border-bottom: 1px solid #797c7d;
+}
+.cta{
+  display: grid;
+  margin-top: 30px;
+  justify-items: center;
+}
+.newcomponent {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 25px;
+}
+.newcomponent p,
+.newcomponent h2 {
+  max-width: 860px;
+  text-align: center;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hover h3 {
+  font-size: 20px !important;
+  font-weight: 500;
+}
+.broadApps > img,
+.broadApps1 > img {
+  width: 17px;
+  height: 16px;
+}
+.broadApps1 {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 25px 0 25px 30px;
+  border-bottom: 1px solid #797c7d;
+}
+.br2 {
+  display: none;
+}
+.br1 {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .br1 {
+    display: block;
+  }
+
+  .broadApps {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 150px;
+    gap: 30px !important;
+    padding: 25px 0 20px 10px;
+  }
+
+  .broadApps1 {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0 20px 10px;
+    border-bottom: 1px solid #797c7d;
+    margin: 0px;
+    align-items: self-start;
+  }
+  .hover p {
+    margin: 0px !important;
+    padding-right: 0px;
+  }
+  .firstDiff p{
+    width: 300px !important;
+  }
+}
+.hover p {
+  margin: 0px !important;
+  padding-right: 10px;
+}
+
+.hover {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between;*/
+  align-items: flex-start;
+  box-shadow: 5px 12px 20px rgba(139, 115, 85, 0.25);
+}
+.hover:hover {
+  box-shadow: 5px 12px 20px rgba(139, 115, 85, 0.3);
+}
+.cardHostedmain .cardHosted .item > img {
+  width: 17px;
+  height: 17px;
+}
+.cardHostedmain .cardHosted .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 0 15px 20px;
+  border-left: 1px solid #d1d1d1;
+  gap: 20px;
+  border-radius: 30px 0 0 30px;
+  background-color: #f4f9ff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+}
+.designMain p {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 20px;
+  font-weight: 500;
+}
+.designMain .removeborder {
+  border: none;
+}
+.cardHostedmain {
+  max-width: 780px;
+  margin: auto;
+}
+
+.cardHostedmain .cardHosted {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3px;
+}
+
+.cardHostedmain .marginRemove {
+  margin-left: -30px;
+}
+.vsh2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.designMain {
+  background: #f3f8ff;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+}
+
+.designMain .design-1 p {
+  color: #ffffff;
+}
+.designMain .design-1 {
+  flex: 1;
+}
+
+.designMain .design-2 {
+  flex: 1;
+}
+
+.design-1 {
+  background: #f3f8ff;
+  background: url(/assets/images/sage-100/leftside.png) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.design-2 {
+  background: #f3f8ff;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  position: relative;
+  color: black;
+}
+.design-2::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-top: 20px solid white;
+  clear: both;
+  transform: rotate(360deg);
+}
+.itemblog2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: auto;
+}
+.itemblog2 > div {
+  padding: 26px 0px 20px 15px;
+  border-radius: 10px;
+  border-bottom: 3px solid orange;
+}
+.itemblog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  row-gap: 10px;
+}
+
+.itemblog > div {
+  border-radius: 8px;
+  border-bottom: 3px solid orange;
+  cursor: pointer;
+  box-shadow: 0px 6.36px 46.65px 0px #0000001f;
+  padding: 5px 8.5px 30px 7.5px;
+}
+.itemblog img {
+  border-radius: 8px;
+  width: 100%;
+  height: 150px;
+  border-radius: 7px;
+}
+.expertH2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+.expertH2Sub {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25x;
+  text-align: left;
+  margin: 25px 0px 0px 9px;
+}
+
+.under-text {
+  text-decoration: underline solid orange;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 2px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgba(0, 255, 255, 0.523);
+}
+
+.under-text::after {
+  bottom: 3px;
+}
+.sage100second {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.sage100second .firstImg .imgss {
+  height: 232px;
+  margin-left: auto;
+  margin-top: 5%;
+  min-width: 200px;
+}
+.sage100second .secondPara {
+  max-width: 740px;
+}
+
+.rack {
+  text-align: center;
+  margin-block: 15px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+.pcenter {
+  text-align: left;
+}
+.textcenter2 {
+  color: #31416c;
+
+  font-size: 30px;
+
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 3px;
+}
+
+.br124 {
+  display: block;
+}
+
+.cloudimg {
+  width: 100%;
+  height: 100%;
+}
+/* media query */
+@media screen and (min-width: 1113px) and (max-width: 1600px) {
+}
+/* desktop */
+@media screen and (min-width: 1113px) and (max-width: 1200px) {
+  .itemblog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1112px) {
+  .itemblog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: auto;
+  }
+}
+/* tablet */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .br2 {
+    display: block;
+  }
+  .sage100second {
+    flex-wrap: wrap;
+  }
+  .first-img-div {
+    flex-basis: 70%;
+  }
+  .sage100second .first-img-div .imgss {
+    display: block;
+    margin: auto;
+  }
+  .sage100second .second-para-div {
+    flex-basis: 70%;
+  }
+  .itemblog2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: auto;
+  }
+  .itemblog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: auto;
+  }
+  .banner-sage-100 {
+    background-image: none;
+  }
+
+  .cloudimg {
+    display: block;
+    margin-left: auto;
+    width: 100%;
+  }
+  .brTag {
+    display: none;
+  }
+  .newcomponent{
+    padding-inline: 20px;
+    gap: 20px;
+  }
+}
+/* phone */
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .newcomponent{
+    gap: 20px;
+    padding-inline: 10px;
+  }
+  .br124 {
+    display: none;
+  }
+  .brTag {
+    display: none;
+  }
+  .itemblog2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    margin: auto;
+  }
+  .cloudimg {
+    display: block;
+    margin: auto;
+  }
+  .cardHostedmain .cardHosted .item {
+    gap: 15px;
+    font-size: 16px;
+  }
+  .sage100second {
+    margin-top: 60px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .firstImg {
+    flex-basis: 100%;
+  }
+
+  .sage100second .firstImg .imgss {
+    height: auto !important;
+    width: auto;
+    margin: 0;
+  }
+  .sage100second .secondPara {
+    flex-basis: 100%;
+  }
+  .cardHostedmain {
+    width: 100%;
+    margin: 0px;
+  }
+  .cardHostedmain .cardHosted {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 3px;
+  }
+  .cardHostedmain .marginRemove {
+    margin-left: 0px;
+  }
+  .imgss {
+    margin: 0px;
+  }
+  .design > img {
+    width: 16px;
+    height: 16px;
+  }
+  .itemblog {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin: auto;
+  }
+
+  .textcenter2 {
+    color: #31416c;
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2.5px;
+  }
+  .pcenter {
+    text-align: center;
+  }
+  .vsh2 {
+    text-align: center;
+
+    font-size: 23px;
+    font-weight: 700;
+  }
+  .designMain p {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .mgr {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+}

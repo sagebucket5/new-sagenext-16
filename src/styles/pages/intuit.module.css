@@ -1,0 +1,68 @@
+
+.main_header {
+  padding: 15px 0 85px 0px;
+      background-image: linear-gradient(to right, #2f4f93 , #648ad1);
+}
+
+.intuit-feature-list {
+    width: 20%;
+    padding: 3px;
+}
+.banner_contents {
+  padding-top: 4%;
+}
+.banner_contents h1 {
+  align-items: center;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+
+
+
+
+.intuit-feature-list .card {
+    height: 300px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+ .sub_heading{
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #4d4d4d;
+  letter-spacing: .6px;
+ }
+ .about_section p{
+  font-size: 17px !important;
+  font-weight: 300 !important;
+}
+
+/* media query */
+/* desktop */
+@media screen and (min-width: 1113px) and (max-width: 1200px)
+{}
+/*laptop */
+@media screen and (min-width: 769px) and (max-width: 1112px)
+{}
+/* tablet */
+@media screen and (min-width: 481px) and (max-width: 768px)
+{
+    .intuit-feature-list {
+        width: 100%;
+        padding: 3px;
+      }
+      .intuit-feature-list .card {
+        height: auto;
+        }
+}
+/* phone */
+@media screen and (min-width: 0px) and (max-width: 480px)
+{
+    .intuit-feature-list {
+        width: 100%;
+        padding: 3px;
+      }
+      .intuit-feature-list .card {
+        height: auto;
+        }
+}

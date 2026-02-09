@@ -1,0 +1,76 @@
+/* Proven process start */
+.proven-process {
+  margin: 5rem 0rem 2.5rem 0rem;
+}
+.proven-process .top-section {
+  text-align: center;
+}
+.proven-process .bottom-section {
+  margin-top: 2.5rem;
+}
+.proven-process .bottom-section .card-outer h3 {
+  font-size: 17px;
+  background-color: #013d8e;
+  color: #fff;
+  padding: 1rem;
+  min-height: 80px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.proven-process .bottom-section .card-outer {
+  padding: 0rem;
+  width: 100%;
+  background-color: #f3f8ff;
+  height: 100%;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+}
+.proven-process .bottom-section .card {
+  position: relative;
+  padding: 1rem 1rem 1rem 1rem;
+}
+.proven-process .stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card-outer.one::after,
+.card-outer.two::after,
+.card-outer.three::after {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #013d8e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  /* box-shadow: 0px 3px 6px #00000029; */
+}
+.card-outer.one::after {
+  content: "1";
+}
+.card-outer.two::after {
+  content: "2";
+}
+.card-outer.three::after {
+  content: "3";
+}
+
+@media screen and (max-width: 992px) {
+  .proven-process .stepper {
+    transform: rotate(90deg);
+  }
+}
+/* Proven process end */

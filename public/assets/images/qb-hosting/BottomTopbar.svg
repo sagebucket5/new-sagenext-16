@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="40" viewBox="0 0 46 40">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.338" y1="0.376" x2="1.465" y2="0.382" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#60a5fc"/>
+      <stop offset="1" stop-color="#82dee9"/>
+    </linearGradient>
+  </defs>
+  <g id="Pattern" transform="translate(-831.938 -1370)">
+    <path id="Path_54377" data-name="Path 54377" d="M25.143,0H30L12.857,40H8Z" transform="translate(841.938 1370)" fill="url(#linear-gradient)"/>
+    <path id="Path_54378" data-name="Path 54378" d="M25.143,0H30L12.857,40H8Z" transform="translate(847.938 1370)" fill="url(#linear-gradient)"/>
+    <g id="Group_28175" data-name="Group 28175">
+      <path id="Path_54377-2" data-name="Path 54377" d="M25.143,0H30L12.857,40H8Z" transform="translate(835.938 1370)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Group_28176" data-name="Group 28176" transform="translate(-8)">
+      <path id="Path_54377-3" data-name="Path 54377" d="M25.143,0H30L12.857,40H8Z" transform="translate(837.938 1370)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Group_28177" data-name="Group 28177" transform="translate(-11)">
+      <path id="Path_54377-4" data-name="Path 54377" d="M25.143,0H30L12.857,40H8Z" transform="translate(834.938 1370)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

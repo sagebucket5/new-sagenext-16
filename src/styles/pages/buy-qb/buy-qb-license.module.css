@@ -1,0 +1,249 @@
+.advantage .top_section,
+.all-qb h2,
+.why-buy .top_section,
+.why-buy .why_buy_note {
+  text-align: center;
+}
+.all-qb h2,
+.why-buy {
+  padding-bottom: 5rem;
+}
+.edition:hover,
+.why-buy {
+  background-color: #ededed;
+}
+.why-buy {
+  padding-top: 5rem;
+}
+.why-buy .bottom_section {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+.why-buy .bottom_section .left_section {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  justify-content: center;
+}
+.why-buy .bottom_section .right_section .features {
+  font-weight: 600;
+  display: block;
+  padding-bottom: 2rem;
+  position: relative;
+}
+.why-buy .bottom_section .right_section .features::before {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background-color: #707070;
+  position: absolute;
+  top: 85%;
+  left: 0;
+}
+.why-buy .bottom_section .right_section .f {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+.why-buy .bottom_section .right_section .f img {
+  width: 30px;
+  height: 30px;
+}
+.why-buy .bottom_section .right_section .f span {
+  padding-left: 1.5rem;
+  font-weight: 500;
+}
+.why-buy .why_buy_note {
+  padding-top: 2rem;
+  font-style: italic;
+}
+.advantage {
+  background: linear-gradient(180deg, #013d8e 0, #011f47 100%) no-repeat
+    padding-box;
+  padding: 5rem 0;
+}
+.advantage .top_section {
+  color: #fff;
+}
+.he {
+  color: #fff !important;
+}
+.advantage .middle_section .option {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.advantage .middle_section .option .left_div {
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 8px;
+}
+.advantage .middle_section .option .right_div {
+  padding-left: 1rem;
+  color: #fff;
+}
+.advantage .bottom_section {
+  text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.advantage .bottom_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: -72px;
+  background-image: url(/assets/images/01/qb-license/mask1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+.advantage .bottom_section p {
+  color: #fff;
+  font-weight: 200;
+  margin: 1rem 0;
+}
+.advantage .bottom_section .offer-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+.advantage .bottom_section .right_div {
+  display: flex;
+}
+.advantage .bottom_section .buttons {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: 0.2s ease-in-out;
+  z-index: 1;
+}
+.advantage .bottom_section .buttons a {
+  text-decoration: none;
+}
+.advantage .bottom_section .buttons.btn1 {
+  margin-right: 1rem;
+  border: 1px solid #013d8e;
+}
+.advantage .bottom_section .buttons.btn1:hover,
+.advantage .bottom_section .buttons.btn2 {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+.advantage .bottom_section .buttons.btn1 a {
+  color: #013d8e;
+  font-weight: 600;
+}
+.advantage .bottom_section .buttons.btn2 {
+  margin-left: 1rem;
+}
+.advantage .bottom_section .buttons.btn2 a {
+  color: #fff;
+  font-weight: 600;
+}
+.advantage .bottom_section .buttons.btn1:hover a {
+  color: #fff;
+}
+.advantage .bottom_section .buttons.btn2:hover {
+  background-color: #fff;
+  border: 1px solid #013d8e;
+}
+.advantage .bottom_section .buttons.btn2:hover a {
+  color: #013d8e;
+}
+.advantage .bottom_section .no-req {
+  color: #fff;
+  font-weight: 200;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  margin-top: 0.5rem;
+  font-size: 14px;
+  font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  .advantage .bottom_section .right-div {
+    flex-direction: column;
+  }
+  .advantage .bottom_section .buttons.btn1 {
+    margin-right: 0;
+  }
+  .advantage .bottom_section .buttons.btn2 {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .advantage .bottom_section::after,
+  .advantage .bottom_section::before {
+    display: none;
+  }
+  .advantage .middle-section .option {
+    margin: 1.1rem 0;
+  }
+}
+.all-qb {
+  padding: 5rem 0 0;
+}
+.edition {
+  border: 2px solid #ededed;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.edition:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0 2px 4px -1px;
+  border-color: #0151c1;
+}
+.edition .top-seciton {
+  position: relative;
+  padding: 1rem 0 2rem 9.5rem;
+}
+.edition .top-seciton img {
+  position: absolute;
+  left: 0;
+  top: -50%;
+  transform: translateY(-10%);
+}
+.edition h3 {
+  font-size: 20px;
+}
+.edition .edition-desc {
+  margin-bottom: 1rem;
+  display: block;
+}
+.edition .bottom_section {
+  margin-top: 1rem;
+}
+@media screen and (max-width: 1200px) {
+  .edition .top-seciton img {
+    top: -40%;
+  }
+  .edition .bottom_section {
+    margin-top: 0 !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  .why-buy .bottom_section {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .why-buy .bottom_section .left_section {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  .edition .bottom_section {
+    margin-top: 3rem !important;
+  }
+}

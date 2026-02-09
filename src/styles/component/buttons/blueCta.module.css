@@ -1,0 +1,130 @@
+.sg_cta {
+    display: flex;
+    margin-right: 4px;
+    padding: 5px 0px;
+    width: 100%;
+}
+
+.sg_cta p {
+    min-width: 120px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    transition: 0.3s all ease-in-out;
+    white-space: nowrap;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0;
+}
+
+.sg_cta .first {
+    color: #fff;
+    background-color: #0151c1;
+    margin: 0px 5px;
+    border: 1px solid #fff;
+}
+
+.sg_cta .second {
+    color: #0151c1;
+    background-color: #fff;
+    color: #646464;
+    margin: 0px 5px;
+
+}
+
+.second svg {
+    display: none;
+}
+
+.second span {
+    text-wrap: wrap !important;
+    white-space: wrap !important;
+    word-wrap: break-word !important;
+}
+
+.sg_cta p svg path {
+    transition: 0.3s all ease-in-out;
+}
+
+.sg_cta p.first img {
+    margin-left: 10px;
+    position: relative;
+    top: 1.5px;
+}
+
+.sg_cta p.second svg {
+    width: 30px;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #646464;
+}
+
+.sg_cta p:hover.first {
+    background-color: #013d8e !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.sg_cta p:hover.first {
+    background-color: #013d8e !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.sg_cta p:hover.second {
+    background-color: #013d8e;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sg_cta p.second:hover {
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.sg_cta p.second:hover svg {
+    border-right: 1px solid #fff !important;
+}
+
+.sg_cta p.second:hover svg path {
+    fill: #fff !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .sg_cta p {
+        font-size: 13px !important;
+        font-weight: 400;
+        width: 195px;
+        padding: .6rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 444px) {
+    .sg_cta p {
+        font-size: 13px !important;
+        font-weight: 400;
+        width: 100%;
+        min-width: 175px;
+    }
+
+    .sg_cta .first {
+        color: #fff;
+        background-color: #0151c1;
+        margin: 0px 1px;
+        border: 1px solid #fff;
+    }
+
+    .sg_cta p.first img {
+        margin-left: 5px;
+        position: relative;
+        top: -0.5px;
+    }
+
+    .firstDiff {
+        width: 290px !important;
+        margin: 5px inherit;
+    }
+}

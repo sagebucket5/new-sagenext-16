@@ -1,0 +1,240 @@
+/* Dedicated Hosting Plan start */
+.dedicated-host-paln {
+    margin: 5rem 0rem;
+}
+
+.dedicated-host-paln-contain {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.dedicated-host-paln-left {
+    width: 18%;
+}
+
+.dedicated-host-paln-left span {
+    display: flex !important;
+    flex-direction: column-reverse;
+    align-content: space-around;
+    justify-content: space-evenly;
+    padding-left: 1rem;
+}
+
+.dedicated-host-paln-right {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.dedicated-host-paln span {
+    display: block;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dedicated-host-paln span:first-child {
+    background-color: #ededed;
+}
+
+.dedicated-host-paln-right span {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dedicatedHostPalnItem {
+    width: calc(100% / 6.2);
+    border: 1px solid #00000034;
+    border-radius: 5px;
+}
+
+.dedicatedHostPalnItem:last-child {
+    border-right: none;
+}
+
+.dedicatedHostPalnItem button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.customTxt{
+    /* display: none; */
+    font-size: 22px !important;
+}
+/* sliding data */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    border-radius: 50px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0151c1;
+    -webkit-transition: 0.4s;
+    transform: translate(0px, 0px);
+    transition: 0.6s ease transform, 0.6s box-shadow;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    /* background-color: #50bfe6; */
+    background-color: #0151c1;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #50bfe6;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.MoreSave {
+    text-align: center;
+    margin: 0;
+    color: #0151c1;
+    font-size: 14px;
+    font-weight: 500;
+} 
+/* sliding data end */
+
+@media screen and (min-width: 992px) {
+    .activeHost:hover {
+        position: relative;
+        border: 2px solid #013d8e;
+    }
+
+    .activeHost span:first-child:hover {
+        background-color: #013d8e;
+        color: #fff;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    .dedicatedHostPalnItem span button {
+        border: none;
+        border-radius: 25px;
+        padding: 0.5rem 1rem;
+        background-color: #013d8e;
+        color: #fff;
+    }
+
+    .activeHost:hover .activeText {
+        font-size: 30px;
+        font-weight: 800;
+        color: #013d8e;
+    }
+
+    .activeHost:hover .activeBg {
+        border: none;
+        background-color: #013d8e;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 800;
+        /* border-radius: 25px; */
+        padding: 0.4rem 1rem 0.6rem 1rem;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .dedicated-host-paln-left {
+        width: 28%;
+    }
+
+    .dedicated-host-paln-right {
+        width: 70%;
+    }
+
+    .dedicatedHostPalnItem {
+        width: calc(100% / 2.3);
+        flex-basis: 40%;
+        flex-shrink: 0;
+        margin-right: 0.5rem;
+        border: 2px solid #013d8e;
+        border-radius: 5px;
+    }
+
+    .dedicatedHostPalnItem span button {
+        border: none;
+        background-color: #013d8e;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+    }
+
+    .dedicatedHostPalnItem span:first-child {
+        background-color: #013d8e;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .dedicatedHostPalnItem span:nth-child(2) div:first-child {
+        font-size: 31px;
+        font-weight: 900;
+        color: #013d8e;
+    }
+
+    .dedicated-host-paln-right {
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dedicated-host-paln-left {
+        width: 38%;
+    }
+
+    .dedicated-host-paln-right {
+        width: 60%;
+    }
+
+    .dedicatedHostPalnItem {
+        width: calc(100% / 1.3);
+        flex-basis: 70%;
+        flex-shrink: 0;
+    }
+    .MoreSave{
+        display: none;
+    }
+}

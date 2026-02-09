@@ -1,0 +1,132 @@
+.Testimonial {
+  /* background-color: #fff; */
+  padding-top: 7rem;
+ 
+}
+.Testimonial .TestimonialCLientVideo {
+  position: relative;
+}
+
+.Testimonial .TestimonialCLientVideo .ClientVideo {
+  position: absolute;
+  left: 5%;
+  top: 14%;
+  z-index: 1;
+
+}
+.Testimonial .TestimonialText {
+  position: relative;
+  padding-bottom: 5.5rem;
+}
+.Testimonial .TestimonialText .TestimonialQuote {
+  position: absolute;
+  top: -12%;
+  right: 8%;
+
+}
+.Testimonial .TestimonialText .TestimonialContent {
+  padding-left: 9rem;
+  padding-right: 3rem;
+  
+}
+.Testimonial .TestimonialText .TestimonialContent h3 {
+  color: #7694bc;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 3.5rem;
+}
+.Testimonial .TestimonialText .TestimonialContent span {
+  color: var(--text-priority-1-light, #464646);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.Testimonial .TestimonialText .TestimonialContent span {
+  color: var(--text-priority-1-light, #464646) !important;
+  font-size: 20px !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: normal;
+}
+.Testimonial .TestimonialText .TestimonialContent span {
+  color: var(--text-priority-1-light, #464646);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.Testimonial .TestimonialText .TestimonialContent p {
+  color: #464646;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.Testimonial .TestimonialCLientVideo .ClientVideo .TestimonialContainer {
+  position: relative;
+  border-radius: 10px;
+ 
+}
+.Testimonial
+  .TestimonialCLientVideo
+  .ClientVideo
+  .TestimonialContainer
+  .PlayButtonContainer {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+@media (max-width: 768px) {
+  .Testimonial {
+    padding-top: 2rem;
+  }
+  .Testimonial .TestimonialCLientVideo .ClientVideo {
+    position: static;
+  }
+  .Testimonial .TestimonialText {
+    margin-top: 5rem;
+  }
+  .Testimonial .TestimonialText .TestimonialContent {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .Testimonial .TestimonialText .TestimonialQuote {
+    position: absolute;
+    top: -7%;
+    right: 5%;
+  }
+  .Testimonial .TestimonialText .TestimonialQuote img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Testimonial .TestimonialCLientVideo .ClientVideo {
+    position: absolute;
+    top: 20%;
+  }
+  .Testimonial .TestimonialText {
+    margin-top: 0rem;
+  }
+  .Testimonial .TestimonialText .TestimonialContent {
+    padding-left: 11rem;
+    padding-right: 0rem;
+  }
+  .Testimonial .TestimonialText .TestimonialContent h3 {
+    padding-top: 4rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .Testimonial .TestimonialText {
+    position: relative;
+    padding-bottom: 6rem;
+  }
+}

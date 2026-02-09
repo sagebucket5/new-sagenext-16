@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",  // Required for path aliasing
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@lib/*": ["src/lib/*"],
+      "@styles/*": ["src/styles/*"],
+      "@layouts/*": ["src/components/layouts/*"],
+      "@public/*": ["public/*"],
+      "@templates/*": ["src/templates/*"],
+      "@api/*": ["src/app/api/*"],
+      "@providers/*": ["src/app/providers/*"],
+      "@fonts/*": ["public/fonts/*"],
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "tailwind.config.mjs"]
+}

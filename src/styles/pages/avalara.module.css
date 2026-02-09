@@ -1,0 +1,33 @@
+.avlara-solution-column {
+  width: 20%;
+  padding: 1px 10px;
+}
+.avalara_h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #e85d04;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* media query */
+/* desktop */
+@media screen and (min-width: 1113px) and (max-width: 1200px) {
+}
+/*laptop */
+@media screen and (min-width: 769px) and (max-width: 1112px) {
+}
+/* tablet */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .avlara-solution-column {
+    width: 100%;
+    padding: 1px 10px;
+  }
+}
+/* phone */
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .avlara-solution-column {
+    width: 100%;
+    padding: 1px 10px;
+  }
+}

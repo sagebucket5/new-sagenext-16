@@ -1,0 +1,2 @@
+const newPages = ["/", "/quickbooks-hosting", "/quickbooks-enterprise-hosting", "/buy-quickbooks-license", "/drake-tax-software-hosting", "/quickbooks-pro-hosting", "/quickbooks-premier-hosting", "/contact-us", "/sage-hosting", "/about-us", "/buy/quickbooks-hosting", "/buy/tax-software-hosting", "/buy/manage-it-services",];
+export default newPages;

@@ -1,0 +1,53 @@
+
+.bg2{
+    background: linear-gradient(to top, #2d4370 100%, #2d4370 100%);
+}
+
+.service-detail{
+    height: 550px;
+}
+
+.services li button.active{
+    background-image: url(/assets/images/Arro.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: unset !important;
+    padding: 7px 25px;
+}
+.services{
+    margin-top: 160px;
+}
+
+.scope-service li{
+    cursor: pointer;
+}
+select#size_select{
+    background: #0f2146;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    text-transform: none;
+}
+select#size_select:focus{
+    outline: none;
+}
+
+@media only screen and (max-width:960px){
+    .service-detail{
+        height: auto;
+    }
+    .bg2{
+        background: linear-gradient(to top, white 50%, #2d4370 50%);
+    }
+    .scope-service{
+        padding-top: 5%;
+    }
+}
+@media only screen and (max-width:720px) {
+    select#size_select{
+        width: 100%;
+    }
+}

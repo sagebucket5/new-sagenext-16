@@ -1,0 +1,177 @@
+.centerSection {
+    margin: 2rem 0;
+}
+
+.centerSection .centerParaText {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.centerSection h2 {
+    color: #31416c;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    padding-top: 3rem;
+}
+
+.centerSection .centerParaText p {
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 0rem 1rem;
+}
+
+.CloudSolution .CTA-taxSoftware {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.CloudSolutions {
+    color: #013d8e;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 3rem;
+}
+
+.ctaButton p {
+    color: #013d8e;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+hr.line {
+    border-top: 2px solid #d0e3ff;
+    width: 60%;
+    margin: auto;
+}
+
+.list-group strong {
+    color: rgb(34, 34, 34);
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .centerSection {
+        background: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .centerSection {
+        background: none;
+    }
+
+    .centerSection h2 {
+        width: 100%;
+    }
+
+    .centerSection .centerParaText p {
+        padding: 0rem 0rem;
+    }
+
+    .centerSection .CloudSolution .CTA-taxSoftware {
+        flex-direction: column;
+    }
+
+    .centerSection .centerParaText {
+        text-align: center;
+        margin-top: 0rem;
+    }
+
+    .centerSection h2 {
+        padding-top: 1rem;
+    }
+
+    hr.line {
+        margin-left: 2rem;
+    }
+}
+
+/* Marquee styles */
+.enable_animation .marquee {
+    background:#eef5fe;
+    padding: 0.5rem 0rem 0rem 0rem;
+    overflow: hidden;
+    margin: 0rem 0rem 1rem 0rem;
+    height: 80px;
+}
+
+.marquee  img {
+    margin: 0rem 0rem 0rem 1.5rem;
+    width: 80px;
+    height: 65px;
+    object-fit: contain;
+}
+
+
+.enable_animation li {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 24px;
+}
+
+.marquee {
+    --gap: 40rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    gap: var(--gap);
+    width: 100%;
+}
+
+.marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+/* Enable animation */
+.enable_animation .marquee__content {
+    animation: scroll 16s linear infinite;
+}
+
+@media screen and (max-width: 992px) {
+    .marquee {
+        margin-top: 2.5rem;
+    }
+}
+
+
+/* /stepper css */
+.StepByStep{
+    background-color: #F3F8FF;
+    max-height: 98vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.StepByStep::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.StepByStep::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .StepByStep::-webkit-scrollbar {
+    width: 5px;
+  }

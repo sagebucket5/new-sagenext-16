@@ -1,0 +1,92 @@
+.featureColumn {
+    border-top: 1px solid #ddd;
+    font-size:29px ;
+    text-align: center;
+    padding-left: 0 !important;
+}
+
+.desktopColumn {
+    font-weight: 500;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    background: #f5f5f5; 
+    font-size: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cloudColumn {
+    font-weight: 700;
+    font-size:29px ;
+    background: #007bff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+}
+.scrollContainer p:last-child{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-color: #007bff;
+}
+
+.scrollContainer p:nth-child(3n){
+    border-inline-color: #007bff;
+}
+.cloudColumn span {
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    top: -18px;
+    border-radius: 5px;
+    padding: 3px 20px;
+    background: #FDC736;
+    color: #013D8E;
+    animation: shineEffect 1.5s infinite alternate ease-in-out;
+
+}
+@keyframes shineEffect {
+    0% { box-shadow: 0 0 1px #FDC736; }
+    50% { box-shadow: 0 0 5px #FDC736, 0 0 10px rgb(255, 230, 0); }
+    100% { box-shadow: 0 0 1px #FDC736; }
+}
+
+.scrollContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-block: 25px;
+}
+
+.cell {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.cell:nth-child(3n+1){
+    border-left: 1px solid #ddd;
+    padding-inline: 30px 10px;
+}
+
+.cloudColumn {background: #007bff;color: white;}
+
+@media screen and (max-width:1200px) {
+    .negative {color: red;border-right: none !important;padding-inline: 50px 20px !important;}
+    .positive {color: #007bff;border-left: 1px solid #007bff;padding-inline: 70px 25px !important;}
+}
+.negative {color: red;border-right: none !important;padding-inline: 70px 0px;}
+.positive {color: #007bff;border-left: 1px solid #007bff;padding-inline: 90px 0px;}
+.scrollContainer p {margin: 0;padding-block: 29px;}
+.scrollContainer p:nth-child(4),
+.scrollContainer p:nth-child(5),
+.scrollContainer p:nth-child(6) {padding-top: 50px;}
+.cell:nth-child(n+4) {font-size: 20px ;}

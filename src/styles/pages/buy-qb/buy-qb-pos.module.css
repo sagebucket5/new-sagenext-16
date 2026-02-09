@@ -1,0 +1,93 @@
+.with-qb-online-list{
+    min-height: 100%;
+    box-shadow: 0 3px 5px 0 #6e6060;
+}
+
+/* buy quickbboks pos  */
+.qbmac-number-list li::marker{
+    font-size: 30px;
+    color: #aaa;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.qbmac-number-list li{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* buy quickbooks pro */
+.maring-top-minus-100 {
+    margin-top: -100px;
+}
+
+.feature-card {
+    background: linear-gradient(to bottom,#354974,#1b2740);
+    height: 260px;
+    border: none;
+    margin-left: -20px;
+    border-radius: 0 20px 0 0;
+    margin-top: -40px;
+}
+.qb-pro-help-2021-section {
+    background-image: url(/assets/images/buy-qb-pro/QBpro3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 15rem;
+}
+ul.system-req{
+    margin: 10px 0 0 30px;
+}
+.system-req li{
+    list-style-type: disc;
+    line-height: 23px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.system-req li::marker {
+    color: #2d4370;
+    font-weight: 600;
+}
+.right-border-black {
+    border-right: 1px solid #000;
+}
+.why-buy-qb-pro-section {
+    background-image: url(/assets/images/buy-qb-pro/sage-icon.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.why-buy-qb-pro-card {
+    border: none;
+    border-left: 2px solid #2d4370;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px)
+{.maring-top-minus-100 {margin-top: auto;} }
+
+@media screen and (min-width: 0px) and (max-width: 480px)
+{.maring-top-minus-100 {margin-top: auto;}}
+
+
+/* buy quickbooks enterprise */
+.number-list-leading-zero {
+    list-style-type:disc;
+}
+.number-list-leading-zero li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.number-list-leading-zero li::marker {
+    color: #000;
+    font-weight: 700;
+
+}
+.why-choose-section-box{
+    border: 1px solid #013d8e;
+    height: 100%;
+    padding: 1rem 0.5rem 1rem 0.8rem;
+    border-radius: 10px;
+}
+.why-choose-section-box h3{
+    font-size: 20px;
+}

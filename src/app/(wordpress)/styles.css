@@ -1,0 +1,131 @@
+.dataSection h2 {
+    text-align: left;
+    margin: 17px 0 0 !important
+}
+
+.dataSection h2 span {
+    color: #084190;
+    font-size: 28px;
+    text-align: left;
+    line-height: 39px;
+    font-weight: 600 !important
+}
+
+.dataHolder h3 {
+    margin-top: 5px;
+    margin-bottom: .3rem !important
+}
+
+.dataHolder h3 span {
+    color: #084190;
+    font-size: 21px;
+    font-weight: 500 !important
+}
+
+.dataHolder h4 span {
+    color: #084190;
+    font-size: 18px;
+    font-weight: 500 !important
+}
+
+.dataHolder {
+    border: .7px solid #9e9e9e;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    overflow: hidden
+}
+
+.dataHolder p,
+.dataHolder ul {
+    margin: 0 !important;
+    padding: 3px 0 0 !important;
+    line-height: 28px;
+    text-align: left
+}
+
+.dataHolder p {
+    margin-bottom: 10px !important
+}
+
+.dataHolder span {
+    text-align: left
+}
+
+.dataHolder ul {
+    padding-left: 17px !important;
+    text-align: left
+}
+
+.dataHolder ul li {
+    list-style-type: disc;
+    font-size: 18px !important
+}
+
+.dataHolder .tableHolder {
+    overflow-x: auto
+}
+
+.dataHolder table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    min-width: 650px
+}
+
+.dataHolder .tableHolder table h3 {
+    padding: 5px;
+    text-align: left
+}
+
+.dataHolder .tableHolder table tbody {
+    overflow-x: scroll !important
+}
+
+.dataHolder .tableHolder table,
+.dataHolder .tableHolder td,
+.dataHolder .tableHolder tr {
+    border: 1px solid gray !important;
+    margin-bottom: 15px
+}
+
+.dataHolder .tableHolder th {
+    border: 1px solid gray !important;
+    text-align: left
+}
+
+.dataHolder .tableHolder th span {
+    font-weight: 600 !important
+}
+
+.tableHolder td {
+    padding: 2px !important
+}
+
+.dataHolder .block-quote,
+.dataHolder .block-quote-note {
+    background: #f0f8ff !important;
+    border-left: 5px solid #2d4370 !important;
+    padding: 5px
+}
+
+.block-quote p a {
+    color: #fcb733 !important
+}
+
+.block-quote p {
+    margin-bottom: 20px !important
+}
+
+.block-quote {
+    margin: 15px 0 1.75em;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.block-quote-note {
+    padding: 15px !important;
+    border-right: 5px solid #2d4370 !important;
+    margin: 0 0 1.75em
+}

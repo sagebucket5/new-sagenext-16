@@ -1,0 +1,40 @@
+.product-service-line:before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: #191970;
+    left: -20px;
+    top: 50%;
+    position: absolute;
+}
+.product-service-line:after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: #191970;
+    right: -20px;
+    top: 50%;
+    position: absolute;
+}
+
+/* media query */
+/* desktop */
+@media screen and (min-width: 1113px) and (max-width: 1200px)
+{}
+/*laptop */
+@media screen and (min-width: 769px) and (max-width: 1112px)
+{}
+/* tablet */
+@media screen and (min-width: 481px) and (max-width: 768px)
+{
+    .product-service-line:after{display: none;}
+    .product-service-line:before{display: none;}
+}
+/* phone */
+@media screen and (min-width: 0px) and (max-width: 480px)
+{
+    .product-service-line:after{display: none;}
+    .product-service-line:before{display: none;}
+}

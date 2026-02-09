@@ -1,0 +1,93 @@
+.proven-process {
+  position: relative;
+  background-color: #f3f8ff;
+  overflow: hidden;
+}
+.proven-process .stepperDot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  height: 4px;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      transparent 50%,
+      #fff 50%,
+      #fff 100%
+    ),
+    linear-gradient(90deg, #cee2ff, #cee2ff, #86b8ff, #0151c1);
+  background-size: 10px 5px, 100% 3px;
+}
+.proven-process .stepper {
+  margin-top: 6.7rem;
+}
+
+.proven-process .top-section {
+  text-align: center;
+  padding-top: 3rem;
+}
+.proven-process .top-section span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.proven-process .bottom-section {
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+.proven-process .bottom-section .card-outer h3 {
+  font-size: 17px;
+  color: #000;
+  font-weight: 700;
+}
+.proven-process .bottom-section .stepperImage p {
+  color: #464646;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@media screen and (max-width: 767px) {
+  .proven-process .stepper {
+    display: none;
+  }
+  .proven-process .stepperDot {
+    display: none;
+  }
+  .proven-process .top-section {
+    width: 82vw;
+  }
+  
+}
+@media  (min-width: 768px)  and (max-width:1023px){
+  .proven-process .bottom-section .StaticRanges {
+    flex: 0 0 100% ;
+  }
+  .proven-process .stepper {
+    display: none;
+  }
+  .proven-process .stepperDot {
+    display: none;
+  }
+  .proven-process .top-section {
+    width: 82vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .proven-process .stepperDot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 51.5%;
+    z-index: 1;
+  }
+  .proven-process .bottom-section {
+    margin-top: 1.8rem;
+    position: relative;
+    z-index: 2;
+  }
+}

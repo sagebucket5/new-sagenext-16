@@ -1,0 +1,65 @@
+.trminal-offers-line:before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 2px;
+    background: #191970;
+    left: -20px;
+    top: 50%;
+    position: absolute;
+}
+.trminal-offers-line:after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 2px;
+    background: #191970;
+    right: -20px;
+    top: 50%;
+    position: absolute;
+}
+.terminal-tssscan {
+    background: linear-gradient(#f7f7f7 70%,#ffffff 30%);
+}
+
+.tss-scan-list {
+    width: 20%;
+    padding: 3px;
+}
+.tss-scan-list .card {
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.pdf-border-right {
+    border-right: 2px solid #9f9494!important;
+}
+.left-aligned-featured::after {
+    flex: 1;
+    height: 2px;
+    content: "";
+    margin-left: 10px;
+    background-color: currentColor;
+  }
+
+  
+/* media query */
+/* desktop */
+@media screen and (min-width: 1113px) and (max-width: 1200px)
+{}
+/*laptop */
+@media screen and (min-width: 769px) and (max-width: 1112px)
+{}
+/* tablet */
+@media screen and (min-width: 481px) and (max-width: 768px)
+{
+    .trminal-offers-line:after{display: none;}
+    .trminal-offers-line:before{display: none;}
+    
+}
+/* phone */
+@media screen and (min-width: 0px) and (max-width: 480px)
+{
+    .trminal-offers-line:after{display: none;}
+    .trminal-offers-line:before{display: none;}
+}

@@ -1,0 +1,126 @@
+.dataBanner {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height:400px;
+    background-image: url("/assets/images/data-center/dataCenterBanner.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    }
+
+.dataBanner h1 {
+    color: #FFD669 !important;
+}
+.iborder{
+    margin-top: 40px;
+    border: 15px solid #000;
+    border-radius: 15px;
+}
+.whyChoose {
+    background-color: #F8F8F8;
+}
+
+.whyChoose h2 {
+    padding-top: 45px;
+}
+
+.whyChoose .cards {
+    word-spacing: 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    column-gap: 24px;
+}
+
+.cards .details {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-color: #E3E4E5;
+    border-radius: 24px;
+}
+
+.cards img {
+    margin-inline: auto;
+}
+
+
+.locations .patnerslocation span {
+    font-weight: 700;
+}
+
+.patnerslocation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.locationbtn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.locationbtn .location-link {
+    min-width: 140px !important;
+    display: flex;
+    color: #0151C1;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #0151C1;
+    border-radius: 40px;
+    padding: 9.7px 14px;
+    font-size: 16px;
+    font-weight:400 !important;
+    gap: 7px;
+    text-decoration: none;
+    transition: 500ms linear;
+}
+
+
+.bgbottom{
+    background-color: #F8F8F8;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .whyChoose .cards {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on smaller screens */
+    }
+   .patnerslocation br{
+        display: none;
+    }
+    .locationbtn {
+        /* font-weight: 400; */
+        width: 100%;
+        gap: 7px;
+    }
+    
+    .locationbtn .location-link {
+        font-size: 16px;
+    }
+    .dataBanner br{
+        display: none;
+    }
+    .bgbottom div div{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .whyChoose .cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 40px;
+        column-gap: 24px;
+    }
+}

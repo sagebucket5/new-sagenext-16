@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204.966" height="204.966" viewBox="0 0 204.966 204.966">
+  <g id="performance" transform="matrix(0.921, 0.391, -0.391, 0.921, 58.958, -5.245)">
+    <g id="Group_14164" data-name="Group 14164" transform="translate(4 4)">
+      <g id="Group_14163" data-name="Group 14163">
+        <path id="Path_51135" data-name="Path 51135" d="M50.214,36V65.629a21.323,21.323,0,1,0,14.21,0V36Zm0,49.737a7.105,7.105,0,1,1,7.105,7.105A7.105,7.105,0,0,1,50.214,85.737Z" transform="translate(20.838 20.842)" fill="rgba(248,248,248,0.75)" fill-rule="evenodd"/>
+        <path id="Path_51136" data-name="Path 51136" d="M69.737,20a49.737,49.737,0,0,1,49.737,49.737v7.105h-14.21V69.737a35.526,35.526,0,1,0-71.052,0v7.105H20V69.737A49.737,49.737,0,0,1,69.737,20Z" transform="translate(8.421 8.421)" fill="rgba(248,248,248,0.75)"/>
+        <path id="Path_51137" data-name="Path 51137" d="M82.158,160.315A78.158,78.158,0,1,0,4,82.158,78.159,78.159,0,0,0,82.158,160.315Zm0-14.21A63.947,63.947,0,1,0,18.21,82.158,63.947,63.947,0,0,0,82.158,146.1Z" transform="translate(-4 -4)" fill="rgba(248,248,248,0.75)" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>

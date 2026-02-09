@@ -1,0 +1,39 @@
+.medium-horizontal-line:before {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 2px;
+    background: #191970;
+    left: 0;
+    top: 50%;
+    position: absolute;
+}
+.medium-horizontal-line:after {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 2px;
+    background: #191970;
+    right: 0;
+    top: 50%;
+    position: absolute;
+}
+
+/* media query */
+/* desktop */
+@media screen and (min-width: 1113px) and (max-width: 1200px)
+{}
+/*laptop */
+@media screen and (min-width: 769px) and (max-width: 1112px)
+{}
+/* tablet */
+@media screen and (min-width: 481px) and (max-width: 768px)
+{
+    
+    
+}
+/* phone */
+@media screen and (min-width: 0px) and (max-width: 480px)
+{
+    
+}
