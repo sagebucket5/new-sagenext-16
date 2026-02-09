@@ -8,7 +8,6 @@ import { ImFire } from 'react-icons/im';
 import { FaUserCircle } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
-import { unstable_noStore } from 'next/cache';
 import SideBarAd from '@/components/utils/SideBarAd';
 import { notFound } from 'next/navigation';
 

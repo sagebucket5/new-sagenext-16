@@ -131,7 +131,6 @@ const cspHeader = `
 const nextConfig = {
 	experimental: {
 		optimizeCss: true,
-		cssChunking: true,
 	},
 
 	async headers() {

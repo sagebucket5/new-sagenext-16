@@ -12,6 +12,7 @@ const Awards = dynamic(() => import("@components/utils/Awards"));
 const Trusted = dynamic(() => import("@components/utils/TrustedPatner"));
 import { FaAngleRight } from "react-icons/fa6";
 import InterLinkCard from "@/components/cards/InterlinkCard";
+// import { Image, ImageKitProvider } from '@imagekit/next';
 
 export async function generateMetadata() {
   const meta = getMetaData("home");

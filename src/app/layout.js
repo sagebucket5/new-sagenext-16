@@ -4,53 +4,20 @@ import ThirdPartyScripts from '@/components/seo/ThirdPartyScripts';
 import Layout from '@/components/layouts/LayoutV2';
 import ReCaptchaProvider from './providers/ReCaptchaProvider';
 import { Toaster } from 'react-hot-toast';
-import localFont from 'next/font/local';
+// import localFont from 'next/font/local';
+import { Montserrat } from "next/font/google";
 
-const graphik = localFont({
-  src: [
-    {
-      path: '../../public/fonts/Graphik-Light.woff2',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Graphik-LightItalic.woff2',
-      weight: '300',
-      style: 'italic',
-    },
-    {
-      path: '../../public/fonts/Graphik-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Graphik-RegularItalic.woff2',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: '../../public/fonts/Graphik-Medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Graphik-Semibold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Graphik-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-graphik', // This creates a CSS variable
-  display: 'swap',           // Ensures text is visible while font loads
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-US">
+    <html lang="en-US" className={montserrat.variable}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://salesiq.zohopublic.com" />
@@ -58,7 +25,7 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
 
-      <body className={`${graphik.variable} font-sans antialiased`}>
+      <body>
         <ThirdPartyScripts />
         <ReCaptchaProvider>
           <Layout>
