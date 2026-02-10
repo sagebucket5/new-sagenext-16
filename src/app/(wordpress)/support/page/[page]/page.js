@@ -2,7 +2,7 @@ import Category from '@/components/support/Category';
 import HeroCards from '@/components/support/HeroCards';
 import SearchSupport from '@/components/support/SearchSupport';
 import { getCategories } from '@/lib/wordpress';
-import BlogPagination from '@components/blog/BlogPagination';
+import SupportPagination from '@components/blog/BlogPagination';
 import { getMetaData } from '@lib/metaData';
 import Link from 'next/link';
 import style from "@styles/pages/support.module.css";
@@ -139,7 +139,7 @@ export default async function SupportPaginatedPage({ params }) {
       </div>
 
       <div className={`my-3 ${style.pagination}`}>
-        <BlogPagination
+        <SupportPagination
           currentPage={currentPage}
           totalPages={totalPages}
           type={"page"}

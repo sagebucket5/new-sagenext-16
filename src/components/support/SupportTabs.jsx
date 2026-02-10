@@ -1,60 +1,78 @@
 'use client';
+
 import { useState } from 'react';
-import { Tabs, Tab, Box } from '@mui/material';
 import PopularPost from '@components/support/PopularPost';
 import RecentPost from '@components/support/RecentPost';
 
+const TABS = [
+  { key: 'all', label: 'All' },
+  { key: 'popular', label: 'Popular' },
+  { key: 'recent', label: 'Recent' },
+];
+
 export default function SupportTabs({ recentPosts }) {
-    const [value, setValue] = useState('all');
+  const [activeTab, setActiveTab] = useState('all');
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+  return (
+    <section className="w-full mt-8">
+      {/* Tabs header */}
+      <div
+        role="tablist"
+        aria-label="Support tabs"
+        className="flex border-b border-gray-200"
+      >
+        {TABS.map((tab) => {
+          const isActive = activeTab === tab.key;
 
-    return (
-        <Box className="w-full mt-8">
-            <Tabs
-                value={value}
-                onChange={handleChange}
-                textColor="primary"
-                indicatorColor="primary"
-                aria-label="support tabs"
-                variant="fullWidth"
-                className="border-b border-gray-200"
+          return (
+            <button
+              key={tab.key}
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => setActiveTab(tab.key)}
+              className={`
+                flex-1 px-4 py-3 text-sm font-medium text-center transition
+                ${isActive
+                  ? 'border-b-2 border-blue-600 text-blue-600'
+                  : 'border-b-2 border-transparent text-gray-600 hover:text-gray-900'}
+              `}
             >
-                <Tab value="all" label="All" />
-                <Tab value="popular" label="Popular" />
-                <Tab value="recent" label="Recent" />
-            </Tabs>
+              {tab.label}
+            </button>
+          );
+        })}
+      </div>
 
-            <Box className="pt-6">
-                {value === 'all' && (
-                    <>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {recentPosts.map((post) => (
-                                <RecentPost key={post.id} post={post} />
-                            ))}
-                        </div>
-                        <div className="mt-6">
-                            <PopularPost />
-                        </div>
-                    </>
-                )}
+      {/* Tab panels */}
+      <div className="pt-6">
+        {activeTab === 'all' && (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {recentPosts.map((post) => (
+                <RecentPost key={post.id} post={post} />
+              ))}
+            </div>
 
-                {value === 'recent' && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {recentPosts.map((post) => (
-                            <RecentPost key={post.id} post={post} />
-                        ))}
-                    </div>
-                )}
-                {value === 'popular' && (
-                    <div>
-                        <PopularPost />
-                    </div>
-                )}
+            <div className="mt-6">
+              <PopularPost />
+            </div>
+          </>
+        )}
 
-            </Box>
-        </Box>
-    );
+        {activeTab === 'recent' && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {recentPosts.map((post) => (
+              <RecentPost key={post.id} post={post} />
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'popular' && (
+          <div>
+            <PopularPost />
+          </div>
+        )}
+      </div>
+    </section>
+  );
 }

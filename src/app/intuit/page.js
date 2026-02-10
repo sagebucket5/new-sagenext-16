@@ -1,7 +1,6 @@
-import styles from "@styles/pages/intuit.module.css";
 import React from "react";
 import { getMetaData } from "@/lib/metaData";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import SimpleAccordion from "@/components/utils/SimpleAccordion";
 import Image from "next/image";
 
 export async function generateMetadata() {
@@ -44,6 +43,7 @@ export async function generateMetadata() {
 }
 
 function intuit() {
+
   const accordionData = [
     {
       title: "New Business",
@@ -110,22 +110,7 @@ function intuit() {
                 <h2 className="text-black font-25 font-weight-bold pt-2 pb-3 mob-center">
                   Solutions by types of businesses
                 </h2>
-                {accordionData.map((data, index) => {
-                  return (
-                    <Accordion key={index}>
-                      <AccordionSummary>
-                        <h3>{data.title}</h3>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: data.description,
-                          }}
-                        />
-                      </AccordionDetails>
-                    </Accordion>
-                  );
-                })}
+                <SimpleAccordion accordionData={accordionData} />
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { Pagination } from '@mui/material';
+import Pagination from '../utils/Pagination';
 
 export default function BlogPagination({ currentPage, totalPages, type, basePath }) {
   const router = useRouter();
@@ -15,13 +15,9 @@ export default function BlogPagination({ currentPage, totalPages, type, basePath
 
   return (
     <Pagination
-      count={totalPages}
-      page={currentPage}
-      color="primary"
-      size="large"
-      variant="outlined"
-      shape="rounded"
-      onChange={handleChange}
+      totalPages={totalPages}
+      currentPage={currentPage}
+      onChange={(page) => handleChange(null, page)}
     />
   );
 }

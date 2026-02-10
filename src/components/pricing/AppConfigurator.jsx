@@ -1,11 +1,6 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { LuCalculator, LuCalendarFold, LuBuilding2 } from "react-icons/lu";
 import { IoAddOutline, IoRemove } from "react-icons/io5";
@@ -19,13 +14,7 @@ import AppCard from "../AppCard";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Image from "next/image";
 
-export default function ApplicationConfigurator({
-  Quickbooks,
-  TaxSoftware,
-  Sage,
-  Cloud,
-  onConfigChange,
-}) {
+export default function ApplicationConfigurator({ Quickbooks, TaxSoftware, Sage, Cloud, onConfigChange }) {
   const [configurations, setConfigurations] = useState([]);
   const [type, setType] = useState("shared");
   const [appUsers, setAppUsers] = useState(1);
@@ -85,7 +74,6 @@ export default function ApplicationConfigurator({
     setConfigurations((prev) => {
       if (prev.some((app) => app.name === appName)) return prev;
 
-      // New item is add-on if there is already a primary
       const newItem = {
         name: appName,
         users: appUsers,
@@ -169,7 +157,7 @@ export default function ApplicationConfigurator({
         <div className="flex items-center justify-center gap-1 md:gap-4 bg-white h-full p-3 md:!p-7 rounded-tr-[40px] w-full overflow-hidden md:w-[45%] border-b-[0.5px]">
           <PricingSwitch
             type={type}
-            onToggle={handleTypeToggle} 
+            onToggle={handleTypeToggle}
           />
         </div>
 
@@ -182,24 +170,30 @@ export default function ApplicationConfigurator({
       <div className="col-span-6 md:col-span-2 md:!py-7 bg-[#efefef]">
         <div className="mx-auto w-full max-w-lg bg-white/5">
           {groups.map((group, idx) => (
-            <Disclosure as="div" key={group.title} className="rounded-[14px]" defaultOpen={idx === 0}>
-              <DisclosureButton className="group flex w-full items-center justify-between bg-white py-4 px-2.5">
+            <details
+              key={group.title}
+              className="rounded-[14px]"
+              open={idx === 0 ? true : undefined} // default open first
+            >
+              <summary className="group flex w-full cursor-pointer list-none items-center justify-between bg-white py-4 px-2.5">
                 <span className="text-[18px] font-bold text-[#000000] flex items-center gap-2">
                   {group.title}
                 </span>
-                <MdKeyboardArrowDown className="size-5 fill-black/60 group-data-open:rotate-180 transition-all" />
-              </DisclosureButton>
+                <MdKeyboardArrowDown className="size-5 fill-black/60 transition-all group-open:rotate-180" />
+              </summary>
 
-              <DisclosurePanel className="mt-2 text-sm/5 text-black/50">
+              {/* Panel */}
+              <div className="mt-2 text-sm/5 text-black/50">
                 <ul className="mt-2">
                   {group.data.map((item) => {
                     const allowed = canSelect(item);
                     const selected = isSelected(item.label);
+
                     return (
                       <li
                         key={item.value ?? item.label}
                         className={`font-normal !text-[16px] !text-[#4A4A4A] p-[13px_16px] m-2 flex items-center justify-between hover:bg-white rounded-sm
-                          ${allowed ? "cursor-pointer" : "opacity-50"}`}
+                ${allowed ? "cursor-pointer" : "opacity-50"}`}
                         onClick={() => toggleSelection(item)}
                         role={allowed ? "button" : undefined}
                         aria-disabled={!allowed}
@@ -223,35 +217,36 @@ export default function ApplicationConfigurator({
                     );
                   })}
                 </ul>
-              </DisclosurePanel>
-            </Disclosure>
+              </div>
+            </details>
           ))}
+
         </div>
       </div>
-    
+
       <div className="col-span-4 md:h-[87vh] md:border-l border-neutral-200 bg-white rounded-tr-[40px] pt-4 relative">
         <div className="min-h-[40vh]">
           {configurations.length > 0 && (
-          <div className="flex flex-col md:flex-row items-center gap-1 md:gap-4 px-4">
-            <p className="font-bold">Number of Users</p>
-            <div className="flex items-center justify-center gap-2 md:gap-4 mb-1">
-              <button
-                onClick={() => updateUserCount(-1)}
-                className="cursor-pointer rounded-l-sm bg-[#334064] h-6 w-8 inline-flex justify-center items-center"
-              >
-                <IoRemove size={19} className="text-white" />
-              </button>
-              <span className="rounded-full !text-[15px] !tracking-[1%] !font-bold h-6 w-8 inline-flex justify-center items-center">
-                {appUsers}
-              </span>
-              <button
-                onClick={() => updateUserCount(1)}
-                className="cursor-pointer rounded-r-sm bg-[#334064] h-6 w-8 inline-flex justify-center items-center"
-              >
-                <IoAddOutline size={19} className="text-white" />
-              </button>
+            <div className="flex flex-col md:flex-row items-center gap-1 md:gap-4 px-4">
+              <p className="font-bold">Number of Users</p>
+              <div className="flex items-center justify-center gap-2 md:gap-4 mb-1">
+                <button
+                  onClick={() => updateUserCount(-1)}
+                  className="cursor-pointer rounded-l-sm bg-[#334064] h-6 w-8 inline-flex justify-center items-center"
+                >
+                  <IoRemove size={19} className="text-white" />
+                </button>
+                <span className="rounded-full !text-[15px] !tracking-[1%] !font-bold h-6 w-8 inline-flex justify-center items-center">
+                  {appUsers}
+                </span>
+                <button
+                  onClick={() => updateUserCount(1)}
+                  className="cursor-pointer rounded-r-sm bg-[#334064] h-6 w-8 inline-flex justify-center items-center"
+                >
+                  <IoAddOutline size={19} className="text-white" />
+                </button>
+              </div>
             </div>
-          </div>
           )}
 
           {configurations.length > 0 ? (
@@ -329,7 +324,7 @@ export default function ApplicationConfigurator({
             </div>
           )}
         </div>
-        
+
         {configurations.length > 0 && (
           <PricingSummary
             {...pricingSummaryProps}

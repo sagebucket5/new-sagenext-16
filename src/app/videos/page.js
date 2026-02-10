@@ -1,11 +1,8 @@
 import Classes from "@styles/pages/company/videos.module.css";
-import { getMetaData } from "@lib/metaData";
 import SkillSection from "@/components/utils/SkillSection";
 import OldHero from "@/components/heros/OldHero";
 import BlueCta from "@/components/buttons/BlueCta";
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import Link from "next/link";
-const meta = getMetaData("videos");
+import VideoTabs from "@/components/VideoTabs";
 
 const data = [
   {
@@ -166,11 +163,9 @@ const data = [
     desc: `Silly mistakes during the tax filing process can lead to hefty penalties, so it is better to have a systematic cloud strategy in plan. <br/> <br/>`,
   },
 ];
-
 const text = ["All", "Quickbooks", "Tax", "Sage"];
 
-const video = () => {
-
+export default function VideoPage() {
   return (
     <>
       <OldHero
@@ -189,62 +184,14 @@ const video = () => {
         width={400}
         height={400}
       />
-      <section className={`${Classes["video-section"]}`}>
-        <TabGroup>
-          <div className="container mx-auto">
-            <TabList className={`${Classes.ContentRef} text-center mb-5`}>
-              <div className={`${Classes["button-title"]}`}>
-                {text.map((item, index) => (
-                  <Tab key={item} className={`${Classes["button-box"]}`}>
-                    {item}
-                  </Tab>
-                ))}
-              </div>
-            </TabList>
 
-            <div className={`${Classes["result"]} mb-4`}>Showing Recent</div>
-            <TabPanels>
-              {text.map((items, index) => (
-                <TabPanel key={items} className={`${Classes["video-card"]}`}>
-                  {data.filter((item) => items.toLowerCase() === "all" || item.heading.toLowerCase() === items.toLowerCase()).map((item, index) => (
-                    <div key={index} className={`${Classes["video-card-1"]}`}>
-                      <div className={`${Classes["video-cont"]}`}>
-                        <div className={`${Classes["video-div"]}`}>
-                          <iframe
-                            src={item.link}
-                            className={`${Classes["video-thumbnail"]}`}
-                            allowFullScreen
-                          ></iframe>
-                        </div>
-                        <div className={`${Classes["content"]}`}>
-                          <Link
-                            href={item.target}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <div>
-                              <span className={`${Classes["sub-title"]}`}>
-                                {item.heading}
-                              </span>
-                              <h3
-                                className={`${Classes["entry-title"]}`}
-                                dangerouslySetInnerHTML={{ __html: item.title }}
-                              />
-                              <p
-                                dangerouslySetInnerHTML={{ __html: item.desc }}
-                              ></p>
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </TabPanel>
-              ))}
-            </TabPanels>
-          </div>
-        </TabGroup>
-        <div className={`${Classes["button-video"]}`}>
+      <section className={Classes["video-section"]}>
+        <div className="container mx-auto">
+          {/* ✅ client tabs */}
+          <VideoTabs Classes={Classes} tabs={text} videos={data} />
+        </div>
+
+        <div className={Classes["button-video"]}>
           <BlueCta
             className={Classes["custom-btn"]}
             showBtn={1}
@@ -255,9 +202,8 @@ const video = () => {
           />
         </div>
       </section>
+
       <SkillSection />
     </>
   );
-};
-
-export default video;
+}

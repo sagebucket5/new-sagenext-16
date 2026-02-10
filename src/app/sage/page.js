@@ -1,7 +1,7 @@
 
 import React from "react";
 import { getMetaData } from "@/lib/metaData";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import SimpleAccordion from "@/components/utils/SimpleAccordion";
 import Image from "next/image";
 
 export async function generateMetadata() {
@@ -158,20 +158,7 @@ function sage() {
                 without the use of a complicated system.
               </p>
 
-              {accordionData1.map((data, index) => {
-                return (
-                  <Accordion key={index}>
-                    <AccordionSummary>{data.title}</AccordionSummary>
-                    <AccordionDetails>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: data.description,
-                        }}
-                      />
-                    </AccordionDetails>
-                  </Accordion>
-                );
-              })}
+              <SimpleAccordion accordionData={accordionData1} />
             </div>
             <div className="lg:w-2/5">
               <Image
@@ -207,20 +194,7 @@ function sage() {
                 effortlessly.
               </p>
 
-              {accordionData2.map((data, index) => {
-                return (
-                  <Accordion key={index}>
-                    <AccordionSummary >{data.title}</AccordionSummary>
-                    <AccordionDetails>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: data.description,
-                        }}
-                      />
-                    </AccordionDetails>
-                  </Accordion>
-                );
-              })}
+              <SimpleAccordion accordionData={accordionData2} />
             </div>
           </div>
         </div>
@@ -238,20 +212,7 @@ function sage() {
                 environment.
               </p>
 
-              {accordionData3.map((data, index) => {
-                return (
-                  <Accordion key={index}>
-                    <AccordionSummary>{data.title}</AccordionSummary>
-                    <AccordionDetails>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: data.description,
-                        }}
-                      />
-                    </AccordionDetails>
-                  </Accordion>
-                );
-              })}
+              <SimpleAccordion accordionData={accordionData3} />
             </div>
             <div className="lg:w-2/5">
               <Image

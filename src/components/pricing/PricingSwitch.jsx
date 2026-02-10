@@ -1,49 +1,48 @@
 "use client";
 
-import { Switch } from "@headlessui/react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function PricingSwitch({
   type = "shared",
   onToggle,
   isToggleable = true,
 }) {
-  const [enabled, setEnabled] = useState(type === "dedicated");
+  const [enabled, setEnabled] = useState(type === "dedicated"); // enabled => dedicated
 
   useEffect(() => {
     setEnabled(type === "dedicated");
   }, [type]);
 
-  const handleToggle = () => {
+  const setNext = (checked) => {
     if (!isToggleable) return;
-    const newType = enabled ? "shared" : "dedicated";
-    setEnabled(!enabled);
+
+    setEnabled(checked);
+    const newType = checked ? "dedicated" : "shared";
     onToggle?.(newType);
   };
 
   return (
-    <>
-      <span
-        className={`font-bold text-lg md:text-xl ${enabled ? "text-gray-500" : "text-blue-400"
-          }`}
-      >
+    <div className="flex items-center gap-3 md:gap-5">
+      <span className={`font-bold text-lg md:text-xl ${enabled ? "text-gray-500" : "text-blue-400"}`}>
         SHARED PLAN
       </span>
 
-      <Switch
-        checked={enabled}
-        onChange={handleToggle}
-        className="group inline-flex h-7 w-14 items-center rounded-full bg-gray-300 transition data-checked:bg-blue-600"
-      >
-        <span className="size-5 translate-x-1 rounded-full bg-white transition group-data-checked:translate-x-7 md:group-data-checked:translate-x-8" />
-      </Switch>
+      {/* Switch */}
+      <label className="relative inline-flex cursor-pointer items-center">
+        <input
+          type="checkbox"
+          checked={enabled}
+          onChange={(e) => setNext(e.target.checked)}
+          className="peer sr-only"
+        />
 
-      <span
-        className={`font-bold text-lg md:text-xl transition text-right md:text-left ${enabled ? "text-blue-400" : "text-gray-500"
-          }`}
-      >
+        <span className="h-7 w-14 rounded-full bg-gray-300 transition peer-checked:bg-blue-600" />
+        <span className="absolute left-1 top-1 h-5 w-5 rounded-full bg-white transition-transform duration-200 peer-checked:translate-x-7" />
+      </label>
+
+      <span className={`font-bold text-lg md:text-xl transition ${enabled ? "text-blue-400" : "text-gray-500"}`}>
         DEDICATED PLAN
       </span>
-    </>
+    </div>
   );
 }

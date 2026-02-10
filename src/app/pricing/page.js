@@ -1,4 +1,3 @@
-import BlueCta from "@/components/buttons/BlueCta";
 import { Quickbooks, Sage, TaxSoftware, Cloud } from "@/lib/applications";
 import AppConfigurator from "@/components/pricing/AppConfigurator";
 import { getMetaData } from "@/lib/metaData";
