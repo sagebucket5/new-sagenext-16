@@ -1,17 +1,20 @@
 "use client"
-import React, { useState } from "react"
+
+import React, { useState, useRef } from "react"
 import Classes from "@styles/pages/company/contact.module.css";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import toast from "react-hot-toast";
 import { FaAngleRight } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import Countrycodes from "@/lib/countryCodes";
 import BlueCta from "@/components/buttons/BlueCta";
 import Link from "next/link";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 const ContactForm = () => {
   const router = useRouter();
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef(null);
+  const [tsToken, setTsToken] = useState(null);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+1");
   const [selectedCountryName, setSelectedCountryName] = useState("");
   const [name, setName] = useState("");
@@ -21,9 +24,6 @@ const ContactForm = () => {
   const [hearAboutUs, setHearAboutUs] = useState("");
   const [loading, setLoading] = useState(false);
   const pathname = router.pathname;
-  const handleChat = () => {
-    $zoho.salesiq.floatwindow.open();
-  };
   const handleCountryChange = (e) => {
     const code = e.target.value;
     setSelectedCountryCode(code);
@@ -33,6 +33,11 @@ const ContactForm = () => {
       setSelectedCountryName(selectedCountry.country); // Print the country name
     }
   };
+
+  const handleChat = () => {
+    $zoho.salesiq.floatwindow.open();
+  };
+
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -62,49 +67,105 @@ const ContactForm = () => {
     return true;
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!validateForm()) {
+  //     return;
+  //   }
+  //   if (!tsToken) {
+  //     toast.error("Turnstile verification missing. Please try again.");
+  //     return;
+  //   }
+  //   setLoading(true);
+  //   const data = {
+  //     name,
+  //     email,
+  //     phone,
+  //     message,
+  //     hearAboutUs,
+  //     token: tsToken,
+  //     subject: "Contact Us",
+  //     pathname,
+  //     description: "Contact us Form Request"
+  //   };
+  //   try {
+  //     const res = await fetch("/api/contact-us-api", {
+  //       method: "POST",
+  //       body: JSON.stringify(data),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+
+  //     const resData = await res.json();
+  //     if (resData.success) {
+  //       toast.success("Thank you, Form Submitted Successfully");
+  //       router.push("thank-you/free-quote");
+  //     } else {
+  //       toast.error(resData.message || "Form submission failed");
+  //     }
+  //   } catch (error) {
+  //     toast.error("An error occurred while submitting the form.");
+  //   } finally {
+  //     setLoading(true);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) {
+
+    if (loading) return;
+
+    if (!validateForm()) return;
+
+    if (!tsToken) {
+      toast.error("Turnstile verification missing. Please try again.");
       return;
     }
+
     setLoading(true);
-    const token = await executeRecaptcha("submit");
-    if (!token) {
-      toast.error("Recaptcha verification failed");
-      setLoading(true);
-      return;
-    }
-    const data = {
+
+    const payload = {
       name,
       email,
       phone,
       message,
       hearAboutUs,
-      token,
+      token: tsToken,
       subject: "Contact Us",
       pathname,
-      description: "Contact us Form Request"
+      description: "Contact us Form Request",
     };
+
     try {
       const res = await fetch("/api/contact-us-api", {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
-      const resData = await res.json();
-      if (resData.success) {
-        toast.success("Thank you, Form Submitted Successfully");
-        router.push("thank-you/free-quote");
-      } else {
-        toast.error(resData.message || "Form submission failed");
+      // handle non-json / empty body safely
+      const resData = await res.json().catch(() => ({}));
+
+      if (!res.ok || !resData?.success) {
+        throw new Error(resData?.message || "Form submission failed");
       }
+
+      toast.success("Thank you, Form Submitted Successfully");
+
+      // Turnstile token is single-use → reset & clear token
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
+
+      router.push("/thank-you/free-quote"); // ✅ add leading slash
     } catch (error) {
-      toast.error("An error occurred while submitting the form.");
+      toast.error(error?.message || "An error occurred while submitting the form.");
+
+      // get a fresh token next time
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
     } finally {
-      setLoading(true);
+      setLoading(false); // ✅ critical fix
     }
   };
 
@@ -248,6 +309,13 @@ const ContactForm = () => {
                       <option value="Other">Other</option>
                     </select>
                   </div>
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    onSuccess={(token) => setTsToken(token)}
+                    onExpire={() => setTsToken(null)}
+                    onError={() => setTsToken(null)}
+                  />
                   <div className="text-center mt-4">
                     <button
                       type="submit"
@@ -380,4 +448,4 @@ const ContactForm = () => {
   )
 }
 
-export default ContactForm
+export default ContactForm;

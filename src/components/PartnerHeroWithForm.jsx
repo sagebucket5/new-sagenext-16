@@ -1,13 +1,16 @@
 "use client";
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import styles from "@styles/pages/company/partners.module.css";
 import Link from 'next/link';
 import { toast } from "react-hot-toast";
 import { useRouter } from 'next/navigation';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { Turnstile } from "@marsidev/react-turnstile";
 
 const PartnerHeroWithForm = () => {
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    // const { executeRecaptcha } = useGoogleReCaptcha();
+    const turnstileRef = useRef(null);
+    const [tsToken, setTsToken] = useState(null);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -38,19 +41,16 @@ const PartnerHeroWithForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateForm()) {
+        if (isSubmit) return;
+        if (!validateForm()) return;
+
+        if (!tsToken) {
+            toast.error("Turnstile verification missing. Please try again.");
             return;
         }
 
         setIsSubmit(true);
 
-        const token = await executeRecaptcha('submit');
-
-        if (!token) {
-            toast.error("Recaptcha verification failed");
-            setIsSubmit(false);
-            return;
-        }
         const data = {
             name,
             email,
@@ -59,7 +59,7 @@ const PartnerHeroWithForm = () => {
             hearAboutUs,
             message,
             program,
-            token,
+            token: tsToken,
             page: "Partners - Register Yourself",
             subject: "Become a Partner"
         };
@@ -73,13 +73,17 @@ const PartnerHeroWithForm = () => {
                 },
             });
 
-            const resData = await res.json();
-            if (resData.success) {
-                toast.success("Thank you, Form Submitted Successfully");
-                router.push(`/thank-you/partners`);
-            } else {
-                toast.error(resData.message || "Form submission failed");
+            const resData = await res.json().catch(() => ({}));
+
+            if (!res.ok || !resData?.success) {
+                throw new Error(resData?.message || "Form submission failed");
             }
+
+            toast.success("Thank you, Form Submitted Successfully");
+
+            turnstileRef.current?.reset?.();
+            setTsToken(null);
+            router.push("/thank-you/free-quote");
         } catch (error) {
             toast.error("An error occurred while submitting the form.");
         } finally {
@@ -247,6 +251,13 @@ const PartnerHeroWithForm = () => {
                                         out at any time.
                                     </p>
                                 </div>
+                                <Turnstile
+                                    ref={turnstileRef}
+                                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                                    onSuccess={(token) => setTsToken(token)}
+                                    onExpire={() => setTsToken(null)}
+                                    onError={() => setTsToken(null)}
+                                />
                                 <button className={` ${styles["btn-partner"]}`}>
                                     {isSubmit ? ("Wait...") : ("SUBMIT")}
                                 </button>

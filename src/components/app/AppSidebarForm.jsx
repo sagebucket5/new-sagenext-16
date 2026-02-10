@@ -1,18 +1,19 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "@styles/pages/app-dir.module.css";
 import Countrycodes from "@/lib/countryCodes";
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import Link from "next/link";
 
 const AppSideBarForm = () => {
-
     const router = useRouter();
-
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    // const { executeRecaptcha } = useGoogleReCaptcha();
+    const turnstileRef = useRef(null);
+    const [tsToken, setTsToken] = useState(null);
     const [name, setName] = useState("");
     const [company, setCompany] = useState("");
     const [email, setEmail] = useState("");
@@ -67,21 +68,23 @@ const AppSideBarForm = () => {
 
     const handleTrialSubmit = async (e) => {
         e.preventDefault();
-        if (!validateForm()) { return; }
-        const token = await executeRecaptcha('submit');
-        if (!token) {
-            toast.error("Recaptcha verification failed");
-            setIsSubmit(false);
+
+        if (isSubmit) return;
+        if (!validateForm()) return;
+        if (!tsToken) {
+            toast.error("Turnstile verification missing. Please try again.");
             return;
         }
+
         setIsSubmit(true);
         setLoading(true);
+
         const data = {
             name,
             company,
             email,
             phone,
-            token,
+            token: tsToken,
             selectedCountryCode,
             application,
             formName: "Free Quote",
@@ -96,13 +99,17 @@ const AppSideBarForm = () => {
                 headers: { 'Content-Type': 'application/json', },
             });
 
-            const resData = await res.json();
-            if (resData.success) {
-                toast.success("Thank you, Form Submitted Successfully");
-                router.push(`/thank-you/free-quote`);
-            } else {
-                toast.error(resData.message || "Form submission failed");
+            const resData = await res.json().catch(() => ({}));
+
+            if (!res.ok || !resData?.success) {
+                throw new Error(resData?.message || "Form submission failed");
             }
+
+            toast.success("Thank you, Form Submitted Successfully");
+
+            turnstileRef.current?.reset?.();
+            setTsToken(null);
+            router.push("/thank-you/free-quote");
         } catch (error) {
             toast.error("An error occurred while submitting the form.");
         } finally {
@@ -142,6 +149,13 @@ const AppSideBarForm = () => {
                         {selectedCountryName && (<span className="text-[12px] text-[#3385F8] font-medium mt-1">Country: {selectedCountryName}</span>)}
                     </div>
                 </div>
+                <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    onSuccess={(token) => setTsToken(token)}
+                    onExpire={() => setTsToken(null)}
+                    onError={() => setTsToken(null)}
+                />
                 <div className="text-center">
                     <button id="nextBtn" className="w-full py-1 px-1 border border-blue-700 rounded-[10px] bg-blue-600 text-white mt-2 hover:bg-transparent hover:text-blue-700 cursor-pointer hover:ring-blue-500 ring-1" disabled={loading}>
                         {loading ? "Submitting..." : "Submit"}

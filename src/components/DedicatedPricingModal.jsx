@@ -3,16 +3,20 @@
 import ListCountryCodes from "@/lib/countryCodes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useEffect, useState, useRef } from "react";
+// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { Turnstile } from "@marsidev/react-turnstile";
 import toast from "react-hot-toast";
 import { AiOutlineLoading } from "react-icons/ai";
 import { IoIosArrowForward, IoIosClose } from "react-icons/io";
 
+
 const DedicatedPricingModal = (props) => {
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef(null);
+  const [tsToken, setTsToken] = useState(null);
 
   const [phone, setPhone] = useState("");
   const [countryCodes, setCountryCodes] = useState("+1");
@@ -68,48 +72,54 @@ const DedicatedPricingModal = (props) => {
 
   const handleSubmitCustmizedHosting = async (e) => {
     e.preventDefault();
+
+    if (isSubmit) return;
     if (!validateForm()) return;
+    if (!tsToken) {
+      toast.error("Turnstile verification missing. Please try again.");
+      return;
+    }
 
     setIsSubmit(true);
+    const data = {
+      name,
+      email,
+      phone,
+      application,
+      noOfUsers,
+      selectedCountryCode: countryCodes,
+      plan,
+      token: tsToken,
+      pathname,
+      subject: "Get Customized Hosting Solutions",
+      description: `<em>Get Customized Hosting Solutions | ${pathname}</em>`,
+    };
 
     try {
-      const token = await executeRecaptcha?.("submit");
-      if (!token) {
-        toast.error("Recaptcha verification failed");
-        return;
-      }
-
-      const data = {
-        name,
-        email,
-        phone,
-        application,
-        noOfUsers,
-        selectedCountryCode: countryCodes,
-        plan,
-        token,
-        pathname,
-        subject: "Get Customized Hosting Solutions",
-        description: `<em>Get Customized Hosting Solutions | ${pathname}</em>`,
-      };
-
+      console.log("my data", data);
       const res = await fetch("/api/api-email-post", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },
       });
 
-      const resData = await res.json();
+      const resData = await res.json().catch(() => ({}));
 
-      if (resData.success) {
-        toast.success("Thank you, Form Submitted Successfully");
-        closeModal();
-        router.push("thank-you/free-quote");
-      } else {
-        toast.error(resData.message || "Form submission failed");
+      if (!res.ok || !resData?.success) {
+        throw new Error(resData?.message || "Form submission failed");
       }
+
+      toast.success("Thank you, Form Submitted Successfully");
+
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
+      router.push("/thank-you/free-quote");
+
     } catch (error) {
-      toast.error("An error occurred while submitting the form.");
+      toast.error(error?.message || "An error occurred while submitting the form.");
+
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
     } finally {
       setIsSubmit(false);
     }
@@ -120,9 +130,8 @@ const DedicatedPricingModal = (props) => {
       {/* Trigger */}
       <button
         onClick={openModal}
-        className={`${props.customClass || ""} ${
-          props.isBanner ? "rounded-md lg:rounded-full" : "rounded-full"
-        } px-8 py-3 h-[50px] w-full flex items-center justify-center cursor-pointer !font-semibold text-[16px] border text-white hover:!bg-white hover:!text-blue-900 bg-[#0151C1] whitespace-nowrap transition-all ease-in duration-200`}
+        className={`${props.customClass || ""} ${props.isBanner ? "rounded-md lg:rounded-full" : "rounded-full"
+          } px-8 py-3 h-[50px] w-full flex items-center justify-center cursor-pointer !font-semibold text-[16px] border text-white hover:!bg-white hover:!text-blue-900 bg-[#0151C1] whitespace-nowrap transition-all ease-in duration-200`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
@@ -247,7 +256,13 @@ const DedicatedPricingModal = (props) => {
                       </Link>
                       .
                     </p>
-
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                      onSuccess={(token) => setTsToken(token)}
+                      onExpire={() => setTsToken(null)}
+                      onError={() => setTsToken(null)}
+                    />
                     <div className="pb-3 w-full">
                       <button
                         type="submit"

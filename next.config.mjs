@@ -148,10 +148,10 @@ const nextConfig = {
 		// });
 
 		// if (process.env.NEXT_PUBLIC_VERCEL_ENV === "preview") {
-			headers.push({
-				source: "/:path*",
-				headers: [{ key: "X-Robots-Tag", value: "noindex" }],
-			});
+		headers.push({
+			source: "/:path*",
+			headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+		});
 		// }
 
 		// Hashed build assets
@@ -181,6 +181,16 @@ const nextConfig = {
 		});
 
 		return headers;
+	},
+
+	images: {
+		remotePatterns: [
+			{ protocol: "https", hostname: "ik.imagekit.io" },
+			{ protocol: "https", hostname: "snb.thesagenext.com" },
+			{ protocol: "https", hostname: "www.thesagenext.com" },
+			{ protocol: "https", hostname: "thesagenext.com" },
+			{ protocol: "https", hostname: "sage-storage.sfo3.cdn.digitaloceanspaces.com" },
+		],
 	},
 
 	async redirects() {
@@ -596,15 +606,6 @@ const nextConfig = {
 				permanent: true,
 			},
 		];
-	},
-
-	images: {
-		remotePatterns: [
-			{ protocol: "https", hostname: "snb.thesagenext.com" },
-			{ protocol: "https", hostname: "www.thesagenext.com" },
-			{ protocol: "https", hostname: "thesagenext.com" },
-			{ protocol: "https", hostname: "sage-storage.sfo3.cdn.digitaloceanspaces.com" },
-		],
 	},
 };
 

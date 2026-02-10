@@ -3,8 +3,9 @@
 import styles from "@styles/pages/ticket-submission.module.css";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useState, useRef } from "react";
+// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { Turnstile } from "@marsidev/react-turnstile";
 import toast from "react-hot-toast";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -20,20 +21,20 @@ const TicketForm = () => {
   const [hearAboutUs, setHearAboutUs] = useState("");
   const [loading, setLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef(null);
+  const [tsToken, setTsToken] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    setIsSubmit(true);
-
-    const token = await executeRecaptcha("submit");
-    if (!token) {
-      toast.error("Recaptcha verification failed");
-      setIsSubmit(false);
+    if (isSubmit) return;
+    if (!tsToken) {
+      toast.error("Turnstile verification missing. Please try again.");
       return;
     }
+
+    setIsSubmit(true);
 
     const data = {
       name,
@@ -46,7 +47,7 @@ const TicketForm = () => {
       hearAboutUs,
       subject: "Ticket Submission",
       description: `<em>Ticket Submission Details</em>`,
-      token,
+      token: tsToken,
       mailTitle: "Ticket Submission",
     };
 
@@ -57,13 +58,17 @@ const TicketForm = () => {
         "Content-Type": "application/json",
       },
     });
-    const resData = await res.json();
-    if (resData.success) {
-      toast.success("Thank you, Your Ticket is Raised");
-      router.push(`/thank-you/${router.asPath}`);
-    } else {
-      toast.error(resData.message || "Form submission failed");
+    const resData = await res.json().catch(() => ({}));
+
+    if (!res.ok || !resData?.success) {
+      throw new Error(resData?.message || "Ticket submission failed");
     }
+
+    toast.success("Thank you, Your Ticket is Raised");
+
+    turnstileRef.current?.reset?.();
+    setTsToken(null);
+    router.push("/thank-you/free-quote");
   };
 
   return (
@@ -182,6 +187,13 @@ const TicketForm = () => {
               <option value="Other">Other</option>
             </select>
           </div>
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+            onSuccess={(token) => setTsToken(token)}
+            onExpire={() => setTsToken(null)}
+            onError={() => setTsToken(null)}
+          />
           <div className="col-lg-6 text-end">
             <div className="form-group">
               <div>

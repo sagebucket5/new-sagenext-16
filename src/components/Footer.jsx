@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { MdOutlinePhone, MdOutlineMail } from "react-icons/md";
 import { ImFacebook2, ImYoutube, ImLinkedin2 } from "react-icons/im";
 import { FaXTwitter, FaPinterestP, FaInstagram, FaGooglePlusG, } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import getCurrentYear from "@lib/utils";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { Turnstile } from "@marsidev/react-turnstile";
 const FormModal = React.lazy(() => import("@/components/FormModal"));
 
 const Solutions = [
@@ -60,7 +61,9 @@ const company = [
 const NewFooter = () => {
   const [email, setEmail] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef(null);
+  const [tsToken, setTsToken] = useState(null);
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -73,20 +76,19 @@ const NewFooter = () => {
   };
   const subScribeNewsLetter = async (e) => {
     e.preventDefault();
-    if (!validateData()) {
+
+    if (isSubmit) return;
+    if (!validateData()) return;
+    if (!tsToken) {
+      toast.error("Turnstile verification missing. Please try again.");
       return;
     }
 
     setIsSubmit(true);
-    const token = await executeRecaptcha("submit");
-    if (!token) {
-      toast.error("Recaptcha verification failed");
-      setIsSubmit(false);
-      return;
-    }
 
     const data = {
-      email, token,
+      email,
+      token: tsToken,
       subject: "Newsletter User Add",
       subjectUser: "Subscribed Sagenext Newsletter",
     };
@@ -97,14 +99,21 @@ const NewFooter = () => {
         headers: { "Content-Type": "application/json", },
       });
 
-      const resData = await res.json();
-      if (resData.success) {
-        toast.success("Thank you, You Have Successfuly Subscribed");
-      } else {
-        toast.error(resData.message || "Error Subscribing you");
+      const resData = await res.json().catch(() => ({}));
+
+      if (!res.ok || !resData?.success) {
+        throw new Error(resData?.message || "Form submission failed");
       }
+
+      toast.success("You are Subscription is Confirmed");
+
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
+
     } catch (error) {
       toast.error("An error occurred while Subscribing you");
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
     } finally {
       setEmail("");
       setIsSubmit(false);
@@ -143,7 +152,13 @@ const NewFooter = () => {
                 Let&apos;s stay connected! Subscribe for expert insights,
                 special offers, and updates.
               </p>
-
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                onSuccess={(token) => setTsToken(token)}
+                onExpire={() => setTsToken(null)}
+                onError={() => setTsToken(null)}
+              />
               <div className="mb-3 relative mt-5 w-4/5 h-[49px] flex items-center cursor-pointer ml-auto rounded-full border border-[#dfdfdf] max-lg:mx-auto">
                 <input autoComplete="true" type="text" id="email" className="flex flex-grow flex-shrink-0 basis-[calc(100%-99px)] text-sm outline-0 bg-black/0 pt-[0.7rem] pb-[0.7rem] pl-[15px] text-white placeholder:text-white" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <button className="absolute text-black text-[13px] font-medium h-[43px] w-[99px] right-0.5 top-0.5 rounded-full bg-[#f4ac04]" type="submit" onClick={subScribeNewsLetter}>

@@ -5,36 +5,61 @@ import { getClientIpFromReq, isPublicIp, lookupGeoByIp } from "@lib/geo";
 
 export async function POST(req) {
   try {
-    const data = await req.json();
-    console.log(data, "my data");
+    const data = await req.json().catch(() => ({}));
     const referer = req.headers.get("referer") || "";
 
-    const recaptchaResponse = data.token;
-    const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
-
-    const params = new URLSearchParams();
-    params.append("secret", recaptchaSecretKey);
-    params.append("response", recaptchaResponse);
-
-    const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params.toString(),
-    });
-
-    const recaptchaJson = await recaptchaRes.json();
-
-    if (!recaptchaJson.success) {
+    // Turnstile token
+    const token = data?.token;
+    if (!token) {
       return NextResponse.json(
-        { success: false, message: "reCAPTCHA verification failed. Please try again." },
+        { success: false, message: "Missing Turnstile token." },
         { status: 400 }
       );
     }
 
-    // ✅ Real client IP from THIS request
-    const clientIp = getClientIpFromReq(req);
+    // Secret key
+    const secret = process.env.TURNSTILE_SECRET_KEY;
+    if (!secret) {
+      return NextResponse.json(
+        { success: false, message: "Server misconfigured (missing TURNSTILE_SECRET_KEY)." },
+        { status: 500 }
+      );
+    }
 
-    // ✅ Geo lookup server-side (no CORS)
+    // client IP (Cloudflare first)
+    const ip =
+      req.headers.get("cf-connecting-ip") ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      undefined;
+
+    // Verify Turnstile (server-side)
+    const formData = new FormData();
+    formData.append("secret", secret);
+    formData.append("response", token);
+    if (ip) formData.append("remoteip", ip);
+
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      { method: "POST", body: formData }
+    );
+
+    const verifyJson = await verifyRes.json().catch(() => null);
+
+    if (!verifyRes.ok || !verifyJson?.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Turnstile verification failed. Please try again.",
+          errors: verifyJson?.["error-codes"] ?? [],
+        },
+        { status: 400 }
+      );
+    }
+
+    // Real client IP
+    const clientIp = getClientIpFromReq(req) || ip;
+
+    // Geo lookup server-side (no CORS)
     let ipData = {
       query: clientIp || "Not Captured",
       city: "Not Captured",
@@ -46,13 +71,15 @@ export async function POST(req) {
       try {
         ipData = await lookupGeoByIp(clientIp);
       } catch (e) {
-        // don’t fail the lead/email just because geo failed
         console.error("Geo lookup error:", e?.message || e);
       }
     }
 
-    // Send email
-    const emailTemplate = freequoteTemplate({ ...data, url: referer }, ipData);
+    // Send email (don’t pass raw token into template)
+    const safeData = { ...data };
+    delete safeData.token;
+
+    const emailTemplate = freequoteTemplate({ ...safeData, url: referer }, ipData);
     await sendEmail(emailTemplate, data.subject);
 
     return NextResponse.json(

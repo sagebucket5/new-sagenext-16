@@ -5,33 +5,58 @@ import NewsLetterBdTemplate from "@/templates/emails/newsletter-bd-temp";
 
 export async function POST(req) {
   try {
-    const data = await req.json();
-    const referer = req.headers.get("referer");
-    console.log(referer, "newsletter data");
+    const data = await req.json().catch(() => ({}));
+    const referer = req.headers.get("referer") || "";
 
-    // ✅ reCAPTCHA validation
-    const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
-    const params = new URLSearchParams();
-    params.append("secret", recaptchaSecretKey);
-    params.append("response", data.token);
-
-    const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params.toString(),
-    });
-
-    const recaptchaJson = await recaptchaRes.json();
-
-    if (!recaptchaJson.success) {
-      console.error("reCAPTCHA verification failed:", recaptchaJson);
-      return NextResponse.json({
-        success: false,
-        message: "reCAPTCHA verification failed. Please try again.",
-      }, { status: 400 });
+    // Turnstile token
+    const token = data?.token;
+    if (!token) {
+      return NextResponse.json(
+        { success: false, message: "Missing Turnstile token." },
+        { status: 400 }
+      );
     }
 
-    // ✅ Compose and send emails
+    // Secret key
+    const secret = process.env.TURNSTILE_SECRET_KEY;
+    if (!secret) {
+      return NextResponse.json(
+        { success: false, message: "Server misconfigured (missing TURNSTILE_SECRET_KEY)." },
+        { status: 500 }
+      );
+    }
+
+    // client IP (Cloudflare first)
+    const ip =
+      req.headers.get("cf-connecting-ip") ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      undefined;
+
+    // Verify Turnstile (server-side)
+    const formData = new FormData();
+    formData.append("secret", secret);
+    formData.append("response", token);
+    if (ip) formData.append("remoteip", ip);
+
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      { method: "POST", body: formData }
+    );
+
+    const verifyJson = await verifyRes.json().catch(() => null);
+
+    if (!verifyRes.ok || !verifyJson?.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Turnstile verification failed. Please try again.",
+          errors: verifyJson?.["error-codes"] ?? [],
+        },
+        { status: 400 }
+      );
+    }
+
+    // Compose and send emails
     try {
       const adminTemplate = NewsLetterBdTemplate({ ...data, url: referer });
       const userTemplate = NewsletterUserTemplate({ ...data, url: referer });

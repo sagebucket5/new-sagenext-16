@@ -2,13 +2,16 @@
 import countryCodes from '@/lib/countryCodes';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import React, { useState, useRef } from 'react'
+// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { Turnstile } from "@marsidev/react-turnstile";
 import toast from 'react-hot-toast';
 
 const BuyNowForm = () => {
     const router = useRouter();
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    // const { executeRecaptcha } = useGoogleReCaptcha();
+    const turnstileRef = useRef(null);
+    const [tsToken, setTsToken] = useState(null);
     const [name, setName] = useState("");
     const [company, setCompany] = useState("");
     const [email, setEmail] = useState("");
@@ -67,17 +70,15 @@ const BuyNowForm = () => {
         setLoading(true);
         e.preventDefault();
 
-        if (!validateForm()) {
-            return;
-        }
-        setIsSubmit(true);
-        const token = await executeRecaptcha('submit');
+        if (isSubmit) return;
+        if (!validateForm()) return;
 
-        if (!token) {
-            toast.error("Recaptcha verification failed");
-            setIsSubmit(false);
+        if (!tsToken) {
+            toast.error("Turnstile verification missing. Please try again.");
             return;
         }
+
+        setIsSubmit(true);
 
         const data = {
             name,
@@ -88,7 +89,7 @@ const BuyNowForm = () => {
             noOfUsers,
             selectedCountryCode,
             hearAboutUs,
-            token,
+            token: tsToken,
             formName: "Buy Now",
             subject: "Buy Now Quickbooks",
             description: `<em>Buy Now Quickbooks  | Buy Now page</em>`,
@@ -96,35 +97,36 @@ const BuyNowForm = () => {
         };
 
         try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 32000); // 32 seconds
-
             const res = await fetch("/api/api-email-post", {
                 method: "POST",
                 body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                signal: controller.signal,
+                headers: { 'Content-Type': 'application/json', },
             });
 
-            clearTimeout(timeoutId);
+            const resData = await res.json().catch(() => ({}));
 
-            const resData = await res.json();
-            if (resData.success) {
-                toast.success("Thank you, Form Submitted Successfully");
-                router.push(`/thank-you/free-quote`);
-            } else {
-                toast.error(resData.message || "Form submission failed");
+            if (!res.ok || !resData?.success) {
+                throw new Error(resData?.message || "Form submission failed");
             }
+
+            toast.success("Thank you, Form Submitted Successfully");
+
+            turnstileRef.current?.reset?.();
+            setTsToken(null);
+            router.push("/thank-you/free-quote");
+
         } catch (error) {
             if (error.name === 'AbortError') {
                 toast.error("Request timed out. Please try again.");
             } else {
                 toast.error("An error occurred while submitting the form.");
             }
+            turnstileRef.current?.reset?.();
+            setTsToken(null);
+            setLoading(false);
         } finally {
             setIsSubmit(false);
+            setLoading(false);
         }
     };
     return (
@@ -302,6 +304,13 @@ const BuyNowForm = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <Turnstile
+                                    ref={turnstileRef}
+                                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                                    onSuccess={(token) => setTsToken(token)}
+                                    onExpire={() => setTsToken(null)}
+                                    onError={() => setTsToken(null)}
+                                />
                                 <button id="nextBtn" className="inline-flex gap-2 btn-get-pricing" disabled={loading}>
                                     {loading ? "Loading..." : "Buy Now"}
                                     <img

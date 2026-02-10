@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useState, useRef } from "react";
+// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { toast } from "react-hot-toast";
 import { IoMdStar, IoMdStarHalf } from "react-icons/io";
 import applications from "@/lib/applications";
@@ -12,7 +13,9 @@ import ListCountryCodes from "@/lib/countryCodes";
 import { AiOutlineLoading } from "react-icons/ai";
 
 const ChristmasHero = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef(null);
+  const [tsToken, setTsToken] = useState(null);
   const [phone, setPhone] = useState("");
   const [countryCodes, setCountryCodes] = useState("");
   const [company, setCompany] = useState("");
@@ -59,18 +62,14 @@ const ChristmasHero = () => {
   const handleSubmitCustmizedHosting = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
+    if (isSubmit) return;
+    if (!validateForm()) return;
+    if (!tsToken) {
+      toast.error("Turnstile verification missing. Please try again.");
       return;
     }
 
     setIsSubmit(true);
-    const token = await executeRecaptcha("submit");
-    if (!token) {
-      toast.error("Recaptcha verification failed");
-      setIsSubmit(false);
-      return;
-    }
-
     const data = {
       name,
       email,
@@ -81,7 +80,7 @@ const ChristmasHero = () => {
       selectedCountryCode: countryCodes,
       hearAboutUs,
       hearAboutUsOther: hearAboutUs === "Other" ? hearAboutUsOther : "",
-      token,
+      token: tsToken,
       pathname,
       subject: "Get Customized Hosting Solutions",
       description: `<em>Get Customized Hosting Solutions | ${pathname}</em>`,
@@ -95,15 +94,23 @@ const ChristmasHero = () => {
         headers: { "Content-Type": "application/json" },
       });
 
-      const resData = await res.json();
-      if (resData.success) {
-        toast.success("Thank you, Form Submitted Successfully");
-        router.push("thank-you/free-quote");
-      } else {
-        toast.error(resData.message || "Form submission failed");
+      const resData = await res.json().catch(() => ({}));
+
+      if (!res.ok || !resData?.success) {
+        throw new Error(resData?.message || "Form submission failed");
       }
+
+      toast.success("Thank you, Form Submitted Successfully");
+
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
+      router.push("/thank-you/free-quote");
+
     } catch (error) {
-      toast.error("An error occurred while submitting the form.");
+      toast.error(error?.message || "An error occurred while submitting the form.");
+
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
     } finally {
       setIsSubmit(false);
     }
@@ -341,6 +348,13 @@ const ChristmasHero = () => {
                 </Link>
                 .
               </p>
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                onSuccess={(token) => setTsToken(token)}
+                onExpire={() => setTsToken(null)}
+                onError={() => setTsToken(null)}
+              />
               <div className="pb-3 place-items-center">
                 <button
                   type="submit"

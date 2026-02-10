@@ -1,13 +1,16 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { Turnstile } from "@marsidev/react-turnstile";
 import countryCodes from '@/lib/countryCodes';
 import { toast } from 'react-hot-toast';
 
 const TrialHeroWithForm = () => {
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    // const { executeRecaptcha } = useGoogleReCaptcha();
+    const turnstileRef = useRef(null);
+    const [tsToken, setTsToken] = useState(null);
     const [name, setName] = useState("");
     const [company, setCompany] = useState("");
     const [email, setEmail] = useState("");
@@ -23,7 +26,7 @@ const TrialHeroWithForm = () => {
     const [loading, setLoading] = useState(false);
     const [isSubmit, setIsSubmit] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-      const router = useRouter();
+    const router = useRouter();
 
     const handleCountryChange = (e) => {
         const code = e.target.value;
@@ -69,19 +72,16 @@ const TrialHeroWithForm = () => {
     const handleTrialSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateForm()) {
+        if (loading) return;
+
+        if (!validateForm()) return;
+
+        if (!tsToken) {
+            toast.error("Turnstile verification missing. Please try again.");
             return;
         }
 
-        setIsSubmit(true);
         setLoading(true);
-        const token = await executeRecaptcha("submit");
-
-        if (!token) {
-            toast.error("Recaptcha verification failed");
-            setIsSubmit(false);
-            return;
-        }
 
         const data = {
             name,
@@ -95,7 +95,7 @@ const TrialHeroWithForm = () => {
             application,
             appSerialKey,
             desireUserName,
-            token,
+            token: tsToken,
             formName: "Trial",
             page: "Trial",
             subject: "Free Trial",
@@ -108,17 +108,29 @@ const TrialHeroWithForm = () => {
                 headers: { "Content-Type": "application/json" },
             });
 
-            const resData = await res.json();
-            if (resData.success) {
-                toast.success("Thank you, Form Submitted Successfully");
-                router.push(`thank-you/trial`);
-            } else {
-                toast.error(resData.message || "Form submission failed");
+            const resData = await res.json().catch(() => ({}));
+
+            if (!res.ok || !resData?.success) {
+                throw new Error(resData?.message || "Form submission failed");
             }
+
+            toast.success("Thank you, Form Submitted Successfully");
+
+            turnstileRef.current?.reset?.();
+            setTsToken(null);
+            router.push("/thank-you/free-quote");
         } catch (error) {
             toast.error("An error occurred while submitting the form.");
+            toast.error(error?.message || "An error occurred while submitting the form.");
+
+            turnstileRef.current?.reset?.();
+            setTsToken(null);
+            setLoading(false);
+
         } finally {
             setIsSubmit(false);
+            setLoading(false);
+
         }
     };
     return (
@@ -487,6 +499,13 @@ const TrialHeroWithForm = () => {
                                     </div>
                                 </div>
                             </div>
+                            <Turnstile
+                                ref={turnstileRef}
+                                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                                onSuccess={(token) => setTsToken(token)}
+                                onExpire={() => setTsToken(null)}
+                                onError={() => setTsToken(null)}
+                            />
                             <div className="mx-5 mt-3 text-center">
                                 <button
                                     id="nextBtn"

@@ -1,7 +1,8 @@
 "use client";
 import styles2 from "@styles/pages/offer.module.css";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import React, { useState } from "react";
+// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { Turnstile } from "@marsidev/react-turnstile";
+import React, { useState, useRef } from "react";
 import { BiPhone } from "react-icons/bi";
 import { IoMdStarHalf, IoMdStar } from "react-icons/io";
 import Countrycodes from "@/lib/countryCodes";
@@ -11,7 +12,9 @@ import { toast } from "react-hot-toast";
 import Link from "next/link";
 
 const BestProviderHero = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef(null);
+  const [tsToken, setTsToken] = useState(null);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+1");
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
@@ -67,17 +70,14 @@ const BestProviderHero = () => {
   const handleSubmitOffer = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
+    if (isSubmit) return;
+    if (!validateForm()) return;
+    if (!tsToken) {
+      toast.error("Turnstile verification missing. Please try again.");
       return;
     }
 
     setIsSubmit(true);
-    const token = await executeRecaptcha("submit");
-    if (!token) {
-      toast.error("Recaptcha verification failed");
-      setIsSubmit(false);
-      return;
-    }
 
     const data = {
       name,
@@ -87,7 +87,7 @@ const BestProviderHero = () => {
       application,
       noOfUsers,
       selectedCountryCode,
-      token,
+      token: tsToken,
       pathname,
       subject: "Get Customized Hosting Solutions",
       description: `<em>Get Customized Hosting Solutions | Offer Page </em>`,
@@ -100,15 +100,22 @@ const BestProviderHero = () => {
         headers: { "Content-Type": "application/json" },
       });
 
-      const resData = await res.json();
-      if (resData.success) {
-        toast.success("Thank you, Form Submitted Successfully");
-        router.push("thank-you/free-quote");
-      } else {
-        toast.error(resData.message || "Form submission failed");
+      const resData = await res.json().catch(() => ({}));
+
+      if (!res.ok || !resData?.success) {
+        throw new Error(resData?.message || "Form submission failed");
       }
+
+      toast.success("Thank you, Form Submitted Successfully");
+
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
+      router.push("/thank-you/free-quote");
     } catch (error) {
-      toast.error("An error occurred while submitting the form.");
+
+      toast.error(error?.message || "An error occurred while submitting the form.");
+      turnstileRef.current?.reset?.();
+      setTsToken(null);
     } finally {
       setIsSubmit(false);
     }
@@ -370,6 +377,13 @@ const BestProviderHero = () => {
                   required
                   className="outline-none text-[17px] border-b border-[#E2E2E2] p-[8px_12px] text-[#585858] focus:border-[#2355FA] focus:ring-1 focus:ring-[#2355FA] transition-all duration-300"
                   onChange={(e) => setEmail(e.target.value)}
+                />
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                  onSuccess={(token) => setTsToken(token)}
+                  onExpire={() => setTsToken(null)}
+                  onError={() => setTsToken(null)}
                 />
                 <button
                   type="submit"
