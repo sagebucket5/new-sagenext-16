@@ -121,12 +121,7 @@ function FishbowlHosting() {
             <section className="py-10">
                 <div className="container mx-auto">
                     <h2 className="text-center px-2">What Can You Expect From Us</h2>
-                    <ExpertCard arr={[
-                        { title: "Efficiently Manage Inventory", description: "Our Fishbowl hosting allows you to effectively streamline your inventories and manage your stock levels, track sales, and avoid stockout scenarios. You get enhanced productivity and efficiency with Fishbowl hosting ensuring your business success. Your business becomes scalable when your inventories are efficiently managed with maximum flexibility.", image: "/assets/images/fishbowl/inventory.webp" },
-                        { title: "Customizable Hosting Solutions", description: "Sagenext offers customizable Fishbowl hosting plans as per your business needs and requirements. With customizable hosting solutions, you can take your business to new growth levels and drive productivity with ease. Whether you need monthly plans or half-yearly, Sagenext can provide you with the right hosting solutions. ", image: "/assets/images/fishbowl/host.webp", },
-                        { title: "Productively Stay Connected Anytime", description: "You can effectively manage your Fishbowl software with remote access. Be it your home, office, or staycation, remote hosting allows you to stay connected with your teammates and clients seamlessly. With remote inventory management options, your business is always at the forefront.", image: "/assets/images/fishbowl/any.webp", },
-                        { title: "Enhanced Technical Support & Collaboration", description: "Our Fishbowl hosting services are designed to offer you round-the-clock technical assistance. So that you can have uninterrupted collaboration across teams and devices. With unbreakable server support and seamless connection with dedicated data centers ensure your inventories are managed and tracked smoothly.", image: "/assets/images/fishbowl/tech.webp", },
-                    ]} />
+                    <ExpertCard/>
                 </div>
             </section>
             <section className="py-10 mb-8">

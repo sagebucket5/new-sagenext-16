@@ -14,11 +14,9 @@ import FormModal from "@/components/FormModal";
 import FAQ from "@/components/utils/FAQ";
 import Testimonial from "@/components/utils/Testimonial";
 import BenefitsV2 from "@/components/quickbooks/BenefitsV2";
-import QuickBooksVersion2 from "@/components/quickbooks/VersionsV2";
 import WhySagenextQB from "@/components/quickbooks/WhySagenextQB";
 import QBdiff from "@/components/quickbooks/QBdiff";
 import ExploreBlogs from "@/components/quickbooks/ExploreBlogs";
-import Script from "next/script";
 
 export const dynamic = "force-static";
 
@@ -68,27 +66,27 @@ const QuickbooksHosting = () => {
   return (
     <>
       <QbHero
-        subtext="Intuit QuickBooks Hosting | Secure Cloud Accounting Solutions with 24/7 Expert Support"
-        title="Authorized QuickBooks Hosting"
+        subtext="Intuit QB Hosting | Secure Cloud Accounting Solutions with 24/7 Expert Support"
+        title="QuickBooks Hosting on Cloud"
         listDisc={[
           {
             name: "99.9% Uptime",
-            src: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/uptime.svg",
+            src: "/assets/images/qb-hosting/uptime.svg",
             alt: "Uptime",
           },
           {
             name: "Enterprise-grade Security",
-            src: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/shield.svg",
+            src: "/assets/images/qb-hosting/shield.svg",
             alt: "Security",
           },
           {
             name: "Reliability and Flexibility",
-            src: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/check.svg",
+            src: "/assets/images/qb-hosting/check.svg",
             alt: "Reliability",
           },
           {
             name: "Intuit Authorized QSP",
-            src: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/intuit.svg",
+            src: "/assets/images/qb-hosting/intuit.svg",
             alt: "Intuit Authorized",
           },
         ]}
@@ -110,7 +108,7 @@ const QuickbooksHosting = () => {
           </>
         }
         required
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-hosting.webp"
+        BannerImage="/assets/images/banner/quickbooks/qb-hosting.webp"
       />
 
       <section
@@ -145,20 +143,13 @@ const QuickbooksHosting = () => {
               </p>
             </aside>
 
-            <Image
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/qbBenefits.png"
-              alt="qbBenefits"
-              height={446}
-              width={419}
+            <Image src="/assets/images/qb-hosting/qbBenefits.png" alt="qbBenefits" height={446} width={419}
             />
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-5 *:tracking-[1%] *:[&>p]:max-w-[134px] *:[&>p]:w-full *:leading-[139%] relative lg:mt-20">
             <div className="grid place-items-center gap-5">
-              <Image
-                src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/benefits-1.svg"
-                alt="qbBenefits" height={45} width={45}
-              />
+              <Image src="/assets/images/qb-hosting/benefits-1.svg" alt="qbBenefits" height={45} width={45} />
 
               <p>Anywhere Anytime Access</p>
             </div>
@@ -167,7 +158,7 @@ const QuickbooksHosting = () => {
 
             <div className="grid place-items-center gap-5">
               <Image
-                src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/benefits-2.svg"
+                src="/assets/images/qb-hosting/benefits-2.svg"
                 alt="qbBenefits" height={45} width={45}
               />
 
@@ -178,7 +169,7 @@ const QuickbooksHosting = () => {
 
             <div className="grid place-items-center gap-5">
               <Image
-                src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/benefits-3.svg"
+                src="/assets/images/qb-hosting/benefits-3.svg"
                 alt="qbBenefits" height={45} width={45}
               />
 
@@ -189,7 +180,7 @@ const QuickbooksHosting = () => {
 
             <div className="grid place-items-center gap-5">
               <Image
-                src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/benefits-4.svg"
+                src="/assets/images/qb-hosting/benefits-4.svg"
                 alt="qbBenefits" height={45} width={45}
               />
 
@@ -200,7 +191,7 @@ const QuickbooksHosting = () => {
 
             <div className="grid place-items-center gap-5">
               <Image
-                src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/benefits-5.svg"
+                src="/assets/images/qb-hosting/benefits-5.svg"
                 alt="qbBenefits" height={45} width={45}
               />
 
@@ -211,7 +202,7 @@ const QuickbooksHosting = () => {
 
             <div className="grid place-items-center gap-5">
               <Image
-                src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/benefits-6.svg"
+                src="/assets/images/qb-hosting/benefits-6.svg"
                 alt="qbBenefits" height={45} width={45}
               />
               <p>Top-notch Data Security</p>
@@ -220,7 +211,206 @@ const QuickbooksHosting = () => {
         </div>
       </section>
 
-      <QuickBooksVersion2 />
+      {/* <!-- QuickBooks Versions Section --> */}
+      <div id="Versions" className="relative pt-20">
+        <div className="container mx-auto text-center space-y-10">
+          <div className="flex flex-col gap-6 items-center">
+            <span className="bg-[#71AAFF2E] text-[#31509F] font-semibold text-[11px] px-6 py-2 rounded-full">
+              VERSIONS
+            </span>
+
+            <div className="flex flex-col gap-4 max-w-5xl">
+              <h2 className="text-[32px] leading-[100%] font-normal">
+                <strong>Which Versions of QuickBooks Do We Host?</strong>
+              </h2>
+
+              <span className="font-semibold text-[#494D52]">
+                Sagenext Cloud Servers can Accommodate All QuickBooks Desktop Versions
+              </span>
+
+              <p className="text-[17px] text-[#6D6D6D]">
+                Host all versions and editions of Windows-based QuickBooks program in a
+                secure, multi-user cloud environment. Whether you are using the US,
+                Canada, or the UK edition of QB Enterprise, Premier, Pro, or POS, you
+                can get customised, affordable monthly, half-annually, and annual
+                QuickBooks hosting plans as per your specific requirements.
+              </p>
+            </div>
+          </div>
+
+          {/* <!-- Version Cards Grid --> */}
+          <div className="grid lg:grid-cols-3 lg:grid-rows-2 gap-5">
+
+            <Link href="/quickbooks-enterprise-hosting"
+              className="flex flex-col gap-5 items-center justify-between rounded-xl overflow-hidden shadow-lg
+                hover:-translate-y-2.5 transition-transform group p-4 min-h-[223px]
+                col-span-1 row-span-2">
+
+              <Image
+                src="/assets/images/qb-versions/qb-enterprise-2.png"
+                alt="QuickBooks Enterprise Hosting"
+                className="w-[90%] h-[220px] object-contain"
+                loading="lazy"
+                height={250} width={250}
+              />
+
+              <div className="flex flex-col h-full justify-between text-left w-full">
+                <div className="space-y-2">
+                  <h3 className="!text-lg leading-[132%] !tracking-[1%] !font-bold text-[#373B59]! mb-1">
+                    QuickBooks Enterprise Hosting
+                  </h3>
+
+                  <p className="!text-sm tracking-[1%] text-[#747474]">
+                    Hosting QuickBooks Enterprise lets you take advantage of countless
+                    benefits with 24×7 support.
+                  </p>
+                </div>
+
+                <div
+                  className="mt-4 flex items-center justify-center gap-2 border border-[#11203331]
+                   rounded-lg py-2 text-[11px] font-medium
+                   group-hover:bg-[#0453AD] group-hover:text-white transition-all">
+                  Get Started →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/quickbooks-pro-hosting"
+              className="flex max-lg:flex-col gap-5 items-center justify-between rounded-xl overflow-hidden shadow-lg
+                hover:-translate-y-2.5 transition-transform group p-4">
+
+              <Image
+                src="/assets/images/qb-versions/qb-pro-2.png"
+                alt="QuickBooks Pro Hosting"
+                className="w-[142px] h-full object-contain"
+                loading="lazy"
+                height={200} width={200}
+              />
+
+              <div className="flex flex-col justify-between h-full text-left">
+                <div className="space-y-2">
+                  <h3 className="!text-lg leading-[132%] !tracking-[1%] !font-bold text-[#373B59]! mb-1">
+                    QuickBooks Pro Hosting
+                  </h3>
+
+                  <p className="!text-sm tracking-[1%] text-[#747474]">
+                    QuickBooks Pro Hosting allows users to run operations remotely.
+                    Ideal for small businesses and accounting firms.
+                  </p>
+                </div>
+
+                <div
+                  className="mt-4 flex items-center justify-center gap-2 border border-[#11203331]
+                   rounded-lg py-2 text-[11px] font-medium
+                   group-hover:bg-[#0453AD] group-hover:text-white transition-all">
+                  Get Started →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/quickbooks-accountant-hosting"
+              className="flex max-lg:flex-col gap-5 items-center justify-between rounded-xl overflow-hidden shadow-lg
+                hover:-translate-y-2.5 transition-transform group p-4">
+
+              <Image
+                src="/assets/images/qb-versions/qb-accountant.png"
+                alt="QuickBooks Accountant Hosting"
+                className="w-[142px] h-full object-contain"
+                loading="lazy"
+                height={200} width={200}
+              />
+
+              <div className="flex flex-col justify-between h-full text-left">
+                <div className="space-y-2">
+                  <h3 className="!text-lg leading-[132%] !tracking-[1%] !font-bold text-[#373B59]! mb-1">
+                    QuickBooks Accountant Hosting
+                  </h3>
+
+                  <p className="!text-sm tracking-[1%] text-[#747474] line-clamp-4">
+                    QuickBooks accountant hosting enables accounting firms &
+                    accountants to access the software seamlessly from anywhere,
+                    at any time.
+                  </p>
+                </div>
+
+                <div
+                  className="mt-4 flex items-center justify-center gap-2 border border-[#11203331]
+                   rounded-lg py-2 text-[11px] font-medium
+                   group-hover:bg-[#0453AD] group-hover:text-white transition-all">
+                  Get Started →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/quickbooks-premier-hosting"
+              className="flex max-lg:flex-col gap-5 items-center justify-between rounded-xl overflow-hidden shadow-lg
+                hover:-translate-y-2.5 transition-transform group p-4">
+
+              <Image
+                src="/assets/images/qb-versions/qb-premier-2.png"
+                alt="QuickBooks Premier Hosting"
+                className="w-[142px] h-full object-contain"
+                loading="lazy"
+                height={200} width={200}
+              />
+
+              <div className="flex flex-col justify-between h-full text-left">
+                <div className="space-y-2">
+                  <h3 className="!text-lg leading-[132%] !tracking-[1%] !font-bold text-[#373B59]! mb-1">
+                    QuickBooks Premier Hosting
+                  </h3>
+
+                  <p className="!text-sm tracking-[1%] text-[#747474]">
+                    Experience smart, cloud-based QB Premier with our SSAE-18
+                    Type II certified data centers.
+                  </p>
+                </div>
+
+                <div
+                  className="mt-4 flex items-center justify-center gap-2 border border-[#11203331]
+                   rounded-lg py-2 text-[11px] font-medium
+                   group-hover:bg-[#0453AD] group-hover:text-white transition-all">
+                  Get Started →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/quickbooks-pos-hosting"
+              className="flex max-lg:flex-col gap-5 items-center justify-between rounded-xl overflow-hidden shadow-lg
+                hover:-translate-y-2.5 transition-transform group p-4">
+
+              <Image
+                src="/assets/images/qb-versions/qb-pos-2.png"
+                alt="QuickBooks POS Hosting"
+                className="w-[142px] h-full object-contain"
+                loading="lazy"
+                height={200} width={200}
+              />
+
+              <div className="flex flex-col justify-between h-full text-left">
+                <div className="space-y-2">
+                  <h3 className="!text-lg leading-[132%] !tracking-[1%] !font-bold text-[#373B59]! mb-1">
+                    QuickBooks POS Hosting
+                  </h3>
+
+                  <p className="!text-sm tracking-[1%] text-[#747474]">
+                    Hosted POS solutions offer maximum freedom and flexibility
+                    to organize your retail business.
+                  </p>
+                </div>
+
+                <div
+                  className="mt-4 flex items-center justify-center gap-2 border border-[#11203331]
+                   rounded-lg py-2 text-[11px] font-medium
+                   group-hover:bg-[#0453AD] group-hover:text-white transition-all">
+                  Get Started →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+
 
       <QBHostingPricing />
 
@@ -254,7 +444,7 @@ const QuickbooksHosting = () => {
         <div className="container mx-auto mt-8 lg:mt-16 lg:grid lg:grid-cols-12">
           <div className="col-span-4 space-y-4 border-t-4 border border-[#CAD2D7] border-t-[#042E6A] p-9 *:[&>h3]:text-xl! *:[&>h3]:text-[#464646]!">
             <Image
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/security.svg"
+              src="/assets/images/qb-hosting/security.svg"
               alt="Reduced Cost of Ownership" width={40} height={40}
             />
 
@@ -275,7 +465,7 @@ const QuickbooksHosting = () => {
           </div>
           <div className="col-span-4 space-y-4 border-t-4 border border-[#CAD2D7] border-t-[#F4AC04] p-9 *:[&>h3]:text-xl! *:[&>h3]:text-[#464646]!">
             <Image
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/dollar-2.svg"
+              src="/assets/images/qb-hosting/dollar-2.svg"
               alt="Reduced Cost of Ownership" width={40} height={41}
             />
             <div className="grid">
@@ -290,7 +480,7 @@ const QuickbooksHosting = () => {
           </div>
           <div className="col-span-4 space-y-4 border-t-4 border border-[#CAD2D7] border-t-[#042E6A] p-9 *:[&>h3]:text-xl! *:[&>h3]:text-[#464646]!">
             <Image
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/collab.svg"
+              src="/assets/images/qb-hosting/collab.svg"
               alt="Reduced Cost of Ownership" width={40} height={40}
             />
 
@@ -307,7 +497,7 @@ const QuickbooksHosting = () => {
           </div>
           <div className="col-span-5 space-y-4 border-t-4 border border-[#CAD2D7] border-t-[#F4AC04] p-9 *:[&>h3]:text-xl! *:[&>h3]:text-[#464646]!">
             <Image
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/freeTrial.svg"
+              src="/assets/images/qb-hosting/freeTrial.svg"
               alt="Reduced Cost of Ownership" width={100} height={50}
             />
 
@@ -324,7 +514,7 @@ const QuickbooksHosting = () => {
           </div>
           <div className="col-span-7 space-y-4 border-t-4 border border-[#CAD2D7] border-t-[#042E6A] p-9 *:[&>h3]:text-xl! *:[&>h3]:text-[#464646]!">
             <Image
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/shield-2.svg"
+              src="/assets/images/qb-hosting/shield-2.svg"
               alt="Reduced Cost of Ownership" width={38} height={38}
             />
 
@@ -367,31 +557,14 @@ const QuickbooksHosting = () => {
         </div>
 
         <Image
-          src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/offerImg-1.png"
+          src="/assets/images/qb-hosting/offerImg-1.png"
           alt="offerImg" height={434} width={582} className="h-full max-lg:hidden"
         />
       </section>
 
       <WhySagenextQB />
-
       <BenefitsV2 />
-
-      <section id="Add Ons" className="my-20">
-        <QbAddsOns
-          heading="Integrate 200+ QuickBooks Add-ons"
-          heading2="Make the Most of Cloud-Based QuickBooks"
-          mainText={`Add more power, features, and
-              functionality to your favourite accounting
-              software by integrating your desired <a href="https://www.thesagenext.com/blog/quickbooks-add-ons-list"  target="_blank">200+ QuickBooks Add-on</a> on
-              the same cloud server.
-              Hundreds of CPAs, accountants, and
-              small businesses rely on third-party tools to
-              enhance their productivity and give their practice a
-              competitive edge.`}
-          src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/QBAddons2.webp"
-          alt="Integrate 200+ QuickBooks Add-ons"
-        />
-      </section>
+      <QbAddsOns />
 
       {/* new offer Banner */}
       <section className="bg-[#114674] h-[434px] lg:h-[377px] overflow-hidden flex items-center justify-between lg:px-[10vw]">
@@ -423,7 +596,7 @@ const QuickbooksHosting = () => {
         </div>
 
         <Image
-          src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/offerImg-2.png"
+          src="/assets/images/qb-hosting/offerImg-2.png"
           alt="offerImg"
           width={758}
           height={524}
@@ -440,12 +613,12 @@ const QuickbooksHosting = () => {
               <p className="text-[26px] whitespace-nowrap flex items-center gap-3">
                 Partnered with
                 <Image loading="lazy"
-                  src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/ms.png"
+                  src="/assets/images/qb-hosting/ms.png"
                   alt="microsoft" width={100} height={28} className="ml-2 w-[100px]"
                 />
                 and
                 <Image loading="lazy"
-                  src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/mcafee.png"
+                  src="/assets/images/qb-hosting/mcafee.png"
                   alt="mcafee" width={100} height={20} className="ml-2 w-[100px]"
                 />
                 to Deliver <span className="text-[26px] font-semibold">World-class Infrastructure</span> and{" "}
@@ -462,13 +635,13 @@ const QuickbooksHosting = () => {
                 Partnered with
                 <Image
                   loading="lazy"
-                  src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/ms.png"
+                  src="/assets/images/qb-hosting/ms.png"
                   alt="microsoft" width={100} height={28} className="ml-2 w-[100px]"
                 />
                 and
                 <Image
                   loading="lazy"
-                  src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/mcafee.png"
+                  src="/assets/images/qb-hosting/mcafee.png"
                   alt="mcafee" width={100} height={20} className="ml-2 w-[100px]"
                 />
                 to Deliver <span className="text-[26px] font-semibold">World-class Infrastructure</span> and{" "}
@@ -479,8 +652,6 @@ const QuickbooksHosting = () => {
         </div>
       </section>
 
-
-      {/* QB online vs desktop difference */}
       <QBdiff />
 
       <section id="Data Protection" className="bg-white">
@@ -497,13 +668,7 @@ const QuickbooksHosting = () => {
                   For 360° Data Protection
                 </span>
 
-                <p
-                  className="
-              text-black text-[16px] font-normal leading-[25px] text-center
-              px-[5.5rem] py-4
-              max-md:px-0
-            "
-                >
+                <p className="text-black text-[16px] font-normal leading-[25px] text-center px-[5.5rem] py-4 max-md:px-0">
                   Ensuring data integrity and security remains at the forefront of our
                   cloud operations. We have implemented enterprise-grade security
                   measures to protect your hosted QuickBooks Desktop Program and
@@ -514,83 +679,40 @@ const QuickbooksHosting = () => {
 
               <div className="container grid grid-cols-2 md:grid-cols-7 gap-2 mx-auto">
                 <div className='flex flex-col gap-2 text-center justify-center items-center'>
-                  <Image
-                    src="/assets/images/qb-hosting/carousel1 (1).svg"
-                    alt="End-To-End Encryption"
-                    loading="lazy"
-                    className="w-20"
-                    height={40}
-                    width={40}
-                  />
+                  <Image src="/assets/images/qb-hosting/carousel1 (1).svg" alt="End-To-End Encryption" loading="lazy" className="w-20" height={40} width={40}/>
                   <p>
                     <Link href="/what-is-end-to-end-encryption" className="text-blue-500"> End-To-End <br /> Encryption</Link>
                   </p>
                 </div>
                 <div className='flex flex-col gap-2 text-center justify-center items-center'>
-                  <Image
-                    src="/assets/images/qb-hosting/carousel2 (1).svg"
-                    alt="Multi-Factor Authentication"
-                    loading="lazy"
-                    className="w-20"
-                    height={40}
-                    width={40}
+                  <Image src="/assets/images/qb-hosting/carousel2 (1).svg" alt="Multi-Factor Authentication" loading="lazy" className="w-20" height={40} width={40}
                   />
                   <p>Multi-Factor Authentication</p>
                 </div>
                 <div className='flex flex-col gap-2 text-center justify-center items-center'>
-                  <Image
-                    src="/assets/images/qb-hosting/carousel3 (1).svg"
-                    alt="Antivirus and Anti-malware"
-                    loading="lazy"
-                    className="w-20"
-                    height={40}
-                    width={40}
+                  <Image src="/assets/images/qb-hosting/carousel3 (1).svg" alt="Antivirus and Anti-malware" loading="lazy" className="w-20" height={40} width={40}
                   />
                   <p>Antivirus and Anti-malware </p>
                 </div>
                 <div className='flex flex-col gap-2 text-center justify-center items-center'>
-                  <Image
-                    src="/assets/images/qb-hosting/carousel4 (1).svg"
-                    alt="Network Firewalls"
-                    loading="lazy"
-                    className="w-20"
-                    height={40}
-                    width={40}
+                  <Image src="/assets/images/qb-hosting/carousel4 (1).svg" alt="Network Firewalls" loading="lazy" className="w-20" height={40} width={40}
                   />
                   <p>
                     Network <br /> Firewalls
                   </p>
                 </div>
                 <div className='flex flex-col gap-2 text-center justify-center items-center'>
-                  <Image
-                    src="/assets/images/qb-hosting/carousel5 (1).svg"
-                    alt="24x7 Network Monitoring"
-                    loading="lazy"
-                    className="w-20"
-                    height={40}
-                    width={40}
+                  <Image src="/assets/images/qb-hosting/carousel5 (1).svg" alt="24x7 Network Monitoring" loading="lazy" className="w-20" height={40} width={40}
                   />
                   <p>24x7 Network Monitoring</p>
                 </div>
                 <div className='flex flex-col gap-2 text-center justify-center items-center'>
-                  <Image
-                    src="/assets/images/qb-hosting/carousel7 (2).svg"
-                    alt="Automated Data Backup"
-                    loading="lazy"
-                    className="w-20"
-                    height={40}
-                    width={40}
+                  <Image src="/assets/images/qb-hosting/carousel7 (2).svg" alt="Automated Data Backup" loading="lazy" className="w-20" height={40} width={40}
                   />
                   <p>Automated Data Backup</p>
                 </div>
                 <div className='flex flex-col gap-2 text-center justify-center items-center'>
-                  <Image
-                    src="/assets/images/qb-hosting/carousel6 (2).svg"
-                    alt="Regular Security Updates"
-                    loading="lazy"
-                    className="w-20"
-                    height={40}
-                    width={40}
+                  <Image src="/assets/images/qb-hosting/carousel6 (2).svg" alt="Regular Security Updates" loading="lazy" className="w-20" height={40} width={40}
                   />
                   <p>Regular Security Updates</p>
                 </div>
@@ -599,37 +721,33 @@ const QuickbooksHosting = () => {
           </div>
         </div>
       </section>
-
-
-
-
-      {/* Explore blogs section */}
       <ExploreBlogs />
 
       <section className="mb-10">
         <Testimonial />
       </section>
+
       <DynamicStepper
         heading="Steps to Host QuickBooks Desktop on Cloud"
         subheading="The Sagenext Proven Process"
         steps={[
           {
-            icon: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/step-1.svg",
+            icon: "/assets/images/qb-hosting/step-1.svg",
             heading: `Pick Your Plan:`,
             desc: "A user's plan should be picked based on the version of QuickBooks and the number of users for the hosting.",
           },
           {
-            icon: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/steps2.svg",
+            icon: "/assets/images/qb-hosting/steps2.svg",
             heading: `Migration Time`,
             desc: "Our specialists will transfer your data safely and will set up your cloud environment.",
           },
           {
-            icon: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/steps3.svg",
+            icon: "/assets/images/qb-hosting/steps3.svg",
             heading: `Log In & Train`,
             desc: `Log in using the device that you prefer. We offer an orientation to help your team get comfortable with new surroundings.`,
           },
           {
-            icon: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/step-4.svg",
+            icon: "/assets/images/qb-hosting/step-4.svg",
             heading: `Going Live &</br>Support`,
             desc: `Commence your work in the newly flexible environment with the support that is always available and just a click away.</br></br>`,
           },
@@ -637,7 +755,7 @@ const QuickbooksHosting = () => {
         variant="2"
       />
 
-      <div className="w-full mx-auto text-center place-items-center -mt-16 py-16 grid gap-10 bg-[url(https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/qb-hosting/banner-2.png)] bg-cover">
+      <div className="w-full mx-auto text-center place-items-center -mt-16 py-16 grid gap-10 bg-[url(/assets/images/qb-hosting/banner-2.png)] bg-cover">
         <h2 className="w-4/5 lg:w-[50%] text-[#0C336B]!">
           Get in touch with our{" "}
           <span className="italic text-[#0C336B]/70">
@@ -645,17 +763,11 @@ const QuickbooksHosting = () => {
           </span>{" "}
           Plan today
         </h2>
-        <FormModal
-          text="Request A Free Quote"
-          customClass="w-fit!"
-        />
+        <FormModal text="Request A Free Quote" customClass="w-fit!" />
       </div>
 
       <section className="my-7">
-        <Qbproduct
-          BtnLink="/buy-now"
-          Btntext="Buy Quickbooks License"
-        />
+        <Qbproduct BtnLink="/buy-now" Btntext="Buy Quickbooks License" />
       </section>
       <SkillSection />
       <Awards />
@@ -674,7 +786,7 @@ const QuickbooksHosting = () => {
             "name": "Sagenext",
             "alternateName": "Sagenext Hosting",
             "url": "https://www.thesagenext.com/",
-            "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "sameAs": [
               "https://www.facebook.com/sagenextinfo",
               "https://x.com/sagenextinfo",
@@ -798,7 +910,7 @@ const QuickbooksHosting = () => {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "QuickBooks Hosting",
-            "image": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "image": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "description": "Get authorized QuickBooks Cloud Hosting with excellent 99.99% uptime. Secure, remote team access, automated backups, 24/7 expert support, and a flexible pay-as-you-go solution for accountants are all included.",
             "brand": { "@type": "Brand", "name": "Sagenext" },
             "sku": "QBH001",

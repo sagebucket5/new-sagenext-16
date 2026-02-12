@@ -1,14 +1,14 @@
 
 import '../styles/globals.css';
-import ThirdPartyScripts from '@/components/seo/ThirdPartyScripts';
 import Layout from '@/components/layouts/LayoutV2';
 import { Toaster } from 'react-hot-toast';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 
 const graphik = localFont({
   src: [
     {
-      path: '../../public/fonts/Graphik-Light.woff2',
+      path: '../../public/fonts/Graphik-Bold.woff',
       weight: '300',
       style: 'normal',
     },
@@ -52,9 +52,8 @@ export default function RootLayout({ children }) {
     <html lang="en-US">
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <Script id='gtag' dangerouslySetInnerHTML={{
+          __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];
               w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
               var f=d.getElementsByTagName(s)[0],
@@ -64,12 +63,11 @@ export default function RootLayout({ children }) {
               f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-KVL53GX');
             `,
-          }}
+        }}
         />
       </head>
 
       <body className={`${graphik.variable} font-sans antialiased`}>
-        {/* ✅ noscript MUST be here */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KVL53GX"
@@ -79,8 +77,7 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-        {/* Client-only scripts */}
-        <ThirdPartyScripts />
+        <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" async defer />
 
         <Layout>
           {children}

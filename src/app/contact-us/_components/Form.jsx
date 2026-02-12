@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react"
 import Classes from "@styles/pages/company/contact.module.css";
+// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import toast from "react-hot-toast";
 import { FaAngleRight } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
@@ -9,6 +10,7 @@ import Countrycodes from "@/lib/countryCodes";
 import BlueCta from "@/components/buttons/BlueCta";
 import Link from "next/link";
 import { Turnstile } from "@marsidev/react-turnstile";
+import Image from "next/image";
 
 const ContactForm = () => {
   const router = useRouter();
@@ -181,17 +183,17 @@ const ContactForm = () => {
                 <div
                   className={`${Classes["top-element"]} flex justify-center absolute top-0 start-1/2 -translate-1/2`}
                 >
-                  <img
+                  <Image height={50} width={50}
                     src="/assets/images/contact-us/ellipse-contact1.svg"
                     className={`${Classes["ele1"]}`}
                     alt="master1"
                   />
-                  <img
+                  <Image height={50} width={50}
                     src="/assets/images/contact-us/ellipse-contact2.svg"
                     className={`${Classes["ele2"]}`}
                     alt="master2"
                   />
-                  <img
+                  <Image height={50} width={50}
                     src="/assets/images/contact-us/ellipse-contact3.svg"
                     className={`${Classes["ele3"]}`}
                     alt="master3"

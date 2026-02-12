@@ -129,9 +129,6 @@ const cspHeader = `
 `.replace(/\s{2,}/g, ' ').trim();
 
 const nextConfig = {
-	experimental: {
-		optimizeCss: true,
-	},
 
 	async headers() {
 		const headers = [];
@@ -184,12 +181,14 @@ const nextConfig = {
 	},
 
 	images: {
+		loader: "custom",
+		loaderFile: "./src/image-loader.js",
 		remotePatterns: [
 			{ protocol: "https", hostname: "ik.imagekit.io" },
-			{ protocol: "https", hostname: "snb.thesagenext.com" },
-			{ protocol: "https", hostname: "www.thesagenext.com" },
-			{ protocol: "https", hostname: "thesagenext.com" },
-			{ protocol: "https", hostname: "sage-storage.sfo3.cdn.digitaloceanspaces.com" },
+			// { protocol: "https", hostname: "snb.thesagenext.com" },
+			// { protocol: "https", hostname: "www.thesagenext.com" },
+			// { protocol: "https", hostname: "thesagenext.com" },
+			// { protocol: "https", hostname: "sage-storage.sfo3.cdn.digitaloceanspaces.com" },
 		],
 	},
 

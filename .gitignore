@@ -36,3 +36,4 @@ next-env.d.ts
 .vscode
 
 AWSCLIV2.pkg
+.env*.local

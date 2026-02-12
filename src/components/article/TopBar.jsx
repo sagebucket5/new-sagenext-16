@@ -13,7 +13,7 @@ function TopBar() {
         <div className="bar-content">
           <Link href="/" className="logo">
             <img
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png"
+              src="/logo/logo.png"
               alt="logo"
               width={140}
               height={32}

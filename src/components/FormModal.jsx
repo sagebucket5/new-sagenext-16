@@ -12,6 +12,7 @@ import { IoIosClose, IoIosArrowForward } from "react-icons/io";
 import toast from "react-hot-toast";
 import { AiOutlineLoading } from "react-icons/ai";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FormModal(props) {
   const [open, setOpen] = useState(false);
@@ -100,7 +101,7 @@ export default function FormModal(props) {
     };
 
     try {
-      console.log('my data', data);
+      // console.log('my data', data);
       const res = await fetch("/api/api-email-post", {
         method: "POST",
         body: JSON.stringify(data),
@@ -185,7 +186,7 @@ export default function FormModal(props) {
                 {/* Left */}
                 <div className="md:w-1/2 rounded-[14px] flex flex-col justify-center lg:rounded-[8px_0px_0px_8px] bg-[url(/assets/component/Modal-Banner.webp)] bg-no-repeat bg-cover py-6 px-6">
                   <div className="mb-4">
-                    <img
+                    <Image
                       src="/footer/logo.png"
                       alt="logo"
                       loading="lazy"
