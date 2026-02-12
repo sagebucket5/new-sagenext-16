@@ -109,7 +109,7 @@ function Sage300erphosting() {
           </>
         }
         required
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/sage/sage300.webp"
+        BannerImage="/assets/images/banner/sage/sage300.webp"
       />
 
       <div className={styles["main"]}>
@@ -118,7 +118,7 @@ function Sage300erphosting() {
             <div className={`${styles["sage100second"]}`}>
               <div className={styles["firstImg"]}>
                 <Image
-                  src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/sage-300/cloud-business.webp"
+                  src="/assets/images/sage-300/cloud-business.webp"
                   alt="loading"
                   className={styles["imgss"]}
                   loading="lazy"

@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import Classes from "@styles/component/utils/supportGrid.module.css";
+import Image from "next/image";
 
 const SupportGrid = (props) => {
     return (
@@ -21,7 +22,7 @@ const SupportGrid = (props) => {
                             <div className={Classes["assistance"]}>
                                 <div className={Classes["assistanceText"]}>
                                     <h3 className="flex items-center">
-                                        <img
+                                        <Image
                                             src="/assets/images/drake-hosting/assistance.svg"
                                             alt="assistance"
                                             width={30}
@@ -40,7 +41,7 @@ const SupportGrid = (props) => {
                             <div className={Classes["turnaround"]}>
                                 <div className={Classes["turnaroundText"]}>
                                     <h3 className="flex items-center">
-                                        <img
+                                        <Image
                                             src="/assets/images/drake-hosting/turnaround.svg"
                                             alt="assistance"
                                             width={30}
@@ -59,7 +60,7 @@ const SupportGrid = (props) => {
                             <div className={Classes["platform"]}>
                                 <div className={Classes["platformText"]}>
                                     <h3 className="flex items-center">
-                                        <img
+                                        <Image
                                             src="/assets/images/drake-hosting/platform.svg"
                                             alt="assistance"
                                             width={30}

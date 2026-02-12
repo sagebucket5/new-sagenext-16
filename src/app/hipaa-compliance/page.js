@@ -22,7 +22,7 @@ export async function generateMetadata() {
       images: [
         {
           url: "/logo/logo.webp",
-          secureUrl: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png",
+          secureUrl: "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
           width: 210,
           height: 314,
           alt: meta.title,
@@ -35,7 +35,7 @@ export async function generateMetadata() {
       description: meta.description,
       site: "@sagenextinfo",
       creator: "@sagenextinfo",
-      images: ["https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png"],
+      images: ["/logo/logo.png"],
     },
   };
 }

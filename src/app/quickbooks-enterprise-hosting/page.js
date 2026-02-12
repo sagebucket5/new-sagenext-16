@@ -69,7 +69,7 @@ const QuickbooksEnterpriseHosting = () => {
       <QbHero
         subtext="Boost Collaboration & Performance with Hosted QuickBooks Enterprise."
         title="QuickBooks Enterprise Hosting"
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-enterprise.png"
+        BannerImage="/assets/images/banner/quickbooks/qb-enterprise.png"
         listDisc={[
           {
             name: "Anywhere, Anytime ",
@@ -599,7 +599,7 @@ const QuickbooksEnterpriseHosting = () => {
             "name": "Sagenext",
             "alternateName": "Sagenext Hosting",
             "url": "https://www.thesagenext.com/",
-            "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "sameAs": [
               "https://www.facebook.com/sagenextinfo",
               "https://x.com/sagenextinfo",
@@ -620,7 +620,7 @@ const QuickbooksEnterpriseHosting = () => {
             "@type": "Product",
             name: "QuickBooks Enterprise Hosting",
             image:
-              "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+              "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             description:
               "Get QuickBooks Enterprise Hosting running on the cloud. Secure remote access, work together in real time, use any device, backup automatically & 24/7 help for modern accounting.",
             brand: {

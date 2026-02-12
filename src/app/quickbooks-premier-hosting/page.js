@@ -147,7 +147,7 @@ const QuickbooksProHosting = () => {
           </>
         }
         required
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-premier.webp"
+        BannerImage="/assets/images/banner/quickbooks/qb-premier.webp"
         alt="QuickBooks Premier Hosting"
       />
 
@@ -596,7 +596,7 @@ const QuickbooksProHosting = () => {
             "name": "Sagenext",
             "alternateName": "Sagenext Hosting",
             "url": "https://www.thesagenext.com/",
-            "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "sameAs": [
               "https://www.facebook.com/sagenextinfo",
               "https://x.com/sagenextinfo",
@@ -708,7 +708,7 @@ const QuickbooksProHosting = () => {
             "@type": "Product",
             name: "QuickBooks Premier Hosting",
             image:
-              "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+              "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             description:
               "QuickBooks Premier Hosting is the process of integrating licensed versions of QB Premier Desktop on cloud for anywhere, anytime accessibility.",
             brand: {

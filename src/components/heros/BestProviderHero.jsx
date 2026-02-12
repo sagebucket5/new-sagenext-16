@@ -121,7 +121,7 @@ const BestProviderHero = () => {
     }
   };
   return (
-    <div className="bg-[url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/offer/herobg.webp')] bg-cover bg-center z-[2] relative">
+    <div className="bg-[url('/assets/images/offer/herobg.webp')] bg-cover bg-center z-[2] relative">
       <img
         src="/assets/component/quickbooks2.webp"
         alt="QuickBooks Solution Provider"

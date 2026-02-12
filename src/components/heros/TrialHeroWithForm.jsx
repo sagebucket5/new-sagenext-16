@@ -142,7 +142,7 @@ const TrialHeroWithForm = () => {
                             <div className="w-1/2 md:w-auto">
                                 <Link href="/" className="block">
                                     <img
-                                        src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png"
+                                        src="/logo/logo.png"
                                         alt="Logo"
                                         width={200}
                                         height={32}

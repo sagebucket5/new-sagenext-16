@@ -61,7 +61,7 @@ export default function Header() {
     <>
       <div className={`${Classes.headerMain} ${!isNavbarVisible ? Classes.hideNavbar : ""}`} id="smooth">
         <div className={Classes.navbarContainer}>
-          <a href="/"> <Image src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png" priority alt="sagenext logo" width={170} height={30} /> </a>
+          <a href="/"> <Image src="/logo/logo.png" priority alt="sagenext logo" width={170} height={30} /> </a>
           <div className={Classes.menuContainer}>
             <ul className={Classes.navbarList}>
               {navbarList.map((topBarItem, index) => (
@@ -79,7 +79,7 @@ export default function Header() {
                             {topBarItem.children.map((sidebar, i) => (
                               <li key={i} ref={(el) => (subMenuRefs.current[i] = el)} style={{ display: 'flex', alignItems: "center", gap: '4px' }} className={`${Classes.sideList} ${selectedItem?.name === sidebar.name ? Classes.active : ""}`}
                                 onMouseEnter={() => { setSelectedItem(sidebar), subHandleMouseEnter(sidebar, i) }}>
-                                <img src={sidebar.icon} alt="sidebar" height={27} width={28} loading="lazy" />{" "} {sidebar.name} <IoIosArrowForward size={19} className={Classes.subArrow} />
+                                <Image src={sidebar.icon} alt="sidebar" height={27} width={28} loading="lazy" />{" "} {sidebar.name} <IoIosArrowForward size={19} className={Classes.subArrow} />
                               </li>
                             ))}
                           </ul>
@@ -107,7 +107,7 @@ export default function Header() {
                                   } ${selectedItem?.name == "Others" ? Classes.otherSubChildrenItem : ""
                                   } ${topBarItem.Sstyle ? Classes.subItemDiff : ""}`}
                               >
-                                {/* <img src={sub.icon} height={35} width={35} loading="lazy" />{" "} */}
+                                {/* <Image src={sub.icon} height={35} width={35} loading="lazy" />{" "} */}
                                 {sub.name}{" "} <IoIosArrowForward size={19} className={Classes.subArrow} />
                               </Link>
                             ))
@@ -137,7 +137,7 @@ export default function Header() {
                             <div className={Classes.subChildrenBottomBar}>
                               {selectedItem.footer.map((item, i) => (
                                 <Link href={item.href} className={Classes.subMenuFooter} key={i}>
-                                  <span> <img src={item.icon} alt={`item${i}`} className={`${Classes.bottomBarImg}`} height={54} width={54} loading="lazy" /> </span>
+                                  <span> <Image src={item.icon} alt={`item${i}`} className={`${Classes.bottomBarImg}`} height={54} width={54} loading="lazy" /> </span>
                                   <span> <h3>{item.title}</h3> <p>{item.lable}</p> </span>
                                 </Link>
                               ))}
@@ -155,12 +155,12 @@ export default function Header() {
                       {topBarItem?.name === "Hosting Solutions"
                         ? selectedItem?.banner && (
                           <a className="p-2" href={selectedItem.bannerHref}>
-                            <img src={selectedItem.banner} className={`${Classes.bottomBarImg}`} height={386} width={296} alt="banner-image" loading="lazy" />
+                            <Image src={selectedItem.banner} className={`${Classes.bottomBarImg}`} height={386} width={296} alt="banner-image" loading="lazy" />
                           </a>
                         )
                         : topBarItem?.banner && (
                           <a className="p-2" href={topBarItem.bannerHref}>
-                            <img src={topBarItem.banner} className={`${Classes.bottomBarImg}`} height={386} width={296} alt="banner-image-1" loading="lazy" />
+                            <Image src={topBarItem.banner} className={`${Classes.bottomBarImg}`} height={386} width={296} alt="banner-image-1" loading="lazy" />
                           </a>
                         )}
                       {/* bottombar */}
@@ -168,7 +168,7 @@ export default function Header() {
                         <div className={Classes.bottomBar}>
                           {topBarItem.footer.map((item, i) => (
                             <span key={i}>
-                              <aside> <img src={item.icon} alt={`footerIcon${i}`} className={`${Classes.bottomBarImg}`} height={54} width={54} loading="lazy" /> </aside>
+                              <aside> <Image src={item.icon} alt={`footerIcon${i}`} className={`${Classes.bottomBarImg}`} height={54} width={54} loading="lazy" /> </aside>
                               <aside> <h3>{item.title}</h3> <p>{item.lable}</p> </aside>
                             </span>
                           ))}
@@ -242,7 +242,7 @@ export default function Header() {
                                 handleMobileMenuClose();
                             }}
                           >
-                            <img src={item.icon} height={23} width={23} loading="lazy" />{" "}
+                            <Image src={item.icon} height={23} width={23} loading="lazy" />{" "}
                             {item.name}{" "} {topBarItem.name == "Hosting Solutions" && (<IoIosArrowDown size={19} />)}
                           </Link>
                           {activeSubIndex === i && (

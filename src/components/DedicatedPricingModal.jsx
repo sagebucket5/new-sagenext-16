@@ -96,7 +96,7 @@ const DedicatedPricingModal = (props) => {
     };
 
     try {
-      console.log("my data", data);
+      // console.log("my data", data);
       const res = await fetch("/api/api-email-post", {
         method: "POST",
         body: JSON.stringify(data),

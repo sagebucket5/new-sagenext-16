@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Light.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Light.woff') format('woff');
+    src: url('/fonts/Graphik-Light.woff2') format('woff2'),
+        url('/fonts/Graphik-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
@@ -10,8 +10,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-LightItalic.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-LightItalic.woff') format('woff');
+    src: url('/fonts/Graphik-LightItalic.woff2') format('woff2'),
+        url('/fonts/Graphik-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
 }
@@ -19,8 +19,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Regular.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Regular.woff') format('woff');
+    src: url('/fonts/Graphik-Regular.woff2') format('woff2'),
+        url('/fonts/Graphik-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -28,8 +28,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-RegularItalic.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-RegularItalic.woff') format('woff');
+    src: url('/fonts/Graphik-RegularItalic.woff2') format('woff2'),
+        url('/fonts/Graphik-RegularItalic.woff') format('woff');
     font-weight: 400;
     font-style: italic;
 }
@@ -37,8 +37,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Medium.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Medium.woff') format('woff');
+    src: url('/fonts/Graphik-Medium.woff2') format('woff2'),
+        url('/fonts/Graphik-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
@@ -46,8 +46,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-MediumItalic.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-MediumItalic.woff') format('woff');
+    src: url('/fonts/Graphik-MediumItalic.woff2') format('woff2'),
+        url('/fonts/Graphik-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
 }
@@ -55,8 +55,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Semibold.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Semibold.woff') format('woff');
+    src: url('/fonts/Graphik-Semibold.woff2') format('woff2'),
+        url('/fonts/Graphik-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -64,8 +64,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-SemiboldItalic.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-SemiboldItalic.woff') format('woff');
+    src: url('/fonts/Graphik-SemiboldItalic.woff2') format('woff2'),
+        url('/fonts/Graphik-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
 }
@@ -73,8 +73,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-BoldItalic.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-BoldItalic.woff') format('woff');
+    src: url('/fonts/Graphik-BoldItalic.woff2') format('woff2'),
+        url('/fonts/Graphik-BoldItalic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
 }
@@ -82,8 +82,8 @@
 @font-face {
     font-family: 'Graphik';
     font-display: swap;
-    src: url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Bold.woff2') format('woff2'),
-        url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/fonts/Graphik-Bold.woff') format('woff');
+    src: url('/fonts/Graphik-Bold.woff2') format('woff2'),
+        url('/fonts/Graphik-Bold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 }

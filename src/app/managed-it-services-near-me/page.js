@@ -439,7 +439,7 @@ const services = () => {
             name: "Sagenext Infotech LLC",
             alternateName: "Sagenext Cloud Hosting Provider",
             url: "https://www.thesagenext.com/",
-            logo: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png",
+            logo: "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "1-855-922-7243",

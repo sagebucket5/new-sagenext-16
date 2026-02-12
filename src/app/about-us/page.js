@@ -3,11 +3,9 @@ import { getMetaData } from "@/lib/metaData";
 import Classes from "@styles/pages/company/about.module.css";
 const Awards = dynamic(() => import("@/components/utils/Awards"));
 import { IoIosStar } from "react-icons/io";
-import Review from "@/components/utils/Review";
 import TextTestimonial from "@/components/utils/TextTestimonial";
 import TrustedPartner from "@/components/utils/TrustedPatner";
 import ToolTip from "@/components/utils/ToolTip";
-import Script from "next/script";
 import AboutUsBanner from "@/components/heros/AboutUsBanner";
 import Image from "next/image";
 
@@ -177,7 +175,7 @@ const About = () => {
           <div className={Classes["core-competency"]}>
             <div className={Classes["competency-card"]}>
               <Image
-                src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/menu-icon/QuickBooks.svg"
+                src="/menu-icon/QuickBooks.svg"
                 alt="QuickBooks Hosting"
                 width={40}
                 height={40}
@@ -336,9 +334,49 @@ const About = () => {
         </div>
       </section>
       <TextTestimonial />
-      <Review />
+      <section className="pb-[50px]">
+        <div className="text-center m-0 rounded-[5px]">
+          <div>
+            <span className="font-bold text-[64px] text-[#307CE7] mr-1">4.9</span>
+            <span className="font-bold text-[36px] text-[#727272]">out of 5</span>
+          </div>
+
+          <div className="mt-2">
+            <p className="text-[#050F36] text-[28px] text-center">
+              <span className="font-black">500+</span> Reviews - Excellent!
+            </p>
+
+            <div className="mt-[70px] flex items-center justify-center flex-wrap gap-[45px]">
+              <Image height={220} width={220}
+                src="/assets/images/about-us/fo.webp"
+                alt="finances"
+                loading="lazy"
+                className="w-[215px] h-auto object-cover max-md:w-[300px]"
+              />
+              <Image height={220} width={220}
+                src="/assets/images/about-us/sr.webp"
+                alt="Review"
+                loading="lazy"
+                className="w-[215px] h-auto object-cover max-md:w-[300px]"
+              />
+              <Image height={220} width={220}
+                src="/assets/images/about-us/sf.webp"
+                alt="Review"
+                loading="lazy"
+                className="w-[215px] h-auto object-cover max-md:w-[300px]"
+              />
+              <Image height={220} width={220}
+                src="/assets/images/about-us/g2.webp"
+                alt="Review"
+                loading="lazy"
+                className="w-[215px] h-auto object-cover max-md:w-[300px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       <TrustedPartner />
-      
+
       <script
         strategy="beforeInteractive"
         id="schema_about"
@@ -350,7 +388,7 @@ const About = () => {
             name: "Sagenext Infotech LLC",
             alternateName: "Sagenext Cloud Hosting Provider",
             url: "https://www.thesagenext.com/",
-            logo: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png",
+            logo: "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "1-855-922-7243",

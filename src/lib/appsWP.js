@@ -42,7 +42,7 @@ export async function getAllPost(page) {
     posts = await postsRes.json();
     return [posts, totalPages, totalRecord];
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return [posts, totalPages, totalRecord];
   }
 }

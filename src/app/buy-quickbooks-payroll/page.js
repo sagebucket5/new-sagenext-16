@@ -78,7 +78,6 @@ function buyquickbookspayroll() {
         }
         BannerImage="/assets/images/banner/buy-qb/buy-qb-payroll.png"
       />
-      <SkillSection />
       <section className="overflow-hidden">
         <div className="container mx-auto grid grid-cols-12 py-5">
           <div className={`lg:col-span-5 col-span-9 md:mb-1 mb-12.5 ${styles.enterpriseIamge}`}>
@@ -433,6 +432,7 @@ function buyquickbookspayroll() {
           </p>
         </div>
       </div>
+      <SkillSection />
       <Awards />
       <TrustedPartner />
     </>

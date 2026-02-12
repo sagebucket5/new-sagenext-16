@@ -7,6 +7,7 @@ import Banner from "@components/article/Banner";
 import BannerCta from "@components/utils/BannerCta";
 import BlueCta from "@components/buttons/BlueCta";
 import { getMetaData } from "@/lib/metaData";
+import Image from "next/image";
 
 export async function generateMetadata() {
     const meta = getMetaData("improved-features-of-quickbooks-desktop");
@@ -161,7 +162,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                     <div>
                         <div>
                             <h3>
-                                <img
+                                <Image height={200} width={200}
                                     src="/assets/images/article/Bill.com/Improved-Banking-Connectivity.webp"
                                     alt="Improved Banking Connectivity"
                                 />
@@ -215,7 +216,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         It also is available by selecting Bank Feeds from the shortcut
                         sidebar on the Home Screen.
                     </p>
-                    <img src="/assets/images/article/Bill.com/Bank-Feeds.webp" alt="Bank-Feeds" />
+                    <Image height={300} width={300} src="/assets/images/article/Bill.com/Bank-Feeds.webp" alt="Bank-Feeds" />
                     <h4>How does it work?</h4>
                     <ul>
                         <li>Find your Bank</li>
@@ -236,7 +237,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         <div className="AlsoRead">
                             <div>
                                 <div>
-                                    <img
+                                    <Image height={300} width={300}
                                         src="https://snb.thesagenext.com/blog/wp-content/uploads/2022/11/QuickBooks-Bank-Reconciliation-1.webp"
                                         loading="lazy"
                                         alt="QuickBooks-Bank-Reconciliation-1"
@@ -261,7 +262,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                     <div>
                         <div>
                             <h3>
-                                <img
+                                <Image height={300} width={300}
                                     src="/assets/images/article/Bill.com/Cash-Flow-Hub.webp"
                                     alt="Cash Flow Hub"
                                 />
@@ -278,7 +279,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         including bank accounts, loans, and credit cards. From here, you can
                         also manage your money-in and money-out transactions.
                     </p>
-                    <img src="/assets/images/article/Bill.com/Cash-Flow-Hub1.webp" alt="cash-flow-hub" />
+                    <Image height={300} width={300} src="/assets/images/article/Bill.com/Cash-Flow-Hub1.webp" alt="cash-flow-hub" />
                     <p>
                         The Trends section of Cash Flow Hub graphically showcases how your
                         balances are varying over time so you can identify key cash flow
@@ -296,7 +297,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         <li>Manage overdue bills and payments</li>
                         <li>Check any and all reports related to cash flow information</li>
                     </ul>
-                    <img
+                    <Image height={300} width={300}
                         src="/assets/images/article/Bill.com/Cash-Flow-Hub-14.webp"
                         alt="What User can Manage via Cash Flow Hub?"
                     />
@@ -310,7 +311,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         <div>
                             {" "}
                             <h3>
-                                <img
+                                <Image height={300} width={300}
                                     src="/assets/images/article/Bill.com/Track-Vehicle.webp"
                                     alt="Track Vehicle Mileage"
                                 />
@@ -342,7 +343,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             <p>
                                 <strong>Tip</strong>
                             </p>
-                            <img src="/assets/images/article/Bill.com/tips.png" alt="bulb" />
+                            <Image height={300} width={300} src="/assets/images/article/Bill.com/tips.png" alt="bulb" />
                         </div>
                         <div>
                             <p>
@@ -353,7 +354,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             </p>
                         </div>
                     </div>
-                    <img
+                    <Image height={300} width={300}
                         src="/assets/images/article/Bill.com/Mileage-tracker-mobile-1.webp"
                         alt="QuickBooks Desktop Mobile App"
                     />
@@ -368,7 +369,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         rate since QuickBooks will automatically fetch that rate for you and
                         use it to calculate each trip’s mileage expense.
                     </p>
-                    <img
+                    <Image height={300} width={300}
                         src="/assets/images/article/Bill.com/Track-Vehicles-Mileage.webp"
                         alt="Track Vehicles Mileage"
                     />
@@ -387,7 +388,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                     <div>
                         <div>
                             <h3>
-                                <img
+                                <Image height={300} width={300}
                                     src="/assets/images/article/Bill.com/Report-Optimization.webp"
                                     alt="Report Optimization"
                                 />
@@ -450,7 +451,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             <p>
                                 <strong>Tip</strong>
                             </p>
-                            <img src="/assets/images/article/Bill.com/tips.png" alt="Tips" />
+                            <Image height={300} width={300} src="/assets/images/article/Bill.com/tips.png" alt="Tips" />
                         </div>
                         <div>
                             <p>
@@ -471,7 +472,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             At first, Company File Administrators should Turn On this feature
                             in the <b>Items & Inventory Company Preferences.</b>
                         </li>
-                        <img src="/assets/images/article/Bill.com/ItemCat-1.webp" alt="ItemCat" />
+                        <Image height={300} width={300} src="/assets/images/article/Bill.com/ItemCat-1.webp" alt="ItemCat" />
                         <li>
                             Users can now easily create and assign categories to their
                             Inventory Items.
@@ -480,7 +481,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                                     <p>
                                         <strong>Tip</strong>
                                     </p>
-                                    <img src="/assets/images/article/Bill.com/tips.png" alt="Tips" />
+                                    <Image height={300} width={300} src="/assets/images/article/Bill.com/tips.png" alt="Tips" />
                                 </div>
                                 <div>
                                     <p>
@@ -499,7 +500,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             can also view, filter, or sort report items by <b>category</b>.
                         </li>
                     </ul>
-                    <img src="/assets/images/article/Bill.com/ItemCat-3.webp" alt="ItemCat" />
+                    <Image height={300} width={300} src="/assets/images/article/Bill.com/ItemCat-3.webp" alt="ItemCat" />
                     <p>
                         This new feature allows users to define items almost any way they
                         want to represent them and helps limit abuses of the item/sub-item
@@ -537,7 +538,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                     <div>
                         <div>
                             <h3>
-                                <img
+                                <Image height={300} width={300}
                                     src="/assets/images/article/Bill.com/Intercompany.webp"
                                     alt="Using Intercompany Transactions"
                                 />
@@ -563,7 +564,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             <b>or</b> the <b>Intercompany Transactions</b> icon inside the
                             Company section of the Home Page of QuickBooks Enterprise.
                         </li>
-                        <img src="/assets/images/article/Bill.com/Interco-1.webp" alt="Interco-1" />
+                        <Image height={300} width={300} src="/assets/images/article/Bill.com/Interco-1.webp" alt="Interco-1" />
                         <li>
                             Now, further, you will have to Add or Select ’Due to’ and ’Due
                             from’ accounts for initiating the Company file.
@@ -582,9 +583,9 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             normally after clicking the <b>’Intercompany Transaction’</b>
                             button on the right side of the Main menu at the top.
                         </li>
-                        <img src="/assets/images/article/Bill.com/Interco-2.webp" alt="interco-2" /> <br />
+                        <Image height={300} width={300} src="/assets/images/article/Bill.com/Interco-2.webp" alt="interco-2" /> <br />
                         <br />
-                        <img src="/assets/images/article/Bill.com/Interco-3.webp" alt="Interco-3" />
+                        <Image height={300} width={300} src="/assets/images/article/Bill.com/Interco-3.webp" alt="Interco-3" />
                         <li>
                             Once it is saved, the transaction is posted in the ’Sent for
                             Approval’ area of the Parent Company’s Dashboard and the Pending
@@ -646,7 +647,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                     <div>
                         <div>
                             <h3>
-                                <img
+                                <Image height={300} width={300}
                                     src="/assets/images/article/Bill.com/Expiration-Dates.webp"
                                     alt="Using Expiration Dates"
                                 />
@@ -677,13 +678,13 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                             date of your product.
                         </li>
                     </ul>
-                    <img
+                    <Image height={300} width={300}
                         src="/assets/images/article/Bill.com/Lot-Expiration.webp"
                         alt="Lot-Expiration"
                     />
                     <br />
                     <br />
-                    <img src="/assets/images/article/Bill.com/LotExpireBill.webp" alt="LotExpireBill" />
+                    <Image height={300} width={300} src="/assets/images/article/Bill.com/LotExpireBill.webp" alt="LotExpireBill" />
                     <p>
                         Most QuickBooks Enterprise users will be delighted with this
                         long-needed product improvement.
@@ -727,7 +728,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         This means that employees will typically get assessed for a loan, or
                         credit, a lot quicker than before.
                     </p>
-                    <img
+                    <Image height={300} width={300}
                         src="/assets/images/article/Bill.com/VerficationOptOut.webp"
                         alt="VerficationOptOut"
                     />
@@ -763,7 +764,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         users of QuickBooks Desktop affordable, fully integrated 401(k)
                         plans.
                     </p>
-                    <img
+                    <Image height={300} width={300}
                         src="/assets/images/article/Bill.com/401k-1.webp"
                         alt="HCM with Guidelines 401(k)"
                     />
@@ -805,7 +806,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                     <div>
                         <div>
                             <h3>
-                                <img
+                                <Image height={300} width={300}
                                     src="/assets/images/article/Bill.com/Enhanced-Payment-Links.webp"
                                     alt="Enhanced Payment Links"
                                 />
@@ -822,7 +823,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         Payments account, has had improvements to this feature that makes it
                         even simpler and quicker for users to accept the payments.
                     </p>
-                    <img src="/assets/images/article/Bill.com/Payment-Links.webp" alt="Payment-Links" />
+                    <Image height={300} width={300} src="/assets/images/article/Bill.com/Payment-Links.webp" alt="Payment-Links" />
                     {/* comments added */}
                     <ul>
                         <li>
@@ -856,7 +857,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         <div className="AlsoRead">
                             <div>
                                 <div>
-                                    <img
+                                    <Image height={300} width={300}
                                         src="https://snb.thesagenext.com/blog/wp-content/uploads/2017/12/Managing-Bills-In-QuickBooks-Online.png"
                                         loading="lazy"
                                         alt="Managing-Bills-In-QuickBooks-Online"
@@ -879,7 +880,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                     <div>
                         <div>
                             <h3>
-                                <img
+                                <Image height={300} width={300}
                                     src="/assets/images/article/Bill.com/New-Node.webp"
                                     alt="New Node Card Reader"
                                 />
@@ -894,7 +895,7 @@ export default function ImprovedFeaturesOfQuickbooksDesktop() {
                         you to accept contactless cards, Apple Pay, Google Pay, and a
                         variety of other forms of payment from your clients.
                     </p>
-                    <img
+                    <Image height={300} width={300}
                         src="/assets/images/article/Bill.com/Node-Card-Reader.webp"
                         alt="Node-Card-Reader"
                     />

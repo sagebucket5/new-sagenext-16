@@ -74,7 +74,6 @@ const page = async ({ params }) => {
   };
 
   const authorId = findAuthorId(rootSlug, author);
-  // console.log("authorid", authorId);
 
   const postsRes = await fetch(
     `https://snb.thesagenext.com/${rootSlug}/index.php/wp-json/wp/v2/posts?_embed&page=${currentPage}&per_page=21&author=${authorId}`
@@ -85,7 +84,6 @@ const page = async ({ params }) => {
   );
 
   const authorDetails = await authorResponse.json();
-  // console.log("authorDetails", authorDetails);
 
   if (!postsRes.ok || authorId === null) {
     redirect("/");
@@ -97,7 +95,6 @@ const page = async ({ params }) => {
     10
   );
 
-  // console.log(posts);
 
   return (
     <>

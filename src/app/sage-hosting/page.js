@@ -79,7 +79,7 @@ const Sagehosting = () => {
           </>
         }
         required
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/sage/sage-hosting.webp"
+        BannerImage="/assets/images/banner/sage/sage-hosting.webp"
         alt="Sage Hosting"
       />
 

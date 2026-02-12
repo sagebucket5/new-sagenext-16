@@ -56,7 +56,7 @@ function PopularPost() {
                         <Link href={`/support/${post.slug}`} rel="noopener noreferrer">
                             <div>
                                 <Image
-                                    src={post.thumb || "/assetshttps://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png"}
+                                    src={post.thumb || "/logo/logo.png"}
                                     alt={post.alt || "Default Image"}
                                     className={style.recent_post_thumb}
                                     height={210}

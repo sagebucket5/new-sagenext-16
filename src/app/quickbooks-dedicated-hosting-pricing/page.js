@@ -400,7 +400,7 @@ function QuickBooksDedicatedHostingPricing() {
             "name": "Sagenext",
             "alternateName": "Sagenext Hosting",
             "url": "https://www.thesagenext.com/",
-            "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "sameAs": [
               "https://www.facebook.com/sagenextinfo",
               "https://x.com/sagenextinfo",

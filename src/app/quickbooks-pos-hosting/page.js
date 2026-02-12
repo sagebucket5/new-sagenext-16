@@ -63,7 +63,7 @@ const QBpos = () => {
                     </>
                 }
                 required
-                BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-pos.webp"
+                BannerImage="/assets/images/banner/quickbooks/qb-pos.webp"
                 alt="QuickBooks POS Hosting"
             />
 
@@ -276,7 +276,7 @@ const QBpos = () => {
                         "name": "Sagenext",
                         "alternateName": "Sagenext Hosting",
                         "url": "https://www.thesagenext.com/",
-                        "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+                        "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
                         "sameAs": [
                             "https://www.facebook.com/sagenextinfo",
                             "https://x.com/sagenextinfo",
@@ -352,7 +352,7 @@ const QBpos = () => {
                         "@type": "Product",
                         name: "QuickBooks POS Hosting",
                         image:
-                            "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+                            "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
                         description:
                             "QuickBooks POS Hosting is simply configuring and setting up the licensed copies of QuickBooks POS applications on cloud servers.",
                         brand: {

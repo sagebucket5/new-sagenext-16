@@ -126,7 +126,7 @@ function Sage100erphosting() {
           </>
         }
         required
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/sage/sage100.webp"
+        BannerImage="/assets/images/banner/sage/sage100.webp"
       />
 
       <section className="mb-10">

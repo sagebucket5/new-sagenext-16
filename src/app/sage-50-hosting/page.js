@@ -154,7 +154,7 @@ function Sage50() {
           </>
         }
         required
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/sage/sage50.webp"
+        BannerImage="/assets/images/banner/sage/sage50.webp"
       />
 
       <div className="container mx-auto mb-4">

@@ -128,7 +128,7 @@ const OfferHead = () => {
         }
     };
     return (
-        <div className="bg-[url('https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/offer/herobg.webp')] bg-cover bg-center">
+        <div className="bg-[url('/assets/images/offer/herobg.webp')] bg-cover bg-center">
             <header className={styles["offer-header"]}>
                 <div className={styles["logo-container"]}>
                     <Link href="/" >

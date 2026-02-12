@@ -3,6 +3,7 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "@styles/component/cards/feature-animation.module.css";
+
 const FeatureAnimationCard = ({arr}) => {
     const descRefs = useRef([]);
     const heightManege = useRef([])

@@ -344,7 +344,7 @@ cta={
                 "name": "Sagenext Infotech LLC",
                 "alternateName": "Sagenext Cloud Hosting Provider",
                 "url": "https://www.thesagenext.com/",
-                "logo": "https://www.thesagenext.comhttps://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png",
+                "logo": "https://www.thesagenext.com/logo/logo.png",
                 "contactPoint": {
                   "@type": "ContactPoint",
                   "telephone": "1-855-922-7243",

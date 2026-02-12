@@ -80,7 +80,7 @@ const QuickbooksProHosting = () => {
           </>
         }
         required
-        BannerImage={"https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-pro.webp"}
+        BannerImage={"/assets/images/banner/quickbooks/qb-pro.webp"}
         alt="QuickBooks Pro Hosting"
       />
       <div className={Classes["qb-pro-cloud-hosting"]}>
@@ -630,7 +630,7 @@ const QuickbooksProHosting = () => {
             "name": "Sagenext",
             "alternateName": "Sagenext Hosting",
             "url": "https://www.thesagenext.com/",
-            "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "sameAs": [
               "https://www.facebook.com/sagenextinfo",
               "https://x.com/sagenextinfo",
@@ -651,7 +651,7 @@ const QuickbooksProHosting = () => {
             "@type": "Product",
             name: "QuickBooks Pro Hosting",
             image:
-              "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+              "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             description:
               "QuickBooks Pro Hosting offers secure on cloud access, enabling you to manage your accounting tasks anytime, anywhere, with complete peace of mind.",
             brand: {

@@ -83,7 +83,7 @@ export async function POST(req) {
     const emailTemplate = getTrialEmailTemplate( { ...safeData, url: referer }, ipData);
 
     await sendEmail(emailTemplate, data.subject);
-    console.log("Email sent successfully.");
+    // console.log("Email sent successfully.");
 
     return NextResponse.json({
       success: true,

@@ -8,7 +8,7 @@ const slug = () => {
             <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-200 px-4">
                 <div className="bg-white rounded-3xl shadow-2xl p-10 md:max-w-9/12 w-full text-center mt-20">
                     <Image
-                        src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png"
+                        src="/logo/logo.png"
                         alt="Thank You"
                         height={56}
                         width={40}

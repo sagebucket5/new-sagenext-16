@@ -5,7 +5,7 @@ import TaxHero from "@/components/heros/TaxHero";
 import Awards from "@/components/utils/Awards";
 import FAQ from "@/components/utils/FAQ";
 import OfferBanner from "@/components/utils/OfferBanner";
-import { VersionCards } from "@/components/utils/QuickBookVersion";
+import VersionCards from "@/components/utils/VersionCards";
 import TrustedPartners from "@/components/utils/TrustedPatner";
 import { getMetaData } from "@/lib/metaData";
 import getCurrentYear from "@lib/getCurrentYear";
@@ -693,7 +693,7 @@ function taxsoftwarehosting() {
             "name": "Sagenext",
             "alternateName": "Sagenext Hosting",
             "url": "https://www.thesagenext.com/",
-            "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "sameAs": [
               "https://www.facebook.com/sagenextinfo",
               "https://x.com/sagenextinfo",

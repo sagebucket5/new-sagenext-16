@@ -8,7 +8,7 @@ function RecentPost({ post }) {
     return (
         <div className={style.recent_post}>
             <Link href={`/support/${post.slug}`} rel="noopener noreferrer">
-                <Image src={post._embedded["wp:featuredmedia"] ? post._embedded["wp:featuredmedia"][0].source_url : "/assetshttps://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png"}
+                <Image src={post._embedded["wp:featuredmedia"] ? post._embedded["wp:featuredmedia"][0].source_url : "/assets/logo/logo.png"}
                     alt="User Guided Access For iPad, iOS, and Android Devices"
                     className={style.recent_post_thumb}
                     height={210}

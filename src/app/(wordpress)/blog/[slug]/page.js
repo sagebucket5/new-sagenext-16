@@ -52,7 +52,6 @@ export async function generateMetadata({ params }) {
 export default async function BlogPostPage({ params }) {
 
     const { slug } = await params;
-    console.log('Generating page for slug:', slug); // Debug log
 
     const post = await getPost(slug);
 

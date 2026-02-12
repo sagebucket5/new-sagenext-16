@@ -57,7 +57,7 @@ function sagenextvsthegroupsage() {
           <hr width="80%" className="hr2 lg:hidden block" />
           <div className="lg:col-span-6 col-span-12 p-4">
             <Image
-              src="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png"
+              src="/logo/logo.png"
               width={208}
               height={100}
               className="mx-auto"

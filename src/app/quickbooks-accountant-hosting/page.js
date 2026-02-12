@@ -36,8 +36,8 @@ export async function generateMetadata() {
       siteName: "Sagenext Infotech LLC",
       images: [
         {
-          url: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-acc-hosting.png",
-          secureUrl: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-acc-hosting.png",
+          url: "/assets/images/banner/quickbooks/qb-acc-hosting.png",
+          secureUrl: "/assets/images/banner/quickbooks/qb-acc-hosting.png",
           width: 210,
           height: 314,
           alt: "quickbooks ad-ons",
@@ -50,7 +50,7 @@ export async function generateMetadata() {
       description: meta.description,
       site: "@sagenextinfo",
       creator: "@sagenextinfo",
-      images: ["https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-acc-hosting.png"],
+      images: ["/assets/images/banner/quickbooks/qb-acc-hosting.png"],
     },
   };
 }
@@ -93,7 +93,7 @@ const QuickbooksAccountantHosting = () => {
           </>
         }
         required
-        BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-acc-hosting.png"
+        BannerImage="/assets/images/banner/quickbooks/qb-acc-hosting.png"
       />
 
       <section
@@ -387,7 +387,7 @@ const QuickbooksAccountantHosting = () => {
             "name": "Sagenext",
             "alternateName": "Sagenext Hosting",
             "url": "https://www.thesagenext.com/",
-            "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+            "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             "sameAs": [
               "https://www.facebook.com/sagenextinfo",
               "https://x.com/sagenextinfo",
@@ -464,7 +464,7 @@ const QuickbooksAccountantHosting = () => {
             "@type": "Product",
             name: "QuickBooks Accountant Hosting",
             image:
-              "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+              "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
             description:
               "QuickBooks accountant hosting enables accounting firms & accountants to access the software seamlessly from anywhere, at any time. Get QB cloud-hosted now",
             brand: {

@@ -516,7 +516,7 @@ export default function taxdomeHosting() {
               name: "Sagenext Infotech LLC",
               logo: {
                 "@type": "ImageObject",
-                url: "https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/logo/logo.png",
+                url: "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
               },
             },
           }),

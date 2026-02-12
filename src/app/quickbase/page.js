@@ -1,5 +1,5 @@
 import { getMetaData } from "@/lib/metaData";
-// import styles from "../styles/quickbase.module.css";
+import Image from "next/image";
 
 import React from "react";
 
@@ -49,10 +49,9 @@ function quickbase() {
         <div className="container">
           <div className="flex">
             <div className="flex flex-col lg:flex-row gap-10 py-10">
-              <img
+              <Image height={300} width={300}
                 src="/assets/images/quickbase/logo.png"
                 alt="quickbase"
-                width={300}
                 className="lg:w-1/5 object-contain"
               />
               <p className="pt-3 text-black default">
@@ -71,10 +70,11 @@ function quickbase() {
             <div className="pt-3 pb-3 ">
               <div className="">
                 <div className="flex flex-col">
-                  <img
+                  <Image
                     className="w-10 border rounded-md aspect-square p-1.5 object-contain"
                     src="/assets/images/quickbase/icn1.png"
                     height={55}
+                    width={55}
                   />
                   <h3>Low-code development</h3>
                 </div>
@@ -90,10 +90,11 @@ function quickbase() {
             <div className="pt-3 pb-3 ">
               <div className="">
                 <div className="flex flex-col">
-                  <img
+                  <Image
                     className="w-10 border rounded-md aspect-square p-1.5 object-contain"
                     src="/assets/images/quickbase/11.png"
                     height={55}
+                    width={55}
                   />
                   <h3>Seamless integration</h3>
                 </div>
@@ -109,10 +110,11 @@ function quickbase() {
             <div className="pt-3 pb-3 ">
               <div className="">
                 <div className="flex flex-col">
-                  <img
+                  <Image
                     className="w-10 border rounded-md aspect-square p-1.5 object-contain"
                     src="/assets/images/quickbase/icn2.png"
                     height={55}
+                    width={55}
                   />
                   <h3>Real-time application deployment</h3>
                 </div>
@@ -127,10 +129,11 @@ function quickbase() {
             <div className="pt-3 pb-3 ">
               <div className="">
                 <div className="flex flex-col">
-                  <img
+                  <Image
                     className="w-10 border rounded-md aspect-square p-1.5 object-contain"
                     src="/assets/images/quickbase/icn3.png"
                     height={55}
+                    width={55}
                   />
                   <h3>Collaborative development</h3>
                 </div>
@@ -147,10 +150,11 @@ function quickbase() {
             <div className="pt-3 pb-3 ">
               <div className="">
                 <div className="flex flex-col">
-                  <img
+                  <Image
                     className="w-10 border rounded-md aspect-square p-1.5 object-contain"
                     src="/assets/images/quickbase/icn4.png"
                     height={55}
+                    width={55}
                   />
                   <h3>Security</h3>
                 </div>
@@ -166,10 +170,11 @@ function quickbase() {
             <div className="pt-3 pb-3 ">
               <div className="">
                 <div className="flex flex-col">
-                  <img
+                  <Image
                     className="w-10 border rounded-md aspect-square p-1.5 object-contain"
                     src="/assets/images/quickbase/icn5.png"
                     height={55}
+                    width={55}
                   />
                   <h3>Cost</h3>
                 </div>
@@ -189,11 +194,13 @@ function quickbase() {
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="col-lg-3 col-md-12 pt-0">
-              <img
+              <Image
                 alt="Unlimited Technical Support"
                 className="center"
                 src="/assets/images/quickbase/app1.png"
                 height={300}
+                    width={300}
+
               />
             </div>
             <div className="col-lg-9 col-md-12 pr-0">

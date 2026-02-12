@@ -76,7 +76,7 @@ function quickbooksaddonshosting() {
                     </>
                 }
                 required
-                BannerImage="https://sage-storage.sfo3.cdn.digitaloceanspaces.com/public/assets/images/banner/quickbooks/qb-add-ons.webp"
+                BannerImage="/assets/images/banner/quickbooks/qb-add-ons.webp"
             />
             <section className="py-7">
                 <div className="container mx-auto">
@@ -346,7 +346,7 @@ function quickbooksaddonshosting() {
                         "name": "Sagenext",
                         "alternateName": "Sagenext Hosting",
                         "url": "https://www.thesagenext.com/",
-                        "logo": "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+                        "logo": "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
                         "sameAs": [
                             "https://www.facebook.com/sagenextinfo",
                             "https://x.com/sagenextinfo",
@@ -429,7 +429,7 @@ function quickbooksaddonshosting() {
                         "@type": "Product",
                         name: "QuickBooks Add-ons Hosting",
                         image:
-                            "https://www.thesagenext.com/_next/image?url=https%3A%2F%2Fsage-storage.sfo3.cdn.digitaloceanspaces.com%2Fpublic%2Flogo%2Flogo.png&w=384&q=75",
+                            "https://www.thesagenext.com/_next/image?url=%2Flogo%2Flogo.png&w=384&q=75",
                         description:
                             "Boost your accounting efficiency with Cloud-Based QuickBooks Add-ons Hosting. Securely access & manage essential add-on apps alongside your QuickBooks software. Try it today!",
                         brand: {
